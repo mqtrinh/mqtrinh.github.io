@@ -1,0 +1,45 @@
+<manifest alg="2" build="30" opt="false" iceEnabled="true">
+  <folder name="css">
+    <file name="site_global.css" crc="4211368951"/>
+    <file name="index.css" crc="57708990" ref="index"/>
+    <file name="iefonts_index.css" crc="70343262" ref="index"/>
+    <file name="faculty.css" crc="346259047" ref="faculty"/>
+    <file name="iefonts_faculty.css" crc="4176814655" ref="faculty"/>
+    <file name="curriculum.css" crc="124879180" ref="curriculum"/>
+    <file name="iefonts_curriculum.css" crc="4082370432" ref="curriculum"/>
+    <file name="events.css" crc="359261500" ref="events"/>
+    <file name="iefonts_events.css" crc="4051094506" ref="events"/>
+  </folder>
+  <folder name="assets">
+    <file name="logo.rgb.maroon.eps" crc="411056542" mt="1462564831000"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="3828297711" ref="index:faculty:curriculum:events"/>
+    <file name="museutils.js" crc="3880880085" ref="index:faculty:curriculum:events"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="3899542795" ref="index:faculty:curriculum:events"/>
+    <file name="jquery.tobrowserwidth.js" crc="152985095" ref="index:faculty:curriculum:events"/>
+    <file name="jquery.musemenu.js" crc="32367222" ref="index:faculty:curriculum:events"/>
+    <file name="jquery.watch.js" crc="4199601726" ref="index:faculty:curriculum:events"/>
+  </folder>
+  <folder name="images">
+    <file name="bird_pattern.jpg" crc="15009568" ref="index:faculty:curriculum:events"/>
+    <file name="logorgbmaroon.png" crc="173661881" ref="index:faculty:curriculum:events"/>
+    <file name="bluebird.gif" crc="192539156" ref="index"/>
+    <file name="classicphoenixrainbow.png" crc="3762542211" ref="faculty"/>
+    <file name="pasted image 600x400.jpg" crc="212949309" ref="faculty"/>
+    <file name="screen shot 2016-05-06 at 113309 pm.jpg" crc="4029358232" ref="faculty"/>
+    <file name="pasted image 400x400.jpg" crc="236329110" ref="faculty"/>
+    <file name="pasted image 500x281.png" crc="39722151" ref="curriculum"/>
+    <file name="pasted image 500x295.jpg" crc="3833114233" ref="curriculum"/>
+    <file name="pasted image 1280x1592.jpg" crc="69852921" ref="events"/>
+    <file name="pasted image 470x245.jpg" crc="451644822" ref="events"/>
+    <file name="pasted image 434x147.png" crc="115916871" ref="events"/>
+    <file name="pasted image 720x273.png" crc="510969443" ref="events"/>
+    <file name="pasted image 1876x375.png" crc="4116761857" ref="events"/>
+    <file name="pasted image 254x70.png" crc="4081372563" ref="events"/>
+  </folder>
+  <file name="index.html" crc="531930963" mt="1462571115856" redirect="true"/>
+  <file name="faculty.html" crc="224209432" mt="1462571461013" redirect="true"/>
+  <file name="curriculum.html" crc="201967885" mt="1462572731768" redirect="true"/>
+  <file name="events.html" crc="30972732" mt="1462571744622" redirect="true"/>
+</manifest>
