@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+	<meta charset="utf-8">
+		<meta http-equiv="cache-control" content="max-age=0"/>
+		<meta http-equiv="cache-control" content="no-cache"/>
+		<meta http-equiv="expires" content="0"/>
+		<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT"/>
+		<meta http-equiv="pragma" content="no-cache"/>
+	<meta name="generator" content="pandoc">
+	<!-- <meta name="robots" content="nofollow, noindex"> -->
+	<meta name="viewport" content="width=device-width,initial-scale=1"/>
+			<meta name="author" content="Minh-Tam Trinh" />
+				<meta name="keywords" content="mathematics, math, 18, calculus, MIT" />
+		<title>18.01A</title>
+	<link rel="icon" type="image/x-icon" href="https://mqtrinh.github.io/data/images/favicon.ico">
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700&amp;subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+			<link rel="stylesheet" href="../../../../style.css" type="text/css" />
+				<script type="text/x-mathjax-config">
+    	MathJax.Hub.Config({
+    		//	only CommonHTML + matchFontHeight avoids vertical alignment problems
+    		//	CommonHTML: { linebreaks: { automatic:true }, matchFontHeight: false, scale: 93.75 },
+    		CommonHTML: { linebreaks: { automatic:true }, matchFontHeight: false},
+    		tex2jax: { inlineMath: [ ["\\(", "\\)"] ], processEscapes: true},
+    		TeX: {  equationNumbers:{autoNumber:"all"}, TagSide:"left" }
+    	});
+    </script>
+				<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML" type="text/javascript"></script>
+	</head>
+<body>
+	<!-- in Pandoc, a hack to include TeX macros -->
+	<span style="display:none";>
+		\(\)
+	</span>
+<div id="header-wrap">
+	<header>
+		<nav>
+		<ul>
+		<li><a href="https://mqtrinh.github.io/about/">about</a></li>
+		<li><a href="https://mqtrinh.github.io/math/">math</a></li>
+		<li><a href="https://mqtrinh.github.io/music/">music</a></li>
+		<li><a href="https://mqtrinh.github.io/other/">other</a></li>
+		</ul>
+		</nav>
+	</header>
+</div>
+<div id="main-wrap">
+<main>
+<h1 id="a">18.01A</h1>
+<h2 id="information">Information</h2>
+<p>
+<b>Recitations:</b> Mondays &amp; Wednesdays, 10 AM in Room 2-132.
+</p>
+<p>
+<b>Office Hours:</b> Wednesdays, 3-4 PM in Room 2-175. <i>Changes to Monday, 5-6 PM for the weeks of <b>9/27</b> and <b>10/18</b>.</i>
+</p>
+<p>
+The course instructor is David Jerison. All course materials are on <a href="https://web.mit.edu/canvas/" target="_blank">Canvas</a>.
+</p>
+<p>Homework is assigned in two ways: by problem set and over <a href="https://lms.mitx.mit.edu/" target="_blank">MITx</a>. In addition to exams and homework, there is a participation grade, so I’ll be taking attendance at recitation.</p>
+<p>I will use this webpage to record what we discuss.</p>
+<h2 id="section">21-10-20</h2>
+<p>
+Review for the final exam.
+</p>
+<ul>
+<li>
+Discuss how to approximate <span class="math inline">\(\cos(0.51\pi)\)</span>. Instead of approximating <span class="math inline">\(\cos x\)</span> near <span class="math inline">\(x = 0\)</span>, this problem calls for approximating it near <span class="math inline">\(x = 0.5\pi\)</span>.
+</li>
+<li>
+For radius-of-convergence problems, my general advice is to study the official solution to Problem 8 of Practice Final Exam #1. I was teaching a slightly different method earlier, but this method helps us avoid pitfalls when the terms of the series involve <span class="math inline">\(x^{2n}\)</span> (or <span class="math inline">\(x^{2n - 1}\)</span>, <i>etc.</i>) rather than <span class="math inline">\(x^n\)</span>. For reinforcement, I’ve updated some other examples on this webpage.
+</li>
+<li>
+Sanity check: The radius of convergence of <span class="math inline">\(\sum_{n = 0}^\infty 2^n x^n\)</span> equals <span class="math inline">\(1/2\)</span>, not <span class="math inline">\(2\)</span>.
+</li>
+</ul>
+<h2 id="section-1">21-10-18</h2>
+<ul>
+<li>
+Discuss how to rescale functions. The graph of <span class="math inline">\(y = (1/3)f(x)\)</span> is three times shorter than the graph of <span class="math inline">\(y = f(x)\)</span>. The graph of <span class="math inline">\(y = f(x/3)\)</span> is three times <i>wider</i> than the graph of <span class="math inline">\(y = f(x)\)</span>.
+</li>
+<li>
+Let <span class="math inline">\(\Psi_{\mu, \sigma}(x_0)\)</span> be the probability that a normal variable with mean <span class="math inline">\(\mu\)</span> and standard deviation <span class="math inline">\(\sigma\)</span> takes a value less than <span class="math inline">\(x_0\)</span>. When the mean is <span class="math inline">\(0\)</span> and the standard deviation is <span class="math inline">\(1\)</span>, we have the formula <span class="math display">\[\Psi_{0, 1}(t_0) = \frac{1}{\sqrt{2\pi}} \int_0^{t_0} e^{-\tfrac{1}{2}t^2}\,dt.\]</span> If we rescale the standard deviation from <span class="math inline">\(1\)</span> to <span class="math inline">\(\sigma\)</span>, then we should rescale the integrand so that its graph is wider by a factor of <span class="math inline">\(\sigma\)</span>, while keeping the total area under the graph equal to <span class="math inline">\(1\)</span>. So by the scaling principle above, we should substitute <span class="math inline">\(t = u/\sigma\)</span> , giving <span class="math display">\[\Psi_{0, \sigma}(u_0) = \frac{1}{\sigma\sqrt{2\pi}} \int_0^{u_0}
+e^{-\tfrac{1}{2}(\tfrac{u}{\sigma})^2}\,du.\]</span> If we shift the mean from <span class="math inline">\(0\)</span> to <span class="math inline">\(\mu\)</span>, then we should substitute <span class="math inline">\(u = x - \mu\)</span>, giving <span class="math display">\[\Psi_{\mu, \sigma}(x_0) = \frac{1}{\sigma\sqrt{2\pi}} \int_0^{x_0}
+e^{-\tfrac{1}{2}(\tfrac{x - \mu}{\sigma})^2}\,dx.\]</span> This is the most general formula.
+</li>
+<li>
+In practice, you might be given a table of values for <span class="math inline">\(\Psi_{0, 1}\)</span>. To match them up with the values of <span class="math inline">\(\Psi_{\mu, \sigma}\)</span>, use <span class="math display">\[\Psi_{\mu, \sigma}(x) = \Psi_{0, 1}(\tfrac{x - \mu}{\sigma}).\]</span> (As a sanity check: <span class="math inline">\(\Psi_{\mu, \sigma}(\mu) = \Psi_{0, 1}(0) = 0.5\)</span>.) Another useful formula is <span class="math display">\[\Psi_{0, 1}(-t) = 1 - \Psi_{0, 1}(t),\]</span> a consequence of the symmetry of the normal distribution.
+</li>
+<li>
+If the lifespan of a flashlight battery is a normal variable with mean <span class="math inline">\(120\)</span> hours and standard deviation <span class="math inline">\(36\)</span> hours, what is the probability that its lifespan is between <span class="math inline">\(85\)</span> and <span class="math inline">\(135\)</span> hours? Write <span class="math display">\[\mathbf{P}(85 &lt; \text{lifespan} &lt; 135) = \Psi_{120, 36}(135) - \Psi_{120, 36}(85).\]</span> We compute <span class="math inline">\((85 - 120)/36 \approx -1.0\)</span> and <span class="math inline">\((135 - 120)/36 \approx 0.4\)</span>, so the last expression equals <span class="math display">\[\Psi_{0, 1}(0.4) - \Psi_{0, 1}(-1.0)
+= \Psi_{0, 1}(0.4) - (1 - \Psi_{0, 1}(1.0)) \approx 0.66 - (1 - 0.84) = 0.50.\]</span> That is, the probability we want is <span class="math inline">\(\approx 50\%\)</span>.
+</li>
+<li>
+Suppose that in a certain course, grades follow a normal distribution with mean <span class="math inline">\(70\)</span> and standard deviation <span class="math inline">\(10\)</span>. If the professor wants <span class="math inline">\(90\%\)</span> of students to pass, what should be the cutoff for a passing grade? Let <span class="math inline">\(x\)</span> be the desired cutoff. Then <span class="math display">\[\mathbf{P}(\text{grade} \geq x) = 1 - \mathbf{P}(\text{grade} &lt; x) = 1 - \Psi_{70, 10}(x).\]</span> We can check from a table that <span class="math inline">\(1 - \Psi_{0, 1}(-1.3) = \Psi_{0, 1}(1.3) = 0.9\)</span>, so we want <span class="math display">\[\Psi_{70, 10}(x) = \Psi_{0, 1}(-1.3).\]</span> By our earlier substitution formula, we deduce that <span class="math inline">\(-1.3 = (x - 70)/10\)</span>, giving <span class="math inline">\(x = 57\)</span>.
+</li>
+</ul>
+<h2 id="section-2">21-10-13</h2>
+<ul>
+<li>
+Discuss problem 1(c) on problem set 4. To find the series expansion of the function <span class="math inline">\(y(x)\)</span> that satisfies <span class="math display">\[\begin{align}
+y&#39; &amp;= -xy,\\
+y(0) &amp;= 1,
+\end{align}\]</span> suppose <span class="math inline">\(y = \sum_{n = 0}^\infty a_n x^n\)</span>. Then we can express <span class="math inline">\(y&#39;\)</span> and <span class="math inline">\(-xy\)</span> in terms of similar series. Equating these series, we obtain a recursion relation among the <span class="math inline">\(a_n\)</span>, which we can solve using the initial condition <span class="math inline">\(y(0) = 1\)</span>.
+</li>
+<li>
+To find the radius of convergence of the series <span class="math display">\[x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \cdots\]</span> the fastest method is to use the “ratio test”. If you write the series in the form <span class="math inline">\(\sum_{n = 1}^\infty a_n x^n\)</span>, then: <span class="math display">\[a_n = \left\{
+\begin{array}{ll}
+\dfrac{(-1)^{(n - 1)/2}}{n} &amp;\text{$n$ odd}\\
+0 &amp;\text{$m$ even}
+\end{array}\right.\]</span> By the ratio test, the series converges for <span class="math inline">\(x\)</span> such that <span class="math display">\[\lim_{n \to \infty} \left|\frac{a_{n + 2} x^{n + 2}}{a_n x^n}\right| \leq 1.\]</span> The limit simplifies to <span class="math inline">\(|x|^2\)</span>, so the radius of convergence is <span class="math inline">\(1\)</span>. Indeed, this series converges to <span class="math inline">\(\arctan x\)</span> within the interval <span class="math inline">\(-1 &lt; x &lt; 1\)</span>, but diverges outside that interval!
+</li>
+<li>
+Once we know the radius of convergence of some series <span class="math inline">\(f(x)\)</span>, we can also find the answer for, say, <span class="math inline">\(\int_0^x f(t)\,dt\)</span>. Taking <span class="math inline">\(f(x)\)</span> to be the series in the previous example, <span class="math display">\[\int_0^x f(t)\,dt = \sum_{n = 2}^\infty b_n x^n\]</span> with the coefficients <span class="math display">\[b_n = \left\{
+\begin{array}{ll}
+\dfrac{(-1)^{n/2 + 1}}{n(n - 1)} &amp;\text{$n$ even}\\
+0 &amp;\text{$n$ odd}
+\end{array}\right.
+\]</span> This has the same radius of convergence.
+</li>
+<li>
+You can also solve the problem above using the <span class="math inline">\(\limsup\)</span> formula. We have <span class="math inline">\((1/(n(n - 1)))^{1/n} \approx n^{-2/n} \to 1\)</span> as <span class="math inline">\(n \to \infty\)</span>, from which <span class="math display">\[\limsup_{n \to \infty} \sqrt[n]{|b_n|} = \limsup_{n \to \infty} \left(\frac{1}{n(n - 1)}\right)^{1/n} = 1.\]</span> We again get the radius of convergence <span class="math inline">\(1/1 = 1\)</span>.
+</li>
+<li>
+Review the Poisson random variable of parameter <span class="math inline">\(\mu &gt; 0\)</span>: Its domain is the set of nonnegative integers, and its probability function <span class="math inline">\(\mathbf{P}(X)\)</span> is given by <span class="math display">\[\mathbf{P}(X = k) = e^{-\mu}\frac{\mu^k}{k!}.\]</span> Fun to check that <span class="math inline">\(\mathbf{E}(X) = \mu\)</span>.
+</li>
+<li>
+If the number of orders per hour in a restaurant is Poisson with mean <span class="math inline">\(5\)</span>, then what’s the likelihood that there will be at least <span class="math inline">\(3\)</span> orders in a given hour? Write: <span class="math display">\[\mathbf{P}(X \geq 3) = 1 - \sum_{k = 0, 1, 2} \mathbf{P}(X = k) = 1 - \sum_{k = 0, 1, 2}  e^{-5}\frac{5^k}{k!} = 1 - \frac{37}{2}e^{-5}.\]</span> This is roughly an <span class="math inline">\(87.5\%\)</span> chance.
+</li>
+<li>
+Suppose that a number generator outputs the positive integer <span class="math inline">\(n\)</span> with probability <span class="math inline">\(1/2^n\)</span>. What’s the probability that the output is divisible by <span class="math inline">\(3\)</span>? Calculate: <span class="math display">\[\sum_{k = 1}^\infty \mathbf{P}(n = 3k) = \sum_{k = 1}^\infty \frac{1}{2^{3k}}.\]</span> This is a geometric series with starting term <span class="math inline">\(a = 1/8\)</span> and ratio <span class="math inline">\(r = 1/8\)</span> between consecutive terms, so the answer is <span class="math inline">\(a/(1 - r) = 1/7\)</span>.
+</li>
+<li>
+<i>Extra:</i> Discuss the <a href="https://plato.stanford.edu/entries/paradox-stpetersburg/" target="_blank">St. Petersburg paradox</a>.
+</li>
+</ul>
+<div class="p">
+More examples of radius of convergence:
+<ul>
+<li>
+To find the radius of <span class="math display">\[\sum_{n = 1}^\infty \frac{100^n}{n!} x^{2n - 1},\]</span> we want to find the <span class="math inline">\(x\)</span>-interval where <span class="math display">\[\lim_{m \to \infty} \left|\frac{100^{(n + 1)} x^{2(n + 1) - 1}/(n + 1)!}{100^n x^n/n!}\right| \leq 1.\]</span> The limit simplifies to <span class="math inline">\(\lim_{n \to \infty} 100 |x|^2/(n + 1) = 0\)</span>, so any <span class="math inline">\(x\)</span> will work, meaning the radius of convergence is infinite.
+</li>
+<li>
+To find the radius of <span class="math display">\[\log\left(1 + \frac{x^2}{2}\right),\]</span> we rely on a Taylor series we already know: <span class="math display">\[\log\left(1 + \frac{x^2}{2}\right) = \frac{x^2}{1\cdot 2} - \frac{x^4}{2 \cdot 2^2} + \frac{x^6}{3 \cdot 2^3} - \cdots\]</span> After dividing by <span class="math inline">\(x\)</span>, we arrive at a series <span class="math inline">\(\sum_{m = 2}^\infty a_m x^m\)</span> in which <span class="math display">\[a_m = \left\{
+\begin{array}{ll}
+\dfrac{(-1)^{n + 1}}{n \cdot 2^n} &amp;\text{$m = 2n$}\\
+0 &amp;\text{$m$ odd}
+\end{array}\right.
+\]</span> Check for yourself that the radius of convergence is <span class="math inline">\(\sqrt{2}\)</span>. But note!—the original function is not defined at the central point <span class="math inline">\(x = 0\)</span>. We say that it has a <i>removable singularity</i> there.
+</li>
+</ul>
+</div>
+<h2 id="section-3">21-10-06</h2>
+<p>
+I made multiple goofs in recitation today, which I fixed in a post-recitation email. Thank you to everyone who spoke up!
+</p>
+<ul>
+<li>
+Discuss problem 4(a) on problem set 3, which asks for the “general properties of integrals” used to establish certain inequalities. For the first two inequalities, the answers should be conditionals of the form, “If [<i>condition</i>], then [<i>inequality</i>]”, stated in terms of a more general integrand. For the third inequality, the answer is the theorem that makes it possible to compute the integral at all.
+</li>
+<li>
+Finish discussing the <span class="math inline">\(\int_0^1 (\ln x)^2\,dx\)</span> example from Monday.
+</li>
+<li>
+To study the convergence of the series <span class="math display">\[\sum_{n = 1}^\infty \tan \frac{1}{n},\]</span> note that <span class="math inline">\(1/n \to 0^+\)</span> as <span class="math inline">\(n \to \infty\)</span>, and thus <span class="math inline">\(\tan(1/n) \approx 1/n\)</span> for <span class="math inline">\(n \gg 0\)</span>. So the series is approximated by the harmonic series <span class="math inline">\(\sum_{n = 1}^\infty 1/n\)</span>, which diverges.
+</li>
+<li>
+To study the convergence of the series <span class="math display">\[\sum_{n = 2}^\infty \frac{1}{n \ln n},\]</span> note that it’s larger than the integral <span class="math inline">\(\int_2^\infty (1/(x \ln x))\,dx\)</span>. Setting <span class="math inline">\(u = \ln x\)</span>, this integral equals <span class="math inline">\(\int_{\ln 2}^\infty (1/u)\,du\)</span>, which diverges.
+</li>
+<li>
+To study the convergence of the series <span class="math display">\[\sum_{n = 1}^\infty \frac{n!}{n^n},\]</span> one approach would be to use Stirling’s asymptotic <span class="math inline">\(n! \sim \sqrt{2\pi n}(n/e)^n\)</span>. (We write <span class="math inline">\(A(x) \sim B(x)\)</span> to mean <span class="math inline">\(\lim_{x \to \infty} A/B = 1\)</span>.) A simpler approach that several people offered: Observe that <span class="math display">\[n \geq 4 \implies \frac{n!}{n^n} = \frac{(1 \cdot 2 \cdot 3) \cdot (4 \cdot 5 \cdots n)}{(n \cdot n \cdot n) \cdot (n \cdot n \cdots n)} \leq \frac{1 \cdot 2 \cdot 3}{n \cdot n \cdot n} = \frac{6}{n^3}.\]</span> The series <span class="math inline">\(\sum_{n = 4}^\infty 6/n^3\)</span> converges by the <span class="math inline">\(p\)</span>-test, so the original series does by comparison.
+</li>
+<li>
+A <i>power series</i> (centered at <span class="math inline">\(0\)</span>) is a series of the form <span class="math inline">\(\sum_{n = 0}^\infty a_n x^n\)</span> where the <span class="math inline">\(a_n\)</span> are constants. It converges whenever <span class="math inline">\(|x|\)</span> is strictly less than the <i>radius of convergence</i> <span class="math display">\[\frac{1}{\limsup_{n \to \infty} \sqrt[n]{|a_n|}}.\]</span> When <span class="math inline">\(|x|\)</span> equals the radius itself, the series could either converge or diverge. <i>Note:</i> Later, we’ll discuss a faster way to calculate this radius.
+</li>
+<li>
+Above, <span class="math inline">\(\limsup\)</span> is short for <i>limit supremum</i> and defined by <span class="math display">\[\limsup_{n \to \infty} f(n) = \lim_{N \to \infty} \max_{n \geq N} f(n).\]</span> (In recitation, I gave a wrong definition.) <a href="https://en.wikipedia.org/wiki/Limit_inferior_and_limit_superior#/media/File:Lim_sup_example_5.png" target="_blank">This illustration</a> on Wikipedia is good.
+</li>
+<li>
+To find the radius of convergence of <span class="math display">\[\sum_{n = 1}^\infty \frac{(-2)^n}{\sqrt{n}} x^n,\]</span> we need to compute <span class="math inline">\(\limsup_{n \to \infty} \sqrt[n]{|(-2)^n/\sqrt{n}|}\)</span>. We have <span class="math display">\[\sqrt[n]{\left|\frac{(-2)^n}{\sqrt{n}}\right|} = (2^n)^{1/n} (n^{-1/2})^{1/n} = 2n^{-1/(2n)}.\]</span> Since <span class="math inline">\(x^{-1/(2x)}\)</span> is strictly increasing for <span class="math inline">\(x \gg 0\)</span>, its <span class="math inline">\(\limsup\)</span> as <span class="math inline">\(x \to \infty\)</span> equals its usual limit as <span class="math inline">\(x \to \infty\)</span>. Ultimately, <span class="math inline">\(\limsup_{n \to \infty} 2n^{-1/(2n)} = 2\)</span>, so the radius of convergence is <span class="math inline">\(1/2\)</span>. What happens when <span class="math inline">\(x = 1/2\)</span>? When <span class="math inline">\(x = -1/2\)</span>?
+</li>
+<li>
+<i>Extra:</i> To show that the harmonic series diverges: <span class="math display">\[1 + \frac{1}{2} + \left(\frac{1}{3} + \frac{1}{4}\right) + \left(\frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8}\right) + \cdots \leq 1 + \frac{1}{2} + \frac{1}{2} + \frac{1}{2} + \cdots\]</span> This trick is due to the 14th-century monk Nicolas Oresme.
+</li>
+<li>
+<i>Extra:</i> Another use of the notation <span class="math inline">\(\sim\)</span> is the celebrated asymptotic <span class="math display">\[\#\{\text{prime numbers $\leq x$}\} \sim \frac{x}{\ln x},\]</span> also known as the prime number theorem.
+</li>
+</ul>
+<h2 id="section-4">21-10-04</h2>
+<ul>
+<li>
+Discuss convergence/divergence of improper integrals. We can use approximation formulas to determine whether an integral converges or diverges, then use the “<span class="math inline">\(p\)</span>-test” and/or comparison tests if we want to prove our answer rigorously.
+</li>
+<li>
+To study the convergence of the integral <span class="math display">\[\int_1^\infty \frac{(x^3 + 3x + 2)^{1/2}}{(x^8 + 1)^{1/3}}\,dx,\]</span> we observe that when <span class="math inline">\(x \gg 0\)</span> (meaning: <span class="math inline">\(x\)</span> is large), <span class="math display">\[\frac{(x^3 + 3x + 2)^{1/2}}{(x^8 + 1)^{1/3}} \approx \frac{(x^3)^{1/2}}{(x^8)^{1/3}}
+= x^{3/2 - 8/3} = x^{-7/6}.\]</span> The <span class="math inline">\(p\)</span>-test says that <span class="math display">\[
+\int_1^\infty x^{-p}\,dx =
+\left\{\begin{array}{ll}
+\text{converges} &amp;p &gt; 1\\
+\text{diverges} &amp;p \leq 1
+\end{array}\right.
+\]</span> Therefore, <span class="math inline">\(\int_1^\infty x^{-7/6}\,dx\)</span> <u>converges</u>, which in turn shows that our original integral converges.
+</li>
+<li>
+If we wanted to prove the convergence above more rigorously, we might use the following known comparisons for <span class="math inline">\(x \gg 0\)</span>: <span class="math display">\[\frac{(x^3 + 3x + 2)^{1/2}}{(x^8 + 1)^{1/3}} \leq \frac{(x^3 + 3x + 2)^{1/2}}{x^{8/3}} \leq \frac{(x^3 + x^3 + x^3)^{1/2}}{x^{8/3}} = \frac{3^{1/2} x^{3/2}}{x^{8/3}}.\]</span> Note that the constant <span class="math inline">\(3^{1/2}\)</span> isn’t so important. Only the exponent is important, since we want to use the <span class="math inline">\(p\)</span>-test.
+</li>
+<li>
+To study the convergence of the integral <span class="math display">\[\int_1^\infty (1 - \cos(\tfrac{1}{x}))\,dx,\]</span> we note that <span class="math inline">\(1/x \to 0^+\)</span> as <span class="math inline">\(x \to \infty\)</span>, and therefore we can use the approximation <span class="math display">\[\cos\left(\frac{1}{x}\right) \approx 1 - \frac{1}{2}\left(\frac{1}{x}\right)^2 = 1 - \frac{1}{2x^2}.\]</span> So the original integral is approximated by <span class="math inline">\(\int_1^\infty (1/(2x^2))\,dx\)</span>, which again <u>converges</u> by the <span class="math inline">\(p\)</span>-test. I think that proving convergence rigorously (using some comparison test) is a bit trickier in this example.
+</li>
+<li>
+To study <span class="math display">\[\int_0^1 (\ln x)^2\,dx,\]</span> it’s helpful to graph the integrand <span class="math inline">\((\ln x)^2\)</span>. In the <span class="math inline">\(x\)</span>-interval <span class="math inline">\([0, 1]\)</span>, it is nonnegative and blows up to infinity as <span class="math inline">\(x \to 0^+\)</span>. I find it helpful to recast the area in question as an integral in <span class="math inline">\(y\)</span>, rather than an integral in <span class="math inline">\(x\)</span>. In the <span class="math inline">\(x\)</span>-interval <span class="math inline">\([0, 1]\)</span>, we have <span class="math display">\[y = (\ln x)^2 \iff x = e^{-\sqrt{y}}\]</span> (why do we need a negative sign?), so the original integral equals <span class="math display">\[\int_0^\infty e^{-\sqrt{y}}\,dy.\]</span> This is essentially exponential decay, so it converges.
+</li>
+<li>
+In more detail, you can do a “reverse <span class="math inline">\(u\)</span>-substitution”: If <span class="math inline">\(y = u^2\)</span>, then <span class="math inline">\(dy = 2u\,du\)</span>, so <span class="math display">\[\int_{y = 0}^{y = \infty} e^{-\sqrt{y}}\,dy = \int_{u = 0}^{u = \infty} 2u e^{-u}\,du.\]</span> The <span class="math inline">\(u\)</span>-integral converges because, for instance, <span class="math inline">\(2u e^{-u} \leq 2u(u^{-100}) = 2u^{-99}\)</span> for <span class="math inline">\(u \gg 0\)</span>.
+</li>
+</ul>
+<h2 id="section-5">21-09-29</h2>
+<ul>
+<li>
+We can use partial fraction decomposition to solve integrals like <span class="math display">\[\int \frac{4x - 3}{x^2 - x - 6}\,dx.\]</span> Factor the denominator: <span class="math inline">\(x^2 - x - 6 = (x - 3)(x + 2)\)</span>. Since the factors are distinct, the decomposition looks like <span class="math display">\[\frac{4x - 3}{x^2 - x - 6} = \frac{A}{x - 3} + \frac{B}{x + 2}\]</span> for some constants <span class="math inline">\(A, B\)</span>. After clearing denominators on both sides, and grouping together terms with the same exponents, we get the pair of linear equations <span class="math display">\[\left\{\begin{array}{rl}
+4 &amp;= A + B\\
+-3 &amp;= 2A - 3B
+\end{array}\right.\]</span> which together determine a unique solution.
+</li>
+<li>
+If there are repeated factors,then the decomposition has more terms: <span class="math display">\[\frac{4}{(x + 1)(x - 1)^2} = \frac{A}{x + 1} + \frac{B_1}{x - 1} + \frac{B_2}{(x - 1)^2}.\]</span> If one of the factors in the denominator is quadratic, then the corresponding term in the decomposition has a linear numerator: <span class="math display">\[\frac{4x - 3}{(x + 1)(x^2 + x + 1)} = \frac{A}{x + 1} + \frac{Bx + C}{x^2 + x + 1}\]</span> If the numerator is of higher degree than the denominator, then use long division to simplify it: <span class="math display">\[\frac{x^3 - x^2 + 1}{x^2 - x - 6} = \frac{x(x^2 - x - 6) + (6x + 1)}{x^2 - x - 6} = x + \frac{6x + 1}{x^2 - x - 6}.\]</span> We know that <span class="math inline">\(6x + 1\)</span> is the final remainder of the long division because it’s of lower degree than the divisor <span class="math inline">\(x^2 - x - 6\)</span>.
+</li>
+<li>
+A one-line proof of the integration-by-parts formula: Observe that <span class="math display">\[uv = \int d(uv) = \int u\,dv + \int v\,du,\]</span> and rearrange the terms.
+</li>
+<li>
+Sometimes, we need to integrate by parts multiple times. A standard example is <span class="math display">\[\int_0^{\pi/2} x^2\cos x\,dx.\]</span> Take <span class="math inline">\(u = x^2\)</span> the first time, and take <span class="math inline">\(u = x\)</span> the second time.
+</li>
+<li>
+A trickier example is <span class="math inline">\(\int e^x \sin x\,dx\)</span>. After integrating by parts twice, we end up with <span class="math display">\[\int_a^b e^x \sin x\,dx = (e^x \sin x - e^x \cos x)|_a^b - \int_a^b e^x \sin x\,dx.\]</span> We got back the original integral we wanted to solve. But we can group together these two copies of the integral! Doing so, we arrive at <span class="math display">\[\int_a^b e^x \sin x\,dx = \frac{1}{2}(e^x \sin x - e^x \cos x)|_a^b.\]</span> The moral is that sometimes you get infinitely repeating patterns of integrands, and you can break out of them by doing algebra instead of calculus.
+</li>
+<li>
+<i>Extra:</i> Suppose I have cows and chickens, there are <span class="math inline">\(14\)</span> animals in total, and there are <span class="math inline">\(36\)</span> legs in total. How many cows and how many chickens do I have? You might solve this with a pair of linear equations. Alternatively, you might note that <span class="math inline">\(14\)</span> chickens is definitely too few legs, and each time we trade a chicken for a cow, the leg-count goes up by <span class="math inline">\(2\)</span>.
+</li>
+</ul>
+<h2 id="section-6">21-09-27</h2>
+<p>
+Review for the 1-hour test on Tuesday, September 28.
+</p>
+<ul>
+<li>
+Review limits that can be evaluated by interpretation as Riemann sums. Given <span class="math display">\[\lim_{n \to \infty} \sum_{k = 1}^n \frac{1}{n + k},\]</span> we want to write the expression being summed in terms of <span class="math inline">\(f(k/n)\)</span> (for some function <span class="math inline">\(f\)</span>) and <span class="math inline">\(1/n\)</span>. In this case, the observation <span class="math display">\[\frac{1}{n + k} = \frac{1}{1 + k/n} \cdot \frac{1}{n}\]</span> suggests taking <span class="math inline">\(f(x) = 1/(1 + x)\)</span>. Indeed, the limit equals the integral <span class="math inline">\(\int_0^1 (1/(1 + x))\,dx\)</span>.
+</li>
+<li>
+In the method of shells, the axis of rotation and the axis of integration are perpendicular to one another. In the method of disks/washers, they are the same.
+</li>
+<li>
+Draw a region in the <span class="math inline">\(xy\)</span>-plane such that, if we rotated it about the <span class="math inline">\(y\)</span>-axis, it’d be more difficult to find the volume using shells than using disks/washers. Repeat this exercise with the relative difficulty levels reversed.
+</li>
+<li>
+Use either shells or disks/washers to solve the following problem (or both, and decide which was easier): A hole is drilled vertically through the center of a solid sphere, leaving a “spherical ring”. Suppose the sphere has radius <span class="math inline">\(A\)</span> and the ring has height <span class="math inline">\(H\)</span>. Show that the volume of the ring depends on <span class="math inline">\(H\)</span> but not on <span class="math inline">\(A\)</span>.
+</li>
+</ul>
+<h2 id="section-7">21-09-22</h2>
+<ul>
+<li>
+Discuss problem 2(b) from problem set 2. In general, when a question asks for an approximate or asymptotic formula, the answer should keep the (important) variables from the thing we’re approximating. In this particular case, we need to find an asymptotic for <span class="math inline">\(\ln((j + 1)/j)\)</span> when the integer <span class="math inline">\(j\)</span> is large. We expand <span class="math display">\[\ln \left(\frac{j + 1}{j}\right) = \ln(1 + j^{-1}) = j^{-1} + O(j^{-2}).\]</span> Although it is true that the last expression tends to <span class="math inline">\(0\)</span> as <span class="math inline">\(j \to +\infty\)</span>, the problem is asking for the (linear) <i>asymptotic</i>, not the <i>limit</i>. So the answer is the linear term <span class="math inline">\(j^{-1}\)</span>, not <span class="math inline">\(0\)</span>.
+</li>
+<li>
+You need trigonometric substitution (trig sub) when your integrand has a quadratic term like <span class="math inline">\(x^2 \pm a^2\)</span>, but substituting <span class="math inline">\(u = x^2 \pm a^2\)</span> doesn’t work.
+<ol>
+<li>
+<b>Good:</b> The integral <span class="math display">\[\int \frac{2x\,dx}{\sqrt{1 + x^2}}\]</span> can be solved with <span class="math inline">\(u = 1 + x^2\)</span>. No trig sub is required.
+</li>
+<li>
+<b>Bad:</b> To solve the integral <span class="math display">\[\int \frac{dx}{(1 + x^2)^2},\]</span> we observe that <span class="math inline">\(1 + x^2\)</span> looks like the left-hand side of <span class="math inline">\(1 + \tan^2 \theta = \sec^2 \theta\)</span>. That suggests the substitution <span class="math inline">\(x = \tan \theta\)</span>. In the end you get <span class="math inline">\(\int \cos^2 \theta\,d\theta\)</span>, which can be solved with the identity <span class="math inline">\(\cos^2 \theta = \frac{1}{2}(1 + \cos(2\theta))\)</span>.
+</li>
+<li>
+<b>Ugly:</b> To solve the integral <span class="math display">\[\int \frac{\sqrt{x^2 - a^2}}{x^2}\,dx,\]</span> we observe that <span class="math inline">\(x^2 - a^2\)</span> looks like the left-hand side of <span class="math inline">\(\sec^2 \theta - 1 = \tan^2 \theta\)</span>. That suggests <span class="math inline">\(x = a\sec \theta\)</span>. In the end you get <span class="math inline">\(\int ((\sin^2 \theta)/\cos \theta)\,d\theta\)</span> (up to sign). You can simplify the integrand to <span class="math inline">\(\sec \theta - \cos \theta\)</span>, then look up the antiderivative of <span class="math inline">\(\sec \theta\)</span>.
+</li>
+</ol>
+</li>
+<li>
+In general, I like to do trig sub using the <span class="math inline">\(\sec\)</span>/<span class="math inline">\(\tan\)</span> identities above. When there are bounds of integration, the substitution will result in bounds that involve <span class="math inline">\(\text{arcsec}\)</span> and <span class="math inline">\(\arctan\)</span>.
+</li>
+<li>
+The equation <span class="math inline">\(x^2/a^2 + y^2/b^2 = 1\)</span> describes an ellipse with <span class="math inline">\(x\)</span>-radius <span class="math inline">\(a\)</span> and <span class="math inline">\(y\)</span>-radius <span class="math inline">\(b\)</span>. If we rotate the piece where <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(y \geq 0\)</span> about the <span class="math inline">\(y\)</span>-axis, what is the volume of the resulting half-ellipsoid? You should get <span class="math inline">\((2/3)\pi a^2b\)</span>.
+</li>
+<li>
+But we can do the ellipsoid problem by “pure thought”! We know that the volume of a unit hemisphere equals <span class="math inline">\((2/3)\pi\)</span>. The half-ellipsoid in the problem is a unit hemisphere that we’ve stretched uniformly by a factor of <span class="math inline">\(a\)</span> along the <span class="math inline">\(x\)</span>- and <span class="math inline">\(z\)</span>-axes, and by a factor of <span class="math inline">\(b\)</span> along the <span class="math inline">\(y\)</span>-axis. That’s why we get two factors of <span class="math inline">\(a\)</span> and one factor of <span class="math inline">\(b\)</span> in the answer above.
+</li>
+</ul>
+<h2 id="section-8">21-09-20</h2>
+<ul>
+<li>
+What can we say about the graph of <span class="math display">\[F(x) = \int_0^x (1 + t^2)^{-3/2}\,dt?\]</span> By the Fundamental Theorem of Calculus, <span class="math display">\[F&#39;(x) = (1 + x^2)^{-3/2}.\]</span> That’s already enough to tell us (1) whether <span class="math inline">\(F\)</span> is even or odd or neither; (2) whether <span class="math inline">\(F\)</span> is increasing or decreasing or neither; (3) where <span class="math inline">\(F\)</span> is concave or convex.
+</li>
+<li>
+Consider the curve where <span class="math inline">\(y = x^2\)</span> and <span class="math inline">\(x \geq 0\)</span> and <span class="math inline">\(1 \leq y \leq 4\)</span>. What’s the area of the surface formed by rotating this curve about the <span class="math inline">\(y\)</span>-axis? Slice the desired surface into cylinders of radius <span class="math inline">\(x\)</span> and infinitesimal height <span class="math inline">\(ds = \sqrt{(dx)^2 + (dy)^2}\)</span>. Such a cylinder has area <span class="math inline">\(2\pi x\,ds.\)</span> Since <span class="math inline">\(y = x^2\)</span>, we get <span class="math inline">\(dy = 2x\,dx\)</span>, whence <span class="math display">\[ds = \sqrt{1 + 4x^2}\,dx.\]</span> Finally, the <span class="math inline">\(y\)</span>-interval <span class="math inline">\([1, 4]\)</span> corresponds to the <span class="math inline">\(x\)</span>-interval <span class="math inline">\([1, 2]\)</span>, so we arrive at <span class="math display">\[\int_1^2 2\pi x \sqrt{1 + 4x^2}\,dx\]</span> The rest is the reverse chain rule.
+</li>
+<li>
+The method of shells relies on knowing the volume of a cylindrical shell of height <span class="math inline">\(h\)</span>, radius <span class="math inline">\(r\)</span>, and infinitesimal thickness <span class="math inline">\(dr\)</span>: <span class="math display">\[V_\text{cyl} = 2\pi rh\,dr.\]</span> In this method, you slice the graph <i>parallel</i> to the axis of rotation.
+</li>
+<li>
+The method of disks/washers relies on knowing the volume of a washer of outer radius <span class="math inline">\(R\)</span>, inner radius <span class="math inline">\(r\)</span>, and infinitesimal thickness <span class="math inline">\(dh\)</span>: <span class="math display">\[V_\text{wash} = \pi (R^2 - r^2)\,dh.\]</span> In this method, you slice <i>perpendicular</i> to the axis of rotation.
+</li>
+<li>
+Discuss how work equals force times distance: <span class="math display">\[dW = F(x)\,dx.\]</span> Since force is mass times acceleration, force has units of <span class="math inline">\(\text{kg} \cdot \text{m/s$^2$}\)</span> and work has units of <span class="math inline">\(\text{kg} \cdot \text{m$^2$/s$^2$} = \text{J}\)</span> (joules). For example: Gravity is an inverse square law <span class="math inline">\(F(x) = GMm/x^2\)</span>. The work required to lift a rocket from height <span class="math inline">\(r\)</span> above the Earth’s center to height <span class="math inline">\(R\)</span> is <span class="math display">\[W = \int_r^R \frac{GMm}{x^2}\,dx = GMm\left(\frac{1}{r} - \frac{1}{R}\right).\]</span> As <span class="math inline">\(R\)</span> gets large, this expression tends to <span class="math inline">\(GMm/r\)</span>, a finite amount of energy. Therefore, rockets only need finite energy to escape the Earth’s pull.
+</li>
+</ul>
+<h2 id="section-9">21-09-15</h2>
+<ul>
+<li>
+Discuss problem 1(b) from problem set 1. We’re asked to find the smallest <span class="math inline">\(b\)</span> such that if <span class="math inline">\(x \geq b\)</span>, then <span class="math inline">\(x^3/(e^x - 1) = (1 \pm 0.05)x^3 e^{-x}.\)</span> It’s possible to find an exact answer, but the problem asks us to solve it by finding an approximation to <span class="math display">\[\frac{x^3}{e^x - 1} - x^3 e^{-x}\]</span> for large <span class="math inline">\(x\)</span>. There are two key ideas:
+<ol>
+<li>
+Approximating something when <span class="math inline">\(x\)</span> is large, <i>i.e.</i>, when <span class="math inline">\(x\)</span> is near <span class="math inline">\(+\infty\)</span>, is equivalent to approximating it when <span class="math inline">\(x^{-1}\)</span> is near <span class="math inline">\(0\)</span> (and positive).
+</li>
+<li>
+If a function in <span class="math inline">\(x\)</span> has exponential decay, then its Taylor expansion at <span class="math inline">\(+\infty\)</span> is just zero, which gives no information; in that case it is better to work with the variable <span class="math inline">\(u = e^x\)</span> than the variable <span class="math inline">\(x\)</span>.
+</li>
+</ol>
+Ultimately, we’re led to rewrite some expression in <span class="math inline">\(x\)</span> as an expression in <span class="math inline">\(u\)</span>, then rewrite that as an expression in <span class="math inline">\(u^{-1}\)</span>: <span class="math display">\[\begin{align}
+\frac{1}{e^x - 1}
+= \frac{1}{u - 1}
+= \frac{u^{-1}}{1 - u^{-1}}
+= u^{-1}(1 + u^{-1} + O(u^{-2})).
+\end{align}\]</span> Above, the last step is linear approximation for <span class="math inline">\(u^{-1}\)</span> near <span class="math inline">\(0\)</span>. After re-substituting, we get <span class="math display">\[\frac{1}{e^x - 1} = e^{-x}(1 + e^{-x} + O(e^{-2x})),\]</span> which yields the estimate <span class="math display">\[\frac{x^3}{e^x - 1} - x^3 e^{-x} \approx x^3e^{-2x}.\]</span> The problem can be finished from there.
+</li>
+<li>
+A Riemann integral is a limit of the form <span class="math display">\[\int_a^b f(x)\,dx = \lim_{\max_i |\Delta_i| \to 0} \sum_i f(x_i)\Delta_i.\]</span> Here, the sum on a fixed partition of the interval <span class="math inline">\([a, b]\)</span> into finitely many subintervals: <span class="math inline">\(a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b\)</span>. (The sum runs from <span class="math inline">\(i = 1\)</span> to <span class="math inline">\(i = n\)</span>.) We use the notation <span class="math inline">\(\Delta_i = x_i - x_{i - 1}\)</span>, so that <span class="math inline">\(f(x_i)\Delta_i\)</span> is the signed area of a rectangle with base <span class="math inline">\([x_{i - 1}, x_i]\)</span>. The limit runs over all possible partitions.
+</li>
+<li>
+Technically, the sum in the definition above is a <i>right-hand</i> Riemann sum. In the <i>left-hand</i> version, we replace <span class="math inline">\(f(x_i)\)</span> with <span class="math inline">\(f(x_{i - 1})\)</span>. The function is said to be <i>Riemann integrable</i> if and only if the limits of both Riemann sums exist and equal each other.
+</li>
+<li>
+Conversely, if we know how to compute integrals, then we can use them to compute certain limits. For instance, <span class="math display">\[\lim_{n \to \infty} \sum_{k = 1}^n \frac{k^2}{n^3}\]</span> can be viewed as the limit that defines the integral <span class="math inline">\(\int_0^1 x^2\,dx\)</span>, so its value is <span class="math inline">\((x^3/3)|_{x = 0}^{x = 1} = 1/3\)</span>. To do these problems in general, we want to write the expression being summed as <span class="math inline">\(f(x_k)\Delta_k\)</span>, where <span class="math inline">\(\Delta_k \to 0\)</span> as <span class="math inline">\(n \to \infty\)</span>. Usually the rectangles all have the same width, <i>i.e.</i>, <span class="math inline">\(\Delta_k\)</span> is the same for all <span class="math inline">\(k\)</span>. In the present example, <span class="math inline">\(x_k = k/n\)</span> and <span class="math inline">\(\Delta_k = 1/n\)</span>.
+</li>
+<li>
+The main technique to compute integrals is what I call the “reverse chain rule” (sometimes known as “<span class="math inline">\(u\)</span>-substitution”). For instance, suppose <span class="math inline">\(a\)</span> is a positive constant and we want to compute <span class="math display">\[\int_{2a}^{3a} \frac{x}{x^2 - a^2}\,dx.\]</span> The complicated part is the denominator. Since <span class="math inline">\(\ln u\)</span> is the antiderivative of <span class="math inline">\(1/u\)</span> (with respect to <span class="math inline">\(u\)</span>), we’re led to consider <span class="math inline">\(\ln(x^2 - a^2)\)</span>. The derivative of this expression differs from the actual integrand by a factor of <span class="math inline">\(2\)</span>, so we have to multiply the expression by <span class="math inline">\(1/2\)</span>. So the original integral equals <span class="math display">\[\left.\left[\frac{1}{2}\,\ln(x^2 - a^2)\right]\right|_{x = 2a}^{3a} = \frac{1}{2}\,\ln(8a^2) - \frac{1}{2}\,\ln(3a^2) = \frac{1}{2}\,\ln\frac{8}{3}.\]</span> Interestingly, this value is independent of <span class="math inline">\(a\)</span>.
+</li>
+</ul>
+<h2 id="section-10">21-09-13</h2>
+<ul>
+<li>
+The general formula for the quadratic approximation of <span class="math inline">\(f(x)\)</span> near <span class="math inline">\(x = c\)</span>: <span class="math display">\[f(x) = f(c) + f&#39;(c) \cdot (x - c) + \frac{1}{2} f&#39;&#39;(c) \cdot (x - c)^2 + O((x - c)^3)\]</span>
+</li>
+<li>
+Review quadratic approximations of <span class="math inline">\(e^x\)</span>, <span class="math inline">\(\cos x\)</span>, <span class="math inline">\(\sin x\)</span>, <span class="math inline">\(\sqrt{1 + x}\)</span>. Do <span class="math inline">\(\log(1 + x)\)</span> as an exercise.
+</li>
+<li>
+Discuss big-<span class="math inline">\(O\)</span> notation and the analogy with significant digits. If <span class="math display">\[\begin{align}
+f(x) &amp;= a_0 + a_1x + O(x^2),\\
+g(x) &amp;= b_0 + b_1x + b_2x^2 + O(x^3),
+\end{align}\]</span> then <span class="math display">\[\begin{align}
+f(x) + g(x) &amp;= (a_0 + b_0) + (a_1 + b_1)x + O(x^2),\\
+f(x)g(x) &amp;= (a_0b_0) + (a_0b_1 + a_1b_0)x + O(x^2).
+\end{align}\]</span> In general, if you form a sum, product, <i>etc.</i> of big-<span class="math inline">\(O\)</span> expressions, then the error term of the result is the <i>coarsest</i> error term among the original expressions.
+</li>
+<li>
+Why care about the above? When approximating something messy like <span class="math inline">\(e^x(\cos x)\sqrt{1 + x},\)</span> it’s often easier to approximate the individual pieces first, then multiply them together.
+</li>
+<li>
+L’Hôpital’s rule can be proven using linear approximation. Sometimes, approximation is faster than l’Hôpital itself. For instance, <span class="math display">\[\lim_{x \to 0} \frac{\sin(2x)}{\sin(5x)}
+= \lim_{x \to 0} \frac{2x + O(x^3)}{5x + O(x^3)}
+= \frac{2}{5}.\]</span> Another example: To solve <span class="math display">\[
+\lim_{x \to 0} \frac{\sqrt{\cos x} - \cos x}{x^2 \cos^2 x},
+\]</span> is it faster to do l’Hôpital twice, or to use quadratic approximation?
+</li>
+</ul>
+<div class="p">
+Addendum:
+<ul>
+<li>
+How to approximate <span class="math inline">\(xe^{4 - 2x}\)</span> near the point <span class="math inline">\(x = 2\)</span>? If you do it by approximating <span class="math inline">\(x\)</span> and <span class="math inline">\(e^{4 - 2x}\)</span> separately, just remember to expand <span class="math inline">\(x = 2 + (x - 2)\)</span> as well.
+</li>
+</ul>
+</div>
+<h2 id="section-11">21-09-08</h2>
+<ul>
+<li>
+Review the derivatives of <span class="math inline">\(x^n\)</span>, <span class="math inline">\(e^x\)</span>, <span class="math inline">\(\ln x\)</span>, <span class="math inline">\(\sin x\)</span>, <span class="math inline">\(\cos x\)</span>, <span class="math inline">\(\tan x\)</span>. Do <span class="math inline">\(\cot x\)</span> as an exercise.
+</li>
+<li>
+Review the sum rule, the product rule, the quotient rule, and the chain rule. My mnemonic for the quotient rule is “ho-de-hi minus hi-de-ho over hoho”: <span class="math display">\[D\left(\frac{ho}{hi}\right) = \frac{ho\,D(hi) - hi\,D(ho)}{(ho)^2},\]</span> where <span class="math inline">\(ho\)</span>, <span class="math inline">\(hi\)</span> are functions (say, of <span class="math inline">\(x\)</span>) and <span class="math inline">\(D = d/dx\)</span>.
+</li>
+<li>
+Find the derivative of <span class="math inline">\(f(x) = x^x\)</span>. One approach is to take logarithms of both sides to get <span class="math inline">\(\ln f(x) = x\ln x\)</span>, then differentiate both sides, then solve for <span class="math inline">\(f&#39;(x)\)</span>. Main point: It’s easier to work with <span class="math inline">\(\ln f(x)\)</span> than <span class="math inline">\(f(x)\)</span> directly.
+</li>
+<li>
+What is <span class="math inline">\(\lim_{x \to 0^+} x^x\)</span>? As before, set <span class="math inline">\(f(x) = x^x\)</span>. We can show that <span class="math inline">\(\ln f(x) \to 0\)</span>, then deduce that <span class="math inline">\(f(x) = e^{\ln f(x)} \to e^0 = 1\)</span>.
+</li>
+<li>
+<i>Extra:</i> Discuss the paradox of the <a href="https://math.stackexchange.com/a/43121" target="_blank">zigzag path</a>.
+</li>
+</ul>
+</main>
+</div>
+</body>
+</html>

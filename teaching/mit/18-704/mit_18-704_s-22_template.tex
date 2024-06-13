@@ -1,0 +1,151 @@
+%--------------------------------------------------------------------------
+
+%	avoid modifying
+
+\documentclass[a4paper,10pt,leqno]{amsart}
+	\setlength{\textheight}{\paperheight}
+	\addtolength{\textheight}{-2in}
+	\calclayout
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage{xcolor}
+\RequirePackage{amsfonts, amsmath, amssymb, amsthm}
+%\RequirePackage[main=english,]{babel}
+\RequirePackage{etoolbox, mathtools, microtype, stmaryrd, textcomp}
+\RequirePackage{hyperref}
+	%	http://tex.stackexchange.com/a/142276
+	\pdfstringdefDisableCommands{\let\enspace\empty\let\noindent\empty}
+	\hypersetup{colorlinks}
+\RequirePackage{lmodern}
+
+%	https://tex.stackexchange.com/a/47776
+\makeatletter
+\g@addto@macro \normalsize {%
+ \setlength\abovedisplayskip{10pt plus 2pt minus 2pt}%
+ \setlength\belowdisplayskip{10pt plus 2pt minus 2pt}%
+}
+\makeatother
+
+\linespread{1.25}
+
+%--------------------------------------------------------------------------
+
+%	modify with caution
+
+	\numberwithin{equation}{section}
+	\theoremstyle{plain}
+		\newtheorem{thm}{Theorem}[section]
+	\theoremstyle{plain}
+		\newtheorem{conj}[thm]{Conjecture}
+		\newtheorem{cor}[thm]{Corollary}
+		\newtheorem{lem}[thm]{Lemma}
+		\newtheorem{prop}[thm]{Proposition}
+	\theoremstyle{definition}
+		\newtheorem{df}[thm]{Definition}
+		\newtheorem{ex}[thm]{Example}
+		\newtheorem{xc}[thm]{Exercise}
+	\theoremstyle{remark}
+		\newtheorem{rem}[thm]{Remark}
+
+%--------------------------------------------------------------------------
+
+%	http://tex.stackexchange.com/a/5776/20882
+\newcommand{\define}[3]{\expandafter#1\csname#3\endcsname{#2{#3}}}
+\forcsvlist{\define{\DeclareMathOperator}{}}{ad,codim,coker,gr,id,im,lcm,ord,pr,rk,sgn,supp,tr}
+\forcsvlist{\define{\DeclareMathOperator}{}}{Ad,Aff,Alt,Aut,End,Gal,Heis,Hom,Ind,Inf,Irr,Mat,Sym}
+\forcsvlist{\define{\DeclareMathOperator}{}}{GL,PGL,PSL,SL,SO,SU}
+\forcsvlist{\define{\newcommand}{\mathrm}}{ab,op,sep,tor}
+
+\newcommand{\inject}{\hookrightarrow}
+\newcommand{\normal}{\vartriangleleft}
+\newcommand{\normaleq}{\trianglelefteq}
+\newcommand{\surject}{\twoheadrightarrow}
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\pa}[1]{\left(#1\right)}
+\newcommand{\mat}[1]{\begin{matrix}#1\end{matrix}}
+\newcommand{\pmat}[1]{\pa{\mat{#1}}}
+\newcommand{\smat}[1]{\begin{smallmatrix}#1\end{smallmatrix}}
+\newcommand{\psmat}[1]{\pa{\smat{#1}}}
+
+\begin{document}
+
+\title{Title}
+\author{Author}
+%\address{Massachusetts Institute of Technology, 77 Massachusetts Avenue, Cambridge, MA 02139}
+\maketitle
+
+\thispagestyle{empty}
+
+%--------------------------------------------------------------------------
+
+%	\mainmatter
+
+\section{Section}
+
+\subsection{Subsection}
+
+A formula that could come in handy:
+\begin{align}\label{eq:1}
+\hat{f}(\chi) = \sum_{g \in G} f(g)\chi(g^{-1}).
+\end{align}
+We can use \texttt{\textbackslash{}widehat} to get a hat that stretches: for instance, $\widehat{F}$.
+
+\begin{thm}[Terras]\label{thm:1}
+A theorem environment.
+\end{thm}
+
+\begin{df}
+A definition environment.
+It contains a link to Theorem \ref{thm:1}.
+\end{df}
+
+\begin{rem}
+A remark environment.
+It contains a link to equation \eqref{eq:1}.
+\end{rem}
+
+Here are examples of the matrix commands.
+To typeset a matrix inline with the text, use \texttt{\textbackslash{}psmat\{ \}} like so: $\psmat{a&b\\c&d}$.
+To typeset it as a display, use \texttt{\textbackslash{}pmat\{ \}}:
+\begin{align}
+\pmat{1&x&z\\ &1&y \\ &&1}.
+\end{align}
+If the matrix is very large, then display will look better than inline.
+
+Here is a sequence of equations formatted with the \texttt{align} environment:
+\begin{align}
+\begin{split}
+\left\| T^m p - u \right\|_2^2
+&=	\left\|\pa{\sum_{j = 1}^n \langle p, \phi_j\rangle \lambda_j^m \phi_j} - u\right\|_2^2\\
+&=	\left\|\sum_{j = 2}^n \langle p, \phi_j\rangle \lambda_j^m \phi_j\right\|_2^2\\
+&=	\sum_{j = 2}^n |\langle p, \phi_j\rangle|^2 |\lambda_j|^{2m}.
+\end{split}\end{align}
+I used the \texttt{split} environment to avoid numbering each line separately.
+
+Lastly:
+The AMS helpfully provides a \href{https://mathscinet.ams.org/msnhtml/serials.pdf}{list} of the correct abbreviations to use in citations for the names of journals.
+Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
+
+%--------------------------------------------------------------------------
+
+%	\backmatter
+\frenchspacing
+\begin{thebibliography}{11}
+\bibitem[T]{terras}
+	A. Terras.
+	\textsl{Fourier Analysis on Finite Groups and Applications}.
+	Cambridge University Press (1999).
+	
+\bibitem[W]{wiles}
+	A. Wiles.
+	Modular Elliptic Curves and Fermat's Last Theorem.
+	\textsl{Ann. of Math. (2)},
+	\textbf{141}(93)
+	(May, 1995),
+	443--551.
+
+%	space needed here
+	
+\end{thebibliography}
+
+\end{document}

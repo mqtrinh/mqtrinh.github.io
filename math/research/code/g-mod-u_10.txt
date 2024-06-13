@@ -1,0 +1,135 @@
+Testing SF = -S:
+
+  e 
+
+Total number of mismatches: 0 out of 16
+
+  s 
+
+Total number of mismatches: 0 out of 80
+
+  t 
+
+Total number of mismatches: 0 out of 80
+
+ ts 
+
+Total number of mismatches: 0 out of 400
+
+ st 
+
+Total number of mismatches: 0 out of 400
+
+sts 
+
+Total number of mismatches: 0 out of 2000
+
+
+Testing F^2 relation:
+
+  e 
+
+Total number of mismatches: 0 out of 16
+
+  s 
+
+Total number of mismatches: 0 out of 80
+
+  t 
+
+Total number of mismatches: 0 out of 80
+
+ ts 
+
+Total number of mismatches: 0 out of 400
+
+ st 
+
+Total number of mismatches: 0 out of 400
+
+sts 
+
+Total number of mismatches: 0 out of 2000
+
+
+Testing idempotent relation:
+
+  e 
+
+Total number of mismatches: 0 out of 16
+
+  s 
+
+Total number of mismatches: 0 out of 80
+
+  t 
+
+Total number of mismatches: 0 out of 80
+
+ ts 
+
+Total number of mismatches: 0 out of 400
+
+ st 
+
+Total number of mismatches: 0 out of 400
+
+sts 
+
+Total number of mismatches: 0 out of 2000
+
+
+Testing braid relation:
+
+  e 
+
+Total number of mismatches: 0 out of 16
+
+  s 
+
+Total number of mismatches: 0 out of 80
+
+  t 
+
+Total number of mismatches: 0 out of 80
+
+ ts 
+
+Total number of mismatches: 0 out of 400
+
+ st 
+
+Total number of mismatches: 0 out of 400
+
+sts 
+
+Total number of mismatches: 0 out of 2000
+
+
+Testing p^2F_s^{-1}S_tF_s + pS_sS_t == p^2F_t^{-1}S_sF_t + pS_tS_s:
+
+  e 
+
+Total number of mismatches: 0 out of 16
+
+  s 
+
+Total number of mismatches: 0 out of 80
+
+  t 
+
+Total number of mismatches: 0 out of 80
+
+ ts 
+
+Total number of mismatches: 0 out of 400
+
+ st 
+
+Total number of mismatches: 0 out of 400
+
+sts 
+
+Total number of mismatches: 0 out of 2000
+
+
