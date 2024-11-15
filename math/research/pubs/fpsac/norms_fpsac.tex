@@ -7,8 +7,8 @@
 %% note that the class file already loads {amsmath, amsthm, amssymb}
 
 \newtheorem{thm}{Theorem}
-\newtheorem{conj}{Conjecture}
 \newtheorem{cor}{Corollary}
+\newtheorem{quest}{Question}
 \newtheorem{lem}{Lemma}
 
 \usepackage{lipsum,mathtools,tikz}
@@ -548,10 +548,11 @@ Hence, the elements in \eqref{eq:relative-norms} respectively decompose as sums,
 	\zeta_I^- \vcentcolon= \sum_{\Des(v) = I} \sigma_v \sigma_{v^{-1}}.
 \end{align}
 Note that $\zeta_S^+ = \zeta_\emptyset^- = 1$ and $\zeta_\emptyset^+ = \zeta_S^- =\sigma_{w_\circ}^2$.
+By inclusion-exclusion on the elements in \eqref{eq:relative-norms}, the elements $\zeta_I^\pm$ are again central in $H_W(\x)$.
 
-\begin{conj}
-For any finite Coxeter system $(W, S)$ and subset $I \subseteq S$, the elements $\zeta_I^\pm$ are central in $H_W(\x)$.
-\end{conj}
+\begin{quest}
+For general $W$ and $I$, is there a more familiar description of the traces on $H_W(\x)$ that send $\beta \mapsto \tau(\beta \zeta_I^\pm)$?
+\end{quest}
 
 Henceforth, $W = S_n$.
 %Up to conjugation, we can take $W_J = S_\lambda \vcentcolon= S_{\lambda_1} \times \cdots \times S_{\lambda_k}$ for some partition $\lambda \vdash n$: say, $\lambda = (\lambda_1 \geq \cdots \geq \lambda_k)$.
@@ -572,8 +573,7 @@ Let $e_{S_n, \Lambda^k} \in \mathbb{Q}S_n$ be the symmetrizers corresponding to 
 Using work of Isaev--Ogievetsky on central elements in $H_n(\x)$ \cite{io}, we show:
 
 \begin{thm}\label{thm:asc}
-If $I = \{1, 2, \ldots, k\}$, then $\zeta_I^+$ and $\zeta_I^-$ are central in $H_n(\x)$.
-Moreover, the element $\zeta_I^-$ satisfies $\tau(\beta_{\vec{s}}\zeta_I^-)|_{\x \to q^{1/2}} = \CharQ{\mathbf{Z}(\vec{s})}(e_{S_n, \Lambda^{n - 1 - k}})$ for any word $\vec{s}$.
+If $I = \{1, 2, \ldots, k\}$, then $\tau(\beta_{\vec{s}}\zeta_I^-)|_{\x \to q^{1/2}} = \CharQ{\mathbf{Z}(\vec{s})}(e_{S_n, \Lambda^{n - 1 - k}})$ for any word $\vec{s}$.
 \end{thm}
 
 %Given an integer partition $\lambda=(\lambda_1 \geq \cdots \geq \lambda_k) \vdash n$, let $\Sym[\lambda] = \Sym[\lambda_1]\times \cdots \times \Sym[\lambda_k]$ be the corresponding parabolic subgroup of $\Sym$, and let $\Sym^\lambda = \Sym/\Sym[\lambda]$ be the set of minimal coset representatives of $\Sym[\lambda]$.  If we write $\mathrm{des}(v) = \{j : v^{-1}(j)>v^{-1}(j+1)\}$ for the \dfemph{descent set} of $v \in \Sym$, then $\Sym^\lambda$ contains those permutations whose descent set is contained in \[J_\lambda:=\{\lambda_1,\lambda_1+\lambda_2,\ldots,\lambda_1+\lambda_2+\cdots+\lambda_k\}.\]  We write $\Sym^{[\lambda]}$ for the set of permutations with descent set \emph{equal} to $J_\lambda$, and define a \dfemph{hook} to be an integer partition of the form $\lambda^i = (i+1,1^{n-i-1})$ for $0 \leq i \leq r$.     %the integer partition $(i+1,1^{n-i-1})$, also called a \defn{hook}
