@@ -7,7 +7,7 @@ def main():
     
     output += semigroups(3, 4)
     output += semigroups(3, 5)
-    # output += semigroups(3, 7)
+    output += semigroups(3, 7)
 
     # output += semigroups(4, 3)
     output += semigroups(4, 5)
