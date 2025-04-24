@@ -1,0 +1,30 @@
+The following document options are recommended for use with MTF-Arnold (all values are in staff-space units):
+
+Barlines - Thin Line Thickness ....................... 0.19
+Barlines - Space Between Double Barlines ............. 0.30
+Barlines - Heavy Line Thickness ...................... 0.60
+Beams - Beam Thickness ............................... 0.52
+Beams - Secondary Beam Separation .................... 0.79
+Lines and Curves - Shape Designer Slur - Tip Width ... 0.06
+Slur Mid-thickness ................................... 0.24
+Lines and Curves - Ledger Lines - Thickness .......... 0.20
+Lines and Curves - Line Thickness - Staff Lines ...... 0.10
+Stems - Stem Line Thickness .......................... 0.12
+Ties - Tie Thickness - Tip Width ..................... 0.06
+Ties - Tie Thickness - Left/Right .................... 0.22
+Tuplets - Bracket Thickness .......................... 0.16
+Grace Note Slash Thickness ........................... 0.13021
+Flags - Flag Positioning (All) ....................... 0.0 (Horizontal & Vertical)
+Flags - Flag Spacing ................................. 0.70833
+Flags - Secondary Group Adjust ....................... 0.0
+
+Piano Brace Control Points:
+
+                   Horiz.   Vertic.
+ Outer Tip         0.03667  0.59166
+ Inner Tip         0.65     0.18835
+ Outer Body        0.08332  0.79003
+ Inner Body        0.25     0.74165
+ Width of Brace    0.81667
+ Center Thickness  0.2
+ Tip Thickness     0.2
