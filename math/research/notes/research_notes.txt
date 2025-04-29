@@ -1,0 +1,18 @@
+
+2100	06	root valuations
+2102	13	HOMFLYPT vs Kauffman
+
+2204	10	Catalan combinatorics of homogeneous ASFs
+2205	05	Haiman's conjectures on Hecke characters
+
+2302	06	Mellit's kernel-strict elements
+2302	08	positive ASFs as Quot schemes
+2303	06	q, t-Catalan numbers from Hilb/Quot schemes
+
+2400	02	GKM formula for dimensions of strata in homogeneous ASFs
+2401	06	Webster's SBim interpretation of the Rasmussen spectral sequence
+2401	11	Moy--Prasad and GKM decomposition of ASFs into Hessenbergs
+2402	01	LLT polynomials for tuples of ribbon strips
+2402	02	LLT polynomials via affine roots
+
+2500	05	4/28 discussions with Oscar
