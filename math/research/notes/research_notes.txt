@@ -17,3 +17,4 @@
 
 2500	05	4/28 discussions with Oscar
 2500	07	Catalan combinatorics of the center of Lusztig's small quantum group
+2500	08	summary of the new level-rank duality for finite reductive groups
