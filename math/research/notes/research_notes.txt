@@ -3,7 +3,6 @@
 2102	13	HOMFLYPT vs Kauffman
 
 2204	10	Catalan combinatorics of homogeneous ASFs
-2205	05	Haiman's conjectures on Hecke characters
 
 2302	06	Mellit's kernel-strict elements
 2302	08	positive ASFs as Quot schemes
@@ -18,3 +17,5 @@
 2500	01	Cautis - Kamnitzer versus Ginzburg - Reshetikhin - Vasserot
 2500	05	4/28 discussions with Oscar
 2500	07	Catalan combinatorics of the center of Lusztig's small quantum group
+
+2501	01	Haiman's monomial-character conjecture via webs
