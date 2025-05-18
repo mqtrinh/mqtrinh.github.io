@@ -3,25 +3,25 @@
 * { border:0; margin:0; outline:0; padding:0; }
 html, body, #header-wrap, #main-wrap, header { height:100%; }
 html { background:#ffffff; color:#404040; overflow-y:scroll; -webkit-overflow-scrolling:touch; -webkit-text-size-adjust:100%; } /* magic! */
-body { font-family:"Libre Baskerville", Georgia, serif; font-size:11pt; font-weight:normal; line-height:2; margin:0; } /* the margin declaration is crucial! */
+body { font-family:"Libre Baskerville", serif; font-size:11pt; font-weight:normal; line-height:2; margin:0; } /* the margin declaration is crucial! */
 #header-wrap, #main-wrap { left:0; right:0; }
-#header-wrap { background:#ffffff; border-bottom:1.25px solid #efefef; height:60px; position:fixed; top:0; z-index:999; }
+#header-wrap { background:#ffffff; border-bottom:1.5px solid #efefef; height:60px; position:fixed; top:0; z-index:999; }
 #main-wrap { bottom:0; height:auto; position:relative; top:60px; }
-header, main { box-sizing:border-box; margin:0 auto; width:672px; } /* box-sizing keeps the padding from affecting height and width */
+header, main { box-sizing:border-box; margin:0 auto; width:696px; } /* box-sizing keeps the padding from affecting height and width */
 header { display:table; line-height:0; padding:0 24px; } /* display declarations used in vertical centering of text */
 main { height:auto; min-height:100%; padding:24px; } /* height declarations crucial! */
 
 a:link { color:#00a86b; text-decoration:none; }
 a:visited { color:#00a86b; text-decoration:none; }
 a:hover { color:#00a86b; text-decoration:underline; }
-h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", Helvetica, Arial, sans-serif; margin:0; padding:12px 0; }
-h1 { font-size:137.5%; font-weight:bold; }
+h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", sans-serif; margin:0; padding:12px 0; }
+h1 { font-size:150%; font-weight:normal; }
 h2 { font-size:125%; font-weight:normal; }
 h3 { font-size:112.5%; font-weight:normal; }
 img { vertical-align:text-top; }
 p { margin:0; padding:8px 0; }
 .p { margin:0; padding:8px 0; }
-.access { margin:0; padding:32px 0 0 0; } /* for mandatory MIT footer */
+/* .access { margin:0; padding:32px 0 0 0; } */ /* for mandatory MIT footer */
 .lapis { color:#26619c; }
 ol, ul { list-style-type: none; margin:0; padding:8px 0 8px 32px; }
 
@@ -46,15 +46,15 @@ td, tr { vertical-align:top; }
 .epigram ul { font-size:87.5%; font-style:italic; line-height:150%; padding:16px 0 16px 64px; text-indent:-32px; }
 .epigram ul > li:before { display:none; }
 
-nav { display:table-cell; font-family:"Libre Franklin", Helvetica, Arial, sans-serif; font-size:75%; text-transform:uppercase; text-align:right; vertical-align:middle; white-space:nowrap; }
+nav { display:table-cell; font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; text-align:right; vertical-align:middle; white-space:nowrap; }
 nav ul { padding:0; }
 nav ul > li { display:inline-block; padding:0 10px; }
 nav ul > :first-child { padding:0 10px 0 0; }
 nav ul > :last-child { padding:0 0 0 10px; }
 
-.tt { font-family:"Libre Franklin", Helvetica, Arial, sans-serif; font-size:75%; text-transform:uppercase; }
-/*	.tt:before { content:"\2329"; } /**/
-/*	.tt:after {content:"\232A"; } /**/
+.tt { font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; }
+/*	.tt:before { content:"\2329"; } */
+/*	.tt:after {content:"\232A"; } */
 
 @media print { #header-wrap, header { display:none; } #main-wrap { top:0; } }
 @media screen and (max-width:720px) { header, main { width:93.75%; } }
