@@ -23,10 +23,10 @@ p { margin:0; padding:8px 0; }
 .p { margin:0; padding:8px 0; }
 /* .access { margin:0; padding:32px 0 0 0; } */ /* for mandatory MIT footer */
 .lapis { color:#26619c; }
-ol, ul { list-style-type: none; margin:0; padding:8px 0 8px 24px; }
+ol, ul { list-style-type: none; margin:0; padding:8px 0 8px 32px; }
 
 /* http://stackoverflow.com/questions/5945161/html-css-ordered-list-without-the-period */
-ol > li:before { content:"(" counter(olcounter)")"; font-style:normal; margin-left:-24px; position:absolute; }
+ol > li:before { content:"(" counter(olcounter)")"; font-style:normal; margin-left:-32px; position:absolute; }
 ol:first-child { counter-reset:olcounter; }
 ol > li { counter-increment:olcounter; }
 
@@ -34,23 +34,23 @@ ol > li > ol > li:before { content:"(" counter(ololcounter)")"; }
 ol > li > ol:first-child { counter-reset:ololcounter; }
 ol > li > ol > li { counter-increment:ololcounter; }
 
-main ul > li:before { content:"\2767"; font-style:normal; margin-left:-30px; position:absolute; }
+main ul > li:before { content:"\2767"; font-style:normal; margin-left:-32px; position:absolute; }
 
 td { padding:8px 0; }
 td, tr { vertical-align:top; }
 
-.p ol, .p ul { padding:0 0 0 24px; }
-.quote { padding:0 0 0 24px; }
-.verse ul { padding:16px 0 16px 64px; text-indent:-24px; }
+.p ol, .p ul { padding:0 0 0 32px; }
+.quote { padding:0 0 0 32px; }
+.verse ul { padding:16px 0 16px 64px; text-indent:-32px; }
 .verse ul > li:before { display:none; }
-.epigram ul { font-size:87.5%; font-style:italic; line-height:150%; padding:16px 0 16px 64px; text-indent:-24px; }
+.epigram ul { font-size:87.5%; font-style:italic; line-height:150%; padding:16px 0 16px 64px; text-indent:-32px; }
 .epigram ul > li:before { display:none; }
 
 nav { display:table-cell; font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; text-align:right; vertical-align:middle; white-space:nowrap; }
 nav ul { padding:0; }
 nav ul > li { display:inline-block; padding:0 8px; }
 nav ul > :first-child { padding:0 8px 0 0; }
-nav ul > :last-child { padding:0 0 0 10px; }
+nav ul > :last-child { padding:0 0 0 8px; }
 
 .tt { font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; }
 /*	.tt:before { content:"\2329"; } */
