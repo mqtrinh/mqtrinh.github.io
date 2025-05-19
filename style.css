@@ -7,7 +7,7 @@ body { font-family:"Libre Baskerville", serif; font-size:11pt; font-weight:norma
 #header-wrap, #main-wrap { left:0; right:0; }
 #header-wrap { background:#ffffff; border-bottom:1.5px solid #efefef; height:60px; position:fixed; top:0; z-index:999; }
 #main-wrap { bottom:0; height:auto; position:relative; top:60px; }
-header, main { box-sizing:border-box; margin:0 auto; width:696px; } /* box-sizing keeps the padding from affecting height and width */
+header, main { box-sizing:border-box; margin:0 auto; width:672px; } /* box-sizing keeps the padding from affecting height and width */
 header { display:table; line-height:0; padding:0 24px; } /* display declarations used in vertical centering of text */
 main { height:auto; min-height:100%; padding:24px; } /* height declarations crucial! */
 
@@ -15,7 +15,7 @@ a:link { color:#00a86b; text-decoration:none; }
 a:visited { color:#00a86b; text-decoration:none; }
 a:hover { color:#00a86b; text-decoration:underline; }
 h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", sans-serif; margin:0; padding:12px 0; }
-h1 { font-size:150%; font-weight:normal; }
+h1 { font-size:137.5%; font-weight:normal; }
 h2 { font-size:125%; font-weight:normal; }
 h3 { font-size:112.5%; font-weight:normal; }
 img { vertical-align:text-top; }
@@ -23,10 +23,10 @@ p { margin:0; padding:8px 0; }
 .p { margin:0; padding:8px 0; }
 /* .access { margin:0; padding:32px 0 0 0; } */ /* for mandatory MIT footer */
 .lapis { color:#26619c; }
-ol, ul { list-style-type: none; margin:0; padding:8px 0 8px 32px; }
+ol, ul { list-style-type: none; margin:0; padding:8px 0 8px 24px; }
 
 /* http://stackoverflow.com/questions/5945161/html-css-ordered-list-without-the-period */
-ol > li:before { content:"(" counter(olcounter)")"; font-style:normal; margin-left:-32px; position:absolute; }
+ol > li:before { content:"(" counter(olcounter)")"; font-style:normal; margin-left:-24px; position:absolute; }
 ol:first-child { counter-reset:olcounter; }
 ol > li { counter-increment:olcounter; }
 
@@ -39,17 +39,17 @@ main ul > li:before { content:"\2767"; font-style:normal; margin-left:-30px; pos
 td { padding:8px 0; }
 td, tr { vertical-align:top; }
 
-.p ol, .p ul { padding:0 0 0 32px; }
-.quote { padding:0 0 0 32px; }
-.verse ul { padding:16px 0 16px 64px; text-indent:-32px; }
+.p ol, .p ul { padding:0 0 0 24px; }
+.quote { padding:0 0 0 24px; }
+.verse ul { padding:16px 0 16px 64px; text-indent:-24px; }
 .verse ul > li:before { display:none; }
-.epigram ul { font-size:87.5%; font-style:italic; line-height:150%; padding:16px 0 16px 64px; text-indent:-32px; }
+.epigram ul { font-size:87.5%; font-style:italic; line-height:150%; padding:16px 0 16px 64px; text-indent:-24px; }
 .epigram ul > li:before { display:none; }
 
 nav { display:table-cell; font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; text-align:right; vertical-align:middle; white-space:nowrap; }
 nav ul { padding:0; }
-nav ul > li { display:inline-block; padding:0 10px; }
-nav ul > :first-child { padding:0 10px 0 0; }
+nav ul > li { display:inline-block; padding:0 8px; }
+nav ul > :first-child { padding:0 8px 0 0; }
 nav ul > :last-child { padding:0 0 0 10px; }
 
 .tt { font-family:"Libre Franklin", sans-serif; font-size:75%; text-transform:uppercase; }
