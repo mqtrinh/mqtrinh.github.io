@@ -3,18 +3,18 @@
 * { border:0; margin:0; outline:0; padding:0; }
 html, body, #header-wrap, #main-wrap, header { height:100%; }
 html { background:#ffffff; color:#404040; overflow-y:scroll; -webkit-overflow-scrolling:touch; -webkit-text-size-adjust:100%; } /* magic! */
-body { font-family:"Libre Baskerville", serif; font-size:11pt; font-weight:normal; line-height:1.75em; margin:0; } /* the margin declaration is crucial! */
+body { font-family:"Libre Baskerville", serif; font-size:11pt; font-weight:normal; line-height:2em; margin:0; } /* the margin declaration is crucial! */
 #header-wrap, #main-wrap { left:0; right:0; }
 #header-wrap { background:#ffffff; border-bottom:1.5px solid #efefef; height:60px; position:fixed; top:0; z-index:999; }
 #main-wrap { bottom:0; height:auto; position:relative; top:60px; }
-header, main { box-sizing:border-box; margin:0 auto; width:672px; } /* box-sizing keeps the padding from affecting height and width */
+header, main { box-sizing:border-box; margin:0 auto; width:696px; } /* box-sizing keeps the padding from affecting height and width */
 header { display:table; line-height:0; padding:0 24px; } /* display declarations used in vertical centering of text */
 main { height:auto; min-height:100%; padding:24px; } /* height declarations crucial! */
 
 a:link { color:#00a86b; text-decoration:none; }
 a:visited { color:#00a86b; text-decoration:none; }
 a:hover { color:#00a86b; text-decoration:underline; }
-h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", sans-serif; margin:0; padding:12px 0; }
+h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", sans-serif; margin:0; padding:16px 0; }
 h1 { font-size:137.5%; }
 h2 { font-size:125%; font-weight:normal; }
 h3 { font-size:112.5%; font-weight:normal; }
