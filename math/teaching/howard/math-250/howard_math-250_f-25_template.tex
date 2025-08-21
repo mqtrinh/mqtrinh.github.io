@@ -1,0 +1,178 @@
+\documentclass[a4paper,10pt,leqno]{article}
+
+%------------------------------------------------------------
+
+%	avoid modifying
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{amsfonts, amsmath, amssymb, amsthm}
+\usepackage{mathtools, microtype}
+\usepackage{hyperref}
+	% https://tex.stackexchange.com/a/142276
+	\pdfstringdefDisableCommands{\let\enspace\empty\let\noindent\empty}
+	\hypersetup{colorlinks}
+\usepackage{lmodern}
+
+% increases the line spacing
+\linespread{1.2}
+
+%------------------------------------------------------------
+
+%	modify with caution
+
+\numberwithin{equation}{section}
+\theoremstyle{plain}
+	\newtheorem{thm}{Theorem}[section]
+	\newtheorem{lem}[thm]{Lemma}
+\theoremstyle{definition}
+	\newtheorem{df}[thm]{Definition}
+\theoremstyle{remark}
+	\newtheorem{rem}[thm]{Remark}
+
+%------------------------------------------------------------
+
+%	examples of custom commands ("macros")
+
+\newcommand{\bra}[1]{\left[#1\right]}
+\newcommand{\pa}[1]{\left(#1\right)}
+
+\begin{document}
+
+\title{Title}
+\author{Author}
+\date{\today} % you can also enter the date manually here
+\maketitle
+
+\thispagestyle{empty}
+
+%------------------------------------------------------------
+
+%	\mainmatter
+
+\section{Introduction}
+
+\LaTeX{}, pronounced \emph{LAY-tek} or \emph{LAH-tek}, is a software system for typesetting documents.
+It was created in the 1980s by the computer scientist Leslie Lamport, building on a more basic system called \TeX{}, which had been created in the 1970s by the computer scientist Donald Knuth.
+Nowadays, these systems are extremely standard in scientific writing.
+
+To create \LaTeX{} documents on your own computer, you need a \emph{compiler}, and for maximum convenience, an \emph{editor} as well.
+You edit a \texttt{.tex} file in the editor, then click ``compile'' (or use a keyboard shortcut) to tell the compiler to create a \texttt{.pdf} document.
+In doing so, the compiler will create a bunch of extra files with extensions like \texttt{.aux}, \texttt{.log}, and so on.
+For this reason, it's helpful to keep all the documents for a given project within a single folder.
+
+Alternatively, Overleaf (\url{https://www.overleaf.com/}) is a website where you can create \LaTeX{} documents online, after first creating a free account.
+The makers also wrote a very nice guide to \LaTeX{} itself:
+\begin{center}  \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
+\end{center}
+This webpage contains guidance on choosing and installing a compiler:
+\begin{center}
+\url{https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler}
+\end{center}
+The links above were typeset using the \texttt{\textbackslash{}url\{ \}} command within a \texttt{center} environment.
+
+\section{A New Section}
+
+\subsection{Subsection}
+
+An instance of a mathematical display:
+\begin{align}\label{eq:1}
+X = \bigcup_{i, j = 1}^\infty {(U_i \cap V_j)}.
+\end{align}
+Notice that \texttt{\textbackslash{}bigcap}, \texttt{\textbackslash{}bigcup} produce the larger symbols $\bigcap, \bigcup$, whereas \texttt{\textbackslash{}cap}, \texttt{\textbackslash{}cup} produce the smaller symbols $\cap, \cup$.
+
+\subsection{Another Subsection} 
+
+You can use commands like \texttt{\textbackslash{}textbf\{ \}} and  \texttt{\textbackslash{}textit\{ \}} to produce text in \textbf{bold} or \textit{italics}.
+A shorter command for the latter is \texttt{\textbackslash{}emph\{ \}}.
+
+\LaTeX{} offers several different alphabetic fonts in math mode, like
+\begin{itemize} 
+\item 	\texttt{\textbackslash{}mathbb\{ \}} for blackboard boldface ($\mathbb{A}$),
+
+\item 	\texttt{\textbackslash{}mathbf\{ \}} for ordinary boldface ($\mathbf{A}$), 
+
+\item 	\texttt{\textbackslash{}mathcal\{ \}} for calligraphic ($\mathcal{A}$),
+
+\item 	\texttt{\textbackslash{}mathfrak\{ \}} for fraktur ($\mathfrak{A}$), and
+
+\item 	\texttt{\textbackslash{}mathsf\{ \}} for sans-serif ($\mathsf{A}$).
+
+\end{itemize}
+Please use them wisely!
+
+\LaTeX{} also offers several ways to decorate a symbol in math mode, like \texttt{\textbackslash{}bar\{ \}}, \texttt{\textbackslash{}hat\{ \}}, \texttt{\textbackslash{}vec\{ \}}, among others.
+Use \texttt{\textbackslash{}widehat\{ \}} to get a hat that stretches:
+Compare $\hat{X}$ and $\widehat{X}$.
+
+\subsection{Yet Another Subsection} 
+
+The list above was created using the \texttt{itemize} environment.
+To get a numbered list, use the \texttt{enumerate} environment:
+\begin{enumerate}
+\item 	An item.
+
+\item 	Another item.
+
+\item 	A third item.
+
+\end{enumerate}
+Environments are also used to set apart blocks of text for theorems, proofs, and so on.
+
+\begin{thm}[Terras]\label{thm:1}
+A theorem environment.
+\end{thm}
+
+\begin{proof}
+This \texttt{proof} environment contains an \texttt{align} environment:
+\begin{align}
+\frac{1}{2} \left[(x - y)^2 + (x + y)^2 \right]
+	&= \frac{1}{2} \left[(x^2 - 2xy + y^2) + (x^2 + 2xy + y^2) \right]\\
+	&= \frac{1}{2} [2x^2 + 2y^2]\\
+	&= x^2 + y^2.
+\end{align}
+Notice that we used the commands \texttt{\textbackslash{}left} and \texttt{\textbackslash{}right} to make some brackets appropriately large.
+
+To prevent \LaTeX{} from numbering each line, use \texttt{align*} instead of \texttt{align}.
+To have a single number for the entire environment, put your math inside a \texttt{split} environment \emph{inside} the \texttt{align} environment.
+\end{proof}
+
+\begin{df}
+A definition environment.
+Here is a link to Theorem \ref{thm:1}.
+\end{df}
+
+\begin{rem}
+A remark environment.
+It contains a link to equation \eqref{eq:1}.
+\end{rem}
+
+\section{A Third Section}
+
+Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
+Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
+For instance,
+\begin{center}
+\texttt{\textbackslash{}cite[82--83]\{munkres\}}
+produces
+\cite[82--83]{munkres}.
+\end{center}
+The green text is a link to the bibliography entry below.
+
+%------------------------------------------------------------
+
+%	\backmatter
+\frenchspacing
+\begin{thebibliography}{11}
+\bibitem[M]{munkres}
+	J. Munkres.
+	\textsl{Topology}.
+	2nd Edition.
+	Pearson Education, Ltd.\ (2014).
+	
+%	keep a blank space above \end{thebibliography}, in this TeX file
+	
+\end{thebibliography}
+
+\end{document}
