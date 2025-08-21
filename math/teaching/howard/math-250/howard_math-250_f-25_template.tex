@@ -120,7 +120,7 @@ To get a numbered list, use the \texttt{enumerate} environment:
 \end{enumerate}
 Environments are also used to set apart blocks of text for theorems, proofs, and so on.
 
-\begin{thm}[Terras]\label{thm:1}
+\begin{thm}\label{thm:1}
 A theorem environment.
 \end{thm}
 
@@ -150,6 +150,14 @@ It contains a link to equation \eqref{eq:1}.
 
 \section{A Third Section}
 
+To typeset quotation marks, use \texttt{`} and \texttt{'}:
+\begin{center}
+\texttt{`{}`word'{}'}
+produces 
+``word''.
+\end{center}
+Using \texttt{"} will not produce the correct double-quotation marks.
+
 Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
 Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
 For instance,
@@ -159,6 +167,10 @@ produces
 \cite[82--83]{munkres}.
 \end{center}
 The green text is a link to the bibliography entry below.
+
+\begin{thm}[Munkres]
+You can give a theorem/definition/remark a label in parentheses, to indicate who discovered it.
+\end{thm}
 
 %------------------------------------------------------------
 
