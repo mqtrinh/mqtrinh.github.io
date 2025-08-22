@@ -52,7 +52,7 @@
 
 \section{Introduction}
 
-\LaTeX{}, pronounced \emph{LAY-tek} or \emph{LAH-tek}, is a software system for typesetting documents.
+\LaTeX{}, pronounced \emph{LAY-tek} or \emph{LAH-tek}, is \href{https://en.wikipedia.org/wiki/LaTeX}{a software system for typesetting documents}.
 It was created in the 1980s by the computer scientist Leslie Lamport, building on a more basic system called \TeX{}, which had been created in the 1970s by the computer scientist Donald Knuth.
 Nowadays, these systems are extremely standard in scientific writing.
 
@@ -61,7 +61,7 @@ You edit a \texttt{.tex} file in the editor, then click ``compile'' (or use a ke
 In doing so, the compiler will create a bunch of extra files with extensions like \texttt{.aux}, \texttt{.log}, and so on.
 For this reason, it's helpful to keep all the documents for a given project within a single folder.
 
-Alternatively, Overleaf (\url{https://www.overleaf.com/}) is a website where you can create \LaTeX{} documents online, after first creating a free account.
+Alternatively, \href{https://www.overleaf.com/}{Overleaf} is a website where you can create \LaTeX{} documents online, after first creating a free account.
 The makers also wrote a very nice guide to \LaTeX{} itself:
 \begin{quote}  \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
 \end{quote}
@@ -78,7 +78,7 @@ A \LaTeX{} document consists of
 \begin{enumerate} 
 \item 	a \verb|\documentclass[ ]{ }| command, specifying the type of document; 
 
-\item 	a \emph{preamble} where packages can be loaded and custom commands/environments defined; and
+\item 	a \emph{preamble} where packages can be loaded, and custom commands and/or environments can be defined; and
 
 \item 	a \texttt{document} environment, where the actual document is written.
 
@@ -91,21 +91,24 @@ In general, the syntax for a \texttt{blah} environment is
 \end{quote}
 For instance, the list above was created using the \texttt{enumerate} environment.
 To get an unnumbered list, use the \texttt{itemize} environment.
-The hyperlinks in the previous section were typeset using the \verb|\url{ }| command within a \texttt{quote} environment.
+
+The introduction section contains hyperlinks that were typeset using the \verb|\href{ }{ }| and \verb|\url{ }| commands.
+The latter were placed within \texttt{quote} environments.
 If you want to learn how to make custom commands, see:
 \begin{quote}
 \url{https://www.overleaf.com/learn/latex/Commands#Defining_a_new_command}
 \end{quote}
 
 \subsection{Non-Mathematical Text}
-
-To typeset quotation marks, use \texttt{\`{}} and \texttt{'}:
+ 
+To typeset quotation marks, use \texttt{\`{}} and \texttt{\textquotesingle}.
+To typeset diacritics, use commands like \texttt{\textbackslash\textquotesingle\{\}}, which produces an acute accent.
 \begin{center}
-\texttt{\`{}\`{}word'{}'}
+\texttt{\`{}\`{}Poincar\textbackslash\textquotesingle{}e\textquotesingle\textquotesingle}
 \quad{gives}\quad
-``word''.
+``Poincar\'e''.
 \end{center}
-Using \texttt{"} will not produce the correct double-quotation marks.
+Note that \texttt{"} does not produce correct double-quotation marks.
 
 Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
 Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
@@ -117,8 +120,9 @@ For instance,
 \end{center}
 The hyperlink goes to a bibliography entry at the end of this document.
 
-You can use commands like \verb|\textbf{ }| and  \verb|\textit{ }| to produce text in \textbf{bold} or \textit{italics}.
-A shorter command for the latter is \verb|\emph{ }|.
+You can use commands like \verb|\textbf{ }| or  \verb|\textit{ }| to produce text in \textbf{bold} or \textit{italics}.
+Note that \verb|\emph{ }| also produces italics.
+Use \verb|\textsf{ }| or \verb|\texttt{ }| to produce text in \textsf{sans-serif} or \texttt{typewriter} font.
 
 \subsection{Mathematical Text}
 
@@ -145,7 +149,7 @@ To make a multi-line display with a single label, put a \texttt{split} environme
 Note that \verb|\bigcap|, \verb|\bigcup| produce the large symbols $\bigcap, \bigcup$, whereas \verb|\cap|, \verb|\cup| produce the small symbols $\cap, \cup$.
 The display above shows how the larger symbols have a different use from the smaller ones.
 
-Completely separately, some commands have different inline and display appearances.
+Completely separately, some commands produce different sizes for inline mode versus display mode.
 For instance, compare $C_n = \frac{1}{n + 1} \binom{2n}{n}$ to
 \begin{align*}
 C_n = \frac{1}{n + 1} \binom{2n}{n}.
@@ -177,7 +181,8 @@ A theorem environment.
 \end{thm}
 
 \begin{lem}[Munkres]
-You can add a label in parentheses, like the one here, to most environments.
+This lemma environment has a label in parentheses.
+To make it, I used the syntax \verb|\begin{lem}[Munkres]...\end{lem}|.
 \end{lem}
 
 \begin{df}
