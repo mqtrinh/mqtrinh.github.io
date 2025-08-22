@@ -35,9 +35,6 @@
 
 %	examples of custom commands ("macros")
 
-\newcommand{\bra}[1]{\left[#1\right]}
-\newcommand{\pa}[1]{\left(#1\right)}
-
 \begin{document}
 
 \title{Title}
@@ -64,97 +61,47 @@ For this reason, it's helpful to keep all the documents for a given project with
 
 Alternatively, Overleaf (\url{https://www.overleaf.com/}) is a website where you can create \LaTeX{} documents online, after first creating a free account.
 The makers also wrote a very nice guide to \LaTeX{} itself:
-\begin{center}  \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
-\end{center}
+\begin{quote}  \url{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}
+\end{quote}
 This webpage contains guidance on choosing and installing a compiler:
-\begin{center}
+\begin{quote}
 \url{https://www.overleaf.com/learn/latex/Choosing_a_LaTeX_Compiler}
-\end{center}
-The links above were typeset using the \texttt{\textbackslash{}url\{ \}} command within a \texttt{center} environment.
+\end{quote}
 
-\section{A New Section}
+\section{Section}
 
 \subsection{Subsection}
 
-An instance of a mathematical display:
-\begin{align}\label{eq:1}
-X = \bigcup_{i, j = 1}^\infty {(U_i \cap V_j)}.
-\end{align}
-Notice that \texttt{\textbackslash{}bigcap}, \texttt{\textbackslash{}bigcup} produce the larger symbols $\bigcap, \bigcup$, whereas \texttt{\textbackslash{}cap}, \texttt{\textbackslash{}cup} produce the smaller symbols $\cap, \cup$.
+A \LaTeX{} document consists of
+\begin{enumerate} 
+\item 	a \verb|\documentclass[ ]{ }| command, specifying the type of document; 
 
-\subsection{Another Subsection} 
+\item 	a \emph{preamble} where packages can be loaded and custom commands/environments defined; and
 
-You can use commands like \texttt{\textbackslash{}textbf\{ \}} and  \texttt{\textbackslash{}textit\{ \}} to produce text in \textbf{bold} or \textit{italics}.
-A shorter command for the latter is \texttt{\textbackslash{}emph\{ \}}.
-
-\LaTeX{} offers several different alphabetic fonts in math mode, like
-\begin{itemize} 
-\item 	\texttt{\textbackslash{}mathbb\{ \}} for blackboard boldface ($\mathbb{A}$),
-
-\item 	\texttt{\textbackslash{}mathbf\{ \}} for ordinary boldface ($\mathbf{A}$), 
-
-\item 	\texttt{\textbackslash{}mathcal\{ \}} for calligraphic ($\mathcal{A}$),
-
-\item 	\texttt{\textbackslash{}mathfrak\{ \}} for fraktur ($\mathfrak{A}$), and
-
-\item 	\texttt{\textbackslash{}mathsf\{ \}} for sans-serif ($\mathsf{A}$).
-
-\end{itemize}
-Please use them wisely!
-
-\LaTeX{} also offers several ways to decorate a symbol in math mode, like \texttt{\textbackslash{}bar\{ \}}, \texttt{\textbackslash{}hat\{ \}}, \texttt{\textbackslash{}vec\{ \}}, among others.
-Use \texttt{\textbackslash{}widehat\{ \}} to get a hat that stretches:
-Compare $\hat{X}$ and $\widehat{X}$.
-
-\subsection{Yet Another Subsection} 
-
-The list above was created using the \texttt{itemize} environment.
-To get a numbered list, use the \texttt{enumerate} environment:
-\begin{enumerate}
-\item 	An item.
-
-\item 	Another item.
-
-\item 	A third item.
+\item 	a \texttt{document} environment, where the actual document is written.
 
 \end{enumerate}
-Environments are also used to set apart blocks of text for theorems, proofs, and so on.
+In general, the syntax for a \texttt{blah} environment is
+\begin{quote}
+	\verb|\begin{blah}|\\
+		\verb|...|\\
+		\verb|\end{blah}|
+\end{quote}
+For instance, the list above was created using the \texttt{enumerate} environment.
+To get an unnumbered list, use the \texttt{itemize} environment.
+The hyperlinks in the previous section were typeset using the \verb|\url{ }| command within a \texttt{quote} environment.
+If you want to learn how to make custom commands, see:
+\begin{quote}
+\url{https://www.overleaf.com/learn/latex/Commands#Defining_a_new_command}
+\end{quote}
 
-\begin{thm}\label{thm:1}
-A theorem environment.
-\end{thm}
-
-\begin{proof}
-This \texttt{proof} environment contains an \texttt{align} environment:
-\begin{align}
-\frac{1}{2} \left[(x - y)^2 + (x + y)^2 \right]
-	&= \frac{1}{2} \left[(x^2 - 2xy + y^2) + (x^2 + 2xy + y^2) \right]\\
-	&= \frac{1}{2} [2x^2 + 2y^2]\\
-	&= x^2 + y^2.
-\end{align}
-Notice that we used the commands \texttt{\textbackslash{}left} and \texttt{\textbackslash{}right} to make some brackets appropriately large.
-
-To prevent \LaTeX{} from numbering each line, use \texttt{align*} instead of \texttt{align}.
-To have a single number for the entire environment, put your math inside a \texttt{split} environment \emph{inside} the \texttt{align} environment.
-\end{proof}
-
-\begin{df}
-A definition environment.
-Here is a link to Theorem \ref{thm:1}.
-\end{df}
-
-\begin{rem}
-A remark environment.
-It contains a link to equation \eqref{eq:1}.
-\end{rem}
-
-\section{A Third Section}
+\subsection{Non-Mathematical Text}
 
 To typeset quotation marks, use \texttt{`} and \texttt{'}:
 \begin{center}
-\texttt{`{}`word'{}'}
-produces 
-``word''.
+	\texttt{`{}`word'{}'}
+	\quad{gives}\quad
+	``word''.
 \end{center}
 Using \texttt{"} will not produce the correct double-quotation marks.
 
@@ -162,15 +109,84 @@ Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
 Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
 For instance,
 \begin{center}
-\texttt{\textbackslash{}cite[82--83]\{munkres\}}
-produces
-\cite[82--83]{munkres}.
+	\texttt{\textbackslash{}cite[82--83]\{munkres\}}
+	\quad{gives}\quad
+	\cite[82--83]{munkres}.
 \end{center}
-The green text is a link to the bibliography entry below.
+The green link goes to a bibliography entry at the end of this document.
 
-\begin{thm}[Munkres]
-You can give a theorem/definition/remark a label in parentheses, to indicate who discovered it.
+You can use commands like \texttt{\textbackslash{}textbf\{ \}} and  \texttt{\textbackslash{}textit\{ \}} to produce text in \textbf{bold} or \textit{italics}.
+A shorter command for the latter is \texttt{\textbackslash{}emph\{ \}}.
+
+\subsection{Mathematical Text}
+
+To typeset math inline with non-math text (\emph{inline mode}), use \verb|$...$|.
+For instance,
+\begin{center}
+\verb|the identity $a^2 + b^2 = c^2$|
+\quad{gives}\quad
+the identity $a^2 + b^2 = c^2$.
+\end{center}
+To typeset math as a centered display (\emph{display mode}), there are several methods.
+The quickest is to use \verb|$$...$$|.
+The \texttt{equation} environment will give the same result, but with a numbered label next to the display.
+To omit the numbered label, use \texttt{equation*}.
+
+I tend to use the \texttt{align} and \texttt{align*} environments for everything, because they let you line up expressions using \verb|&|:
+\begin{align}\label{eq:1}
+X 
+	&= Y \cap \bigcup_{i = 1}^\infty Z_i\\
+	&= \bigcup_{i = 1}^\infty {(Y \cap Z_i)}.
+\end{align}
+To make a multi-line display with a single label, put a \texttt{split} environment inside an \texttt{align} environment.
+
+Note that \verb|\bigcap|, \verb|\bigcup| produce the large symbols $\bigcap, \bigcup$, whereas \verb|\cap|, \verb|\cup| produce the small symbols $\cap, \cup$.
+The display above shows how the larger symbols have a different use from the smaller ones.
+
+Completely separately, some commands have different inline and display appearances.
+For instance, compare $C_n = \frac{1}{n + 1} \binom{2n}{n}$ to
+\begin{align*}
+C_n = \frac{1}{n + 1} \binom{2n}{n}.
+\end{align*}
+Use \verb|\displaystyle| and \verb|\textstyle| to modify this behavior.
+
+Lastly, \LaTeX{} offers several different alphabets in math mode, including
+\begin{itemize} 
+\item 	\verb|\mathbb{ }| for blackboard boldface ($\mathbb{A}$),
+
+\item 	\verb|\mathbf{ }| for ordinary boldface ($\mathbf{A}$), 
+
+\item 	\verb|\mathcal{ }| for calligraphic ($\mathcal{A}$),
+
+\end{itemize}
+among others.
+\LaTeX{} also offers several ways to decorate a symbol in math mode, including \verb|\bar{ }|, \verb|\hat{ }|, \verb|\widehat{ }|, \verb|\tilde{ }|, and \verb|\vec{ }|.
+
+\subsection{More Math Environments} 
+
+\begin{proof} 
+The \texttt{proof} environment is used for proofs.
+\end{proof} 
+
+The \texttt{theoremstyle} commands in the preamble of this document define some other useful environments.
+
+\begin{thm}\label{thm:1}
+A theorem environment.
 \end{thm}
+
+\begin{lem}[Munkres]
+You can add a label in parentheses, like the one here, to most environments.
+\end{lem}
+
+\begin{df}
+A definition environment.
+It has a link to Theorem \ref{thm:1}.
+\end{df}
+
+\begin{rem}
+A remark environment.
+It has a link to equation \eqref{eq:1}.
+\end{rem}
 
 %------------------------------------------------------------
 
