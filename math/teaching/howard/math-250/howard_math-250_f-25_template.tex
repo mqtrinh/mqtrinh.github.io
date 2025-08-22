@@ -33,7 +33,11 @@
 
 %------------------------------------------------------------
 
-%	examples of custom commands ("macros")
+%	custom commands ("macros") could go below:
+
+
+
+%------------------------------------------------------------
 
 \begin{document}
 
@@ -43,8 +47,6 @@
 \maketitle
 
 \thispagestyle{empty}
-
-%------------------------------------------------------------
 
 %	\mainmatter
 
@@ -83,9 +85,9 @@ A \LaTeX{} document consists of
 \end{enumerate}
 In general, the syntax for a \texttt{blah} environment is
 \begin{quote}
-	\verb|\begin{blah}|\\
-		\verb|...|\\
-		\verb|\end{blah}|
+\verb|\begin{blah}|\\
+\verb|...|\\
+\verb|\end{blah}|
 \end{quote}
 For instance, the list above was created using the \texttt{enumerate} environment.
 To get an unnumbered list, use the \texttt{itemize} environment.
@@ -99,9 +101,9 @@ If you want to learn how to make custom commands, see:
 
 To typeset quotation marks, use \texttt{`} and \texttt{'}:
 \begin{center}
-	\texttt{`{}`word'{}'}
-	\quad{gives}\quad
-	``word''.
+\verb|``word''|
+\quad{gives}\quad
+``word''.
 \end{center}
 Using \texttt{"} will not produce the correct double-quotation marks.
 
@@ -109,14 +111,14 @@ Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
 Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
 For instance,
 \begin{center}
-	\texttt{\textbackslash{}cite[82--83]\{munkres\}}
-	\quad{gives}\quad
-	\cite[82--83]{munkres}.
+\verb|\cite[82--83]{munkres}|
+\quad{gives}\quad
+\cite[82--83]{munkres}.
 \end{center}
-The green link goes to a bibliography entry at the end of this document.
+The hyperlink goes to a bibliography entry at the end of this document.
 
-You can use commands like \texttt{\textbackslash{}textbf\{ \}} and  \texttt{\textbackslash{}textit\{ \}} to produce text in \textbf{bold} or \textit{italics}.
-A shorter command for the latter is \texttt{\textbackslash{}emph\{ \}}.
+You can use commands like \verb|\textbf{ }| and  \verb|\textit{ }| to produce text in \textbf{bold} or \textit{italics}.
+A shorter command for the latter is \verb|\emph{ }|.
 
 \subsection{Mathematical Text}
 
@@ -187,8 +189,6 @@ It has a link to Theorem \ref{thm:1}.
 A remark environment.
 It has a link to equation \eqref{eq:1}.
 \end{rem}
-
-%------------------------------------------------------------
 
 %	\backmatter
 \frenchspacing
