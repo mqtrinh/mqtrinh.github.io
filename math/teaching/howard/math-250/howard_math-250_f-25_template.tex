@@ -103,21 +103,21 @@ If you want to learn how to make custom commands, see:
  
 To typeset quotation marks, use \texttt{\`{}} and \texttt{\textquotesingle}.
 To typeset diacritics, use commands like \texttt{\textbackslash\textquotesingle\{\}}, which produces an acute accent.
-\begin{center}
-\texttt{\`{}\`{}Poincar\textbackslash\textquotesingle{}e\textquotesingle\textquotesingle}
+\begin{quote}
+\texttt{\`{}\`{}Poincar\textbackslash\textquotesingle{}e\textquotesingle\textquotesingle{}}
 \quad{gives}\quad
 ``Poincar\'e''.
-\end{center}
+\end{quote}
 Note that \texttt{"} does not produce correct double-quotation marks.
 
 Use \texttt{\textbackslash{}cite[ ]\{ \}} to create a citation.
 Use an en dash (in \TeX: \texttt{-{}-}) instead of a hyphen (\texttt{-}) to typeset page ranges.
 For instance,
-\begin{center}
+\begin{quote}
 \verb|\cite[82--83]{munkres}|
 \quad{gives}\quad
 \cite[82--83]{munkres}.
-\end{center}
+\end{quote}
 The hyperlink goes to a bibliography entry at the end of this document.
 
 You can use commands like \verb|\textbf{ }| or  \verb|\textit{ }| to produce text in \textbf{bold} or \textit{italics}.
@@ -128,11 +128,11 @@ Use \verb|\textsf{ }| or \verb|\texttt{ }| to produce text in \textsf{sans-serif
 
 To typeset math inline with non-math text (\emph{inline mode}), use \verb|$...$|.
 For instance,
-\begin{center}
-\verb|the identity $a^2 + b^2 = c^2$|
+\begin{quote}
+\texttt{Einstein\textquotesingle{}s} \verb|$E = mc^2$|
 \quad{gives}\quad
-the identity $a^2 + b^2 = c^2$.
-\end{center}
+Einstein's $E = mc^2$.
+\end{quote}
 To typeset math as a centered display (\emph{display mode}), there are several methods.
 The quickest is to use \verb|$$...$$|.
 The \texttt{equation} environment will give the same result, but with a numbered label next to the display.
