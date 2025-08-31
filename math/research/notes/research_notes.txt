@@ -19,3 +19,4 @@
 2500	07	Catalan combinatorics of the center of Lusztig's small quantum group
 
 2501	01	Haiman's monomial-character conjecture via webs
+2502	01	truncated convolution
