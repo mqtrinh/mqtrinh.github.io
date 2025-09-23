@@ -1,10 +1,11 @@
 
 2100	06	root valuations
+2102	07	Gu's work on braid varieties with regular semisimple monodromy, I
+2102	08	Gu's work on braid varieties with regular semisimple monodromy, II
 2102	13	HOMFLYPT vs Kauffman
 
 2204	10	Catalan combinatorics of homogeneous ASFs
 
-2302	06	Mellit's kernel-strict elements
 2302	08	positive ASFs as Quot schemes
 2303	06	q, t-Catalan numbers from Hilb/Quot schemes
 
@@ -12,11 +13,13 @@
 2401	06	Webster's SBim interpretation of the Rasmussen spectral sequence
 2401	11	Moy--Prasad and GKM decomposition of ASFs into Hessenbergs
 2402	01	LLT polynomials for tuples of ribbon strips
-2402	02	LLT polynomials via affine roots
 
 2500	01	Cautis - Kamnitzer versus Ginzburg - Reshetikhin - Vasserot
 2500	05	4/28 discussions with Oscar
 2500	07	Catalan combinatorics of the center of Lusztig's small quantum group
 2501	01	Haiman's monomial-character conjecture via webs
+2501	02	Macdonald polynomial formulas of HHL and Guo - Ram
+2501	03	LLT polynomials via affine roots [unfinished]
+2501	04	Mellit's kernel-strict elements
 2502	01	truncated convolution
 2502	02	graded W-character formulas computed in GAP
