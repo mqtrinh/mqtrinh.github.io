@@ -6,7 +6,6 @@ def main():
     output = ""
 
     output += semigroups(3, 4, {})
-    output += semigroups(3, 4, {1, 2})
 
     output += semigroups(4, 5, {})
 
@@ -14,10 +13,7 @@ def main():
     output += semigroups(4, 7, {1, 2, 3, 5})
 
     output += semigroups(5, 7, {})
-    output += semigroups(5, 7, {1, 2, 3, 4, 6})
-
-    # output += semigroups(5, 8, {})
-    # output += semigroups(5, 8, {1, 2, 3, 4, 6, 7, 9})
+    output += semigroups(5, 7, {1, 2, 3, 4})
 
     log.write(output)
     log.close()
@@ -97,7 +93,8 @@ def semigroups(N, M, X):
                     temp_i = ng_zeroed[i]
                     temp_j = ng_zeroed[j]
                     if temp_i > k and temp_i <= k + N and temp_j <= k + M:
-                        cog.append(k)
+                        if k not in X: # crucial!
+                            cog.append(k)
                 cogen.append(cog)
 
                 cog_exp = []
@@ -135,8 +132,6 @@ def semigroups(N, M, X):
                     g_zeroed_exp.append(ng_count)
                 gen_exp.append(g_zeroed_exp)
 
-
-    # https://stackoverflow.com/a/9764364
     area, codinv, ngen, cogen, cogen_exp, gen, gen_exp = (list(t) for t in zip(*sorted(zip(area, codinv, ngen, cogen, cogen_exp, gen, gen_exp), reverse=True)))
 
     area_max = area[0]
@@ -167,14 +162,8 @@ def semigroups(N, M, X):
                     y_shift += gen_exp[i][j]
                     z += 1
             gen_array[z][x][y + y_shift] += 1
-    
-    diff_array = [[[0 for y in range(codinv_max + 1)] for x in range(area_max + 1)] for z in range(N)]
-    for z in range(N):
-        for x in range(area_max + 1):
-            for y in range(codinv_min, codinv_max + 1):
-                diff_array[z][x][y] = cogen_array[z][x][y] - gen_array[z][x][y]
 
-    string += "Ngen_0" + " " * 11
+    string += "Ngen_0" + " " * 14
     string += "area" + " " * 3
     string += "codinv" + " " * 1
     string += "Cogen" + " " * 9
@@ -183,7 +172,7 @@ def semigroups(N, M, X):
     string += " " * 14
     string += "\n\n"
     for i in range(count):
-        string += "{:<17}".format(str(ngen[i])[1:-1])
+        string += "{:<20}".format(str(ngen[i])[1:-1])
         string += "{:<7}".format(str(area[i]))
         string += "{:<7}".format(str(codinv[i]))
         string += "{:<14}".format(str(cogen[i])[1:-1])
@@ -193,13 +182,12 @@ def semigroups(N, M, X):
         string += "\n"
     string += "\n\n"
 
-    string += array_to_str(N, cogen_array, area_max, codinv_min, codinv_max, True)
-    string += array_to_str(N, gen_array, area_max, codinv_min, codinv_max, False)
-    string += array_to_str(N, diff_array, area_max, codinv_min, codinv_max, False)
+    string += array_to_str(N, cogen_array, area_min, area_max, codinv_min, codinv_max, True)
+    string += array_to_str(N, gen_array, area_min, area_max, codinv_min, codinv_max, False)
 
     return string
 
-def array_to_str(N, a, x_max, y_min, y_max, row_label):
+def array_to_str(N, a, x_min, x_max, y_min, y_max, row_label):
     temp = ""
     if row_label == True:
         temp += " " * 4
@@ -209,7 +197,7 @@ def array_to_str(N, a, x_max, y_min, y_max, row_label):
             temp += " " * 4
         temp += "\n"
 
-    for x in range(x_max + 1):
+    for x in range(x_min, x_max + 1):
         temp += "{:<4}".format(str(x))
         for z in range(N):
             for y in range(y_min, y_max + 1):
