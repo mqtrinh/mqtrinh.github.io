@@ -24,3 +24,5 @@
 2501	04	Mellit's kernel-strict elements
 2502	01	truncated convolution
 2502	02	graded W-character formulas computed in GAP
+
+2503	01	erratum to subsection 3.5 of 'quot'
