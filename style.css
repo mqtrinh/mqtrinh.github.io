@@ -58,4 +58,4 @@ nav ul > :last-child { padding:0 0 0 8px; }
 
 @media print { #header-wrap, header { display:none; } #main-wrap { top:0; } }
 @media screen and (max-width:720px) { header, main { width:93.75%; } }
-@media screen and (max-width:480px) { body { font-size:10pt; } }
+@media screen and (max-width:480px) { header, main { margin:0 8px; } body { font-size:10pt; } }
