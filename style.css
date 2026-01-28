@@ -57,5 +57,5 @@ nav ul > :last-child { padding:0 0 0 8px; }
 /*	.tt:after {content:"\232A"; } */
 
 @media print { #header-wrap, header { display:none; } #main-wrap { top:0; } }
-@media screen and (max-width:720px) { header, main { width:93.75%; } }
-@media screen and (max-width:480px) { header, main { margin:0; } body { font-size:10pt; } }
+@media screen and (max-width:720px) { header, main { width:100%; } }
+@media screen and (max-width:480px) { header, main { margin:0 4px; } body { font-size:10pt; } }
