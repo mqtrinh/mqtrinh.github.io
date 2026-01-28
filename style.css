@@ -15,9 +15,9 @@ a:link { color:#00a86b; text-decoration:none; }
 a:visited { color:#00a86b; text-decoration:none; }
 a:hover { color:#00a86b; text-decoration:underline; }
 h1, h2, h3 { color:#26619c; font-family:"Libre Franklin", sans-serif; margin:0; padding:16px 0; }
-h1 { font-size:137.5%; }
-h2 { font-size:125%; font-weight:normal; }
-h3 { font-size:112.5%; font-weight:normal; }
+h1 { font-size:150%;  }
+h2 { font-size:135%; font-weight:normal; }
+h3 { font-size:120%; font-weight:normal; }
 img { vertical-align:text-top; }
 p { margin:0; padding:8px 0; }
 .p { margin:0; padding:8px 0; }
