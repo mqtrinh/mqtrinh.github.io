@@ -51,50 +51,161 @@ type="text/javascript"></script>
 		<main>
 			<h1 id="chevie">CHEVIE</h1>
 <p>
-<a class="tt" href="chevie_installation.txt" rel="nofollow, noindex" target="_blank">txt</a>
+<a class="tt" href="chevie_installation.txt" target="_blank">txt</a>
 Installation instructions for GAP3 + CHEVIE on Linux
 </p>
+<h2 id="green-functions-outside-type-a">Green Functions outside Type
+<span class="math inline">\(A\)</span></h2>
 <p>
-<a class="tt" href="green.txt" rel="nofollow, noindex" target="_blank">txt</a>
-Green functions and their specializations at <span
-class="math inline">\(q = 1\)</span>
+<a class="tt" href="chevie_green-icc.pdf" target="_blank">pdf</a> Green
+functions and Lusztig–Shoji multiplicities
 </p>
-<h2 id="truncated-exotic-fourier-transforms">Truncated Exotic Fourier
-Transforms</h2>
+<p>
+<a class="tt" href="chevie_green.txt" target="_blank">txt</a> Green
+functions
+</p>
+<div class="p">
+<a class="tt" href="chevie_icc.txt" target="_blank">txt</a>
+Lusztig–Shoji multiplicities
 <ul>
 <li>
-<a class="tt" href="trace_a2.txt" rel="nofollow, noindex" target="_blank">txt</a>
-<span class="math inline">\(A_2\)</span>
+<a class="tt" href="icc/icc_polynomials.txt" target="_blank">txt</a> …in
+CSV format
 </li>
 <li>
-<a class="tt" href="trace_b2.txt" rel="nofollow, noindex" target="_blank">txt</a>
+<a class="tt" href="icc/icc.txt" target="_blank">txt</a> …in CSV format,
+at <span class="math inline">\(x = 1\)</span>
+</li>
+<li>
+<a class="tt" href="icc/icc_inverted.txt" target="_blank">txt</a> …in
+CSV format, at <span class="math inline">\(x = 1\)</span>, inverted
+</li>
+</ul>
+</div>
+<h2 id="generalized-haiman-conjecture">Generalized Haiman
+Conjecture</h2>
+<div class="p">
+Transformed Hecke character values <span
+class="math inline">\(\sum_{\chi, \psi} {\{\chi,
+\psi\}}\psi_\mathsf{v}(c_z) \in \mathbf{Z}[\mathsf{v}^{\pm 1}]\)</span>
+for <span class="math inline">\(z \in W\)</span> and <span
+class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span>:
+<ul>
+<li>
+<a class="tt" href="exotic/exotic_b2.txt" target="_blank">txt</a> <span
+class="math inline">\(BC_2\)</span>
+</li>
+<li>
+<a class="tt" href="exotic/exotic_g2.txt" target="_blank">txt</a> <span
+class="math inline">\(G_2\)</span>
+</li>
+<li>
+<a class="tt" href="exotic/exotic_b3.txt" target="_blank">txt</a> <span
+class="math inline">\(BC_3\)</span>
+</li>
+<li>
+<a class="tt" href="exotic/exotic_b4.txt" target="_blank">txt</a> <span
+class="math inline">\(BC_4\)</span>
+</li>
+<li>
+<a class="tt" href="exotic/exotic_d4.txt" target="_blank">txt</a> <span
+class="math inline">\(D_4\)</span>
+</li>
+</ul>
+</div>
+<div class="p">
+Haiman-type multiplicities <span
+class="math inline">\(\alpha_z^\psi(\mathsf{v}) \in
+\mathbf{Z}[\mathsf{v}^{\pm 1}]\)</span> for <span
+class="math inline">\(z \in W\)</span> and <span
+class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
+<ul>
+<li>
+<a class="tt" href="exotic/exotic_b2_solved.txt" target="_blank">txt</a>
 <span class="math inline">\(BC_2\)</span>
 </li>
 <li>
-<a class="tt" href="trace_g2.txt" rel="nofollow, noindex" target="_blank">txt</a>
+<a class="tt" href="exotic/exotic_g2_solved.txt" target="_blank">txt</a>
 <span class="math inline">\(G_2\)</span>
 </li>
 <li>
-<a class="tt" href="trace_a3.txt" rel="nofollow, noindex" target="_blank">txt</a>
-<span class="math inline">\(A_3\)</span>
-</li>
-<li>
-<a class="tt" href="trace_b3.txt" rel="nofollow, noindex" target="_blank">txt</a>
+<a class="tt" href="exotic/exotic_b3_solved.txt" target="_blank">txt</a>
 <span class="math inline">\(BC_3\)</span>
 </li>
 <li>
-<a class="tt" href="trace_a4.txt" rel="nofollow, noindex" target="_blank">txt</a>
-<span class="math inline">\(A_4\)</span>
+<a class="tt" href="exotic/exotic_b4_solved.txt" target="_blank">txt</a>
+<span class="math inline">\(BC_4\)</span>
 </li>
 <li>
-<a class="tt" href="trace_d4.txt" rel="nofollow, noindex" target="_blank">txt</a>
+<a class="tt" href="exotic/exotic_d4_solved.txt" target="_blank">txt</a>
 <span class="math inline">\(D_4\)</span>
 </li>
+</ul>
+</div>
+<div class="p">
+Python scripts written by
+<a href="https://claude.ai/" target="_blank">Claude</a>* to process
+CHEVIE data:
+<ul>
 <li>
-<a class="tt" href="trace_a5.txt" rel="nofollow, noindex" target="_blank">txt</a>
-<span class="math inline">\(A_5\)</span>
+<a class="tt" href="py/dedup_vectors.py" target="_blank">py</a> Removes
+elements of <span class="math inline">\(W\)</span> that duplicate
+transformed Hecke character values of other elements
+</li>
+<li>
+<a class="tt" href="py/find_combinations_lp.py" target="_blank">py</a>
+Identifies vectors of transformed character values that are positive
+integer sums of other such vectors
+</li>
+<li>
+<a class="tt" href="py/permute vectors.py" target="_blank">py</a>
+Permutes the ordering of transformed character values
+</li>
+<li>
+<a class="tt" href="py/mv_multiply.py" target="_blank">py</a> Multiplies
+the vectors of transformed character values by the inverses of the
+matrices of Lusztig–Shoji multiplicities
 </li>
 </ul>
+<p>* Sonnet 4.6, free subscription</p>
+</div>
+<p>
+<a class="tt" href="permutations.txt" target="_blank">txt</a>
+Permutations needed to transform the ordering in <span
+class="math inline">\(\mathtt{ChevieCharInfo(W).charnames}\)</span> to
+that in <span
+class="math inline">\(\mathtt{ICCTable(UnipotentClasses(W))}\)</span>
+</p>
+<!--
+##  Exotic Fourier Transforms of Irreducible Characters
+
+<ul>
+<li><a class="tt" href="trace_a2.txt" target="_blank">txt</a>
+$A_2$</li>
+
+<li><a class="tt" href="trace_b2.txt" target="_blank">txt</a>
+$BC_2$</li>
+
+<li><a class="tt" href="trace_g2.txt" target="_blank">txt</a>
+$G_2$</li>
+
+<li><a class="tt" href="trace_a3.txt" target="_blank">txt</a>
+$A_3$</li>
+
+<li><a class="tt" href="trace_b3.txt" target="_blank">txt</a>
+$BC_3$</li>
+
+<li><a class="tt" href="trace_a4.txt" target="_blank">txt</a>
+$A_4$</li>
+
+<li><a class="tt" href="trace_d4.txt" target="_blank">txt</a>
+$D_4$</li>
+
+<li><a class="tt" href="trace_a5.txt" target="_blank">txt</a>
+$A_5$</li>
+
+</ul>
+-->
 		</main>
 	</div>
 	</body>
