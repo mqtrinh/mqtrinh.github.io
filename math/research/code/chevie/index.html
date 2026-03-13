@@ -58,11 +58,20 @@ Installation instructions for GAP3 + CHEVIE on Linux
 <span class="math inline">\(A\)</span></h2>
 <p>
 <a class="tt" href="chevie_green-icc.pdf" target="_blank">pdf</a> Green
-functions and generalized Kostka polynomials
+functions and generalized Kostka polynomials for types <span
+class="math inline">\(BC_2\)</span>, <span
+class="math inline">\(G_2\)</span>, <span
+class="math inline">\(BC_3\)</span>, <span
+class="math inline">\(BC_4\)</span>, <span
+class="math inline">\(D_4\)</span>
 </p>
 <p>
 <a class="tt" href="chevie_green.txt" target="_blank">txt</a> Green
-functions in CHEVIE
+functions in CHEVIE for types <span class="math inline">\(BC_2\)</span>,
+<span class="math inline">\(G_2\)</span>, <span
+class="math inline">\(BC_3\)</span>, <span
+class="math inline">\(BC_4\)</span>, <span
+class="math inline">\(D_4\)</span>
 </p>
 <div class="p">
 Generalized Kostka polynomials <span class="math display">\[\sum_j x^j
@@ -73,6 +82,15 @@ class="math inline">\([u, \kappa]\)</span>:
 <ul>
 <li>
 <a class="tt" href="chevie_icc.txt" target="_blank">txt</a> …in CHEVIE
+for types <span class="math inline">\(BC_2\)</span>, <span
+class="math inline">\(G_2\)</span>, <span
+class="math inline">\(BC_3\)</span>, <span
+class="math inline">\(BC_4\)</span>, <span
+class="math inline">\(D_4\)</span>
+</li>
+<li>
+<a class="tt" href="chevie_icc_f4.txt" target="_blank">txt</a> …in
+CHEVIE for type <span class="math inline">\(F_4\)</span>
 </li>
 <li>
 <a class="tt" href="icc/icc_polynomials.txt" target="_blank">txt</a> …in
@@ -117,6 +135,10 @@ class="math inline">\(BC_4\)</span>
 <a class="tt" href="exotic/exotic_d4.txt" target="_blank">txt</a> <span
 class="math inline">\(D_4\)</span>
 </li>
+<li>
+<a class="tt" href="exotic/exotic_f4.txt" target="_blank">txt</a> <span
+class="math inline">\(F_4\)</span>
+</li>
 </ul>
 </div>
 <div class="p">
@@ -146,6 +168,10 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="exotic/exotic_d4_solved.txt" target="_blank">txt</a>
 <span class="math inline">\(D_4\)</span>
 </li>
+<li>
+<a class="tt" href="exotic/exotic_f4_solved.txt" target="_blank">txt</a>
+<span class="math inline">\(F_4\)</span>
+</li>
 </ul>
 </div>
 <div class="p">
@@ -154,15 +180,16 @@ Python scripts written by
 CHEVIE data:
 <ul>
 <li>
+<a class="tt" href="py/join_lines.py" target="_blank">py</a> Sanitizes
+CHEVIE output by joining lines broken by backslash + newline characters
+</li>
+<li>
 <a class="tt" href="py/dedup_vectors.py" target="_blank">py</a> Removes
 elements of <span class="math inline">\(W\)</span> that duplicate the
 vectors of transformed Hecke character values on other elements
 </li>
-<li>
-<a class="tt" href="py/find_combinations_lp.py" target="_blank">py</a>
-Identifies vectors of transformed character values that are positive
-integer sums of other such vectors
-</li>
+<!--<li><a class="tt" href="py/find_combinations_lp.py" target="_blank">py</a>
+Identifies vectors of transformed character values that are positive integer sums of other such vectors</li>-->
 <li>
 <a class="tt" href="py/permute_vectors.py" target="_blank">py</a>
 Permutes the ordering of transformed character values
@@ -171,6 +198,10 @@ Permutes the ordering of transformed character values
 <a class="tt" href="py/mv_multiply.py" target="_blank">py</a> Multiplies
 the vectors of transformed character values by the inverses of the
 matrices of generalized Kostka numbers
+</li>
+<li>
+<a class="tt" href="py/find_negatives.py" target="_blank">py</a>
+Identifies negative Haiman-type multiplicities
 </li>
 </ul>
 <p>* Sonnet 4.6, free subscription</p>
