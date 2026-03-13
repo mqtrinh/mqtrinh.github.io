@@ -51,14 +51,21 @@ type="text/javascript"></script>
 		<main>
 			<h1 id="chevie">CHEVIE</h1>
 <p>
+<a class="tt" href="https://webusers.imj-prg.fr/~jean.michel/gap3/htm/">web</a>
+GAP3 manual
+</p>
+<p>
+<a class="tt" href="https://webusers.imj-prg.fr/~jean.michel/chevie/chevie.html">web</a>
+CHEVIE homepage
+</p>
+<p>
 <a class="tt" href="chevie_installation.txt" target="_blank">txt</a>
 Installation instructions for GAP3 + CHEVIE on Linux
 </p>
 <h2 id="green-functions-outside-type-a">Green Functions outside Type
 <span class="math inline">\(A\)</span></h2>
 <p>
-<a class="tt" href="chevie_green-icc.pdf" target="_blank">pdf</a> Green
-functions and generalized Kostka polynomials for types <span
+<a class="tt" href="chevie_green-icc.pdf" target="_blank">pdf</a> <span
 class="math inline">\(BC_2\)</span>, <span
 class="math inline">\(G_2\)</span>, <span
 class="math inline">\(BC_3\)</span>, <span
@@ -108,12 +115,13 @@ CSV format, at <span class="math inline">\(x = 1\)</span>, inverted
 </div>
 <h2 id="generalized-haiman-conjecture">Generalized Haiman
 Conjecture</h2>
-<div class="p">
+<p>
 Transformed Hecke character values <span
 class="math display">\[\sum_{\chi, \psi} {\{\chi,
 \psi\}}\psi_\mathsf{v}(c_z) \in \mathbf{Z}[\mathsf{v}^{\pm 1}]\]</span>
 for <span class="math inline">\(z \in W\)</span> and <span
 class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span>:
+</p>
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:108px">
@@ -138,13 +146,13 @@ class="math inline">\(F_4\)</span></br>
 </td>
 </tr>
 </table>
-</div>
-<div class="p">
+<p>
 Haiman-type multiplicities <span
 class="math inline">\(\alpha_z^\psi(\mathsf{v}) \in
 \mathbf{Z}[\mathsf{v}^{\pm 1}]\)</span> for <span
 class="math inline">\(z \in W\)</span> and <span
 class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
+</p>
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:108px">
@@ -179,39 +187,61 @@ class="math inline">\(F_4\)</span></br>
 </td>
 </tr>
 </table>
-</div>
-<div class="p">
-Python scripts written by
+<h2 id="scripts">Scripts</h2>
+<p>
+Python scripts written mostly by
 <a href="https://claude.ai/" target="_blank">Claude</a>* to process
 CHEVIE data:
-<ul>
-<li>
-<a class="tt" href="py/join_lines.py" target="_blank">py</a> Sanitizes
-CHEVIE output by joining lines broken by backslash + newline characters
-</li>
-<li>
-<a class="tt" href="py/dedup_vectors.py" target="_blank">py</a> Removes
-elements of <span class="math inline">\(W\)</span> that duplicate the
-vectors of transformed Hecke character values on other elements
-</li>
-<!--<li><a class="tt" href="py/find_combinations_lp.py" target="_blank">py</a>
-Identifies vectors of transformed character values that are positive integer sums of other such vectors</li>-->
-<li>
-<a class="tt" href="py/permute_vectors.py" target="_blank">py</a>
-Permutes the ordering of transformed character values
-</li>
-<li>
-<a class="tt" href="py/mv_multiply.py" target="_blank">py</a> Multiplies
-the vectors of transformed character values by the inverses of the
-matrices of generalized Kostka numbers
-</li>
-<li>
-<a class="tt" href="py/find_negatives.py" target="_blank">py</a>
-Identifies negative Haiman-type multiplicities
-</li>
-</ul>
-<p>* Sonnet 4.6, free subscription</p>
-</div>
+</p>
+<table style="text-align:left; width:87.5%">
+<colgroup>
+<col style="width:180px">
+</col>
+</colgroup>
+<tr>
+<td>
+<a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a>
+</td>
+<td>
+joins broken lines in CHEVIE output
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/dedup_vectors.py" target="_blank">dedup_vectors.py</a>
+</td>
+<td>
+removes duplicate vectors of transformed Hecke character values
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a>
+</td>
+<td>
+permutes ordering of transformed character values
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/mv_multiply.py" target="_blank">mv_multiply.py</a>
+</td>
+<td>
+multiplies vectors by inverses to matrices of generalized Kostka numbers
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/find_negatives.py" target="_blank">find_negatives.py</a>
+</td>
+<td>
+identifies negative Haiman-type multiplicities
+</td>
+</tr>
+</table>
+<p>
+* Sonnet 4.6, free subscription
+</p>
 <p>
 <a class="tt" href="permutations.txt" target="_blank">txt</a>
 Permutations needed to transform the ordering in <span
