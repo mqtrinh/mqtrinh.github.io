@@ -59,62 +59,411 @@ GAP3 manual
 CHEVIE homepage
 </p>
 <p>
-<a class="tt" href="chevie_installation.txt" target="_blank">txt</a>
+<a class="tt" href="installation.txt" target="_blank">txt</a>
 Installation instructions for GAP3 + CHEVIE on Linux
 </p>
-<h2 id="green-functions-outside-type-a">Green Functions outside Type
-<span class="math inline">\(A\)</span></h2>
-<p>
-<a class="tt" href="chevie_green-icc.pdf" target="_blank">pdf</a> <span
-class="math inline">\(BC_2\)</span>, <span
-class="math inline">\(G_2\)</span>, <span
-class="math inline">\(BC_3\)</span>, <span
-class="math inline">\(BC_4\)</span>, <span
-class="math inline">\(D_4\)</span>
-</p>
-<p>
-<a class="tt" href="chevie_green.txt" target="_blank">txt</a> Green
-functions in CHEVIE for types <span class="math inline">\(BC_2\)</span>,
-<span class="math inline">\(G_2\)</span>, <span
-class="math inline">\(BC_3\)</span>, <span
-class="math inline">\(BC_4\)</span>, <span
-class="math inline">\(D_4\)</span>
-</p>
 <div class="p">
-Generalized Kostka polynomials <span class="math display">\[\sum_j x^j
-(\chi, \mathrm{H}^j(\mathcal{B}_u)_\kappa)_W \in
-\mathbf{Z}[x^2]\]</span> for <span class="math inline">\(\chi \in
-\mathrm{Irr}(W)\)</span> and non-cuspidal <span
-class="math inline">\([u, \kappa]\)</span>:
-<ul>
+Contents:
+<ol>
 <li>
-<a class="tt" href="chevie_icc.txt" target="_blank">txt</a> …in CHEVIE
-for types <span class="math inline">\(BC_2\)</span>, <span
-class="math inline">\(G_2\)</span>, <span
-class="math inline">\(BC_3\)</span>, <span
-class="math inline">\(BC_4\)</span>, <span
-class="math inline">\(D_4\)</span>
+The Springer Correspondence
 </li>
 <li>
-<a class="tt" href="chevie_icc_f4.txt" target="_blank">txt</a> …in
-CHEVIE for type <span class="math inline">\(F_4\)</span>
+The Generalized Haiman Conjecture
 </li>
 <li>
-<a class="tt" href="icc/icc_polynomials.txt" target="_blank">txt</a> …in
-CSV format
+Scripts
 </li>
-<li>
-<a class="tt" href="icc/icc.txt" target="_blank">txt</a> …in CSV format,
-at <span class="math inline">\(x = 1\)</span>
-</li>
-<li>
-<a class="tt" href="icc/icc_inverted.txt" target="_blank">txt</a> …in
-CSV format, at <span class="math inline">\(x = 1\)</span>, inverted
-</li>
-</ul>
+</ol>
 </div>
-<h2 id="generalized-haiman-conjecture">Generalized Haiman
+<h2 id="the-springer-correspondence">1. The Springer Correspondence</h2>
+<p>
+<a class="tt" href="icc_poster.pdf" target="_blank">pdf</a> Poster
+</p>
+<p>
+Raw CHEVIE data:
+</p>
+<table style="text-align:left; width:87.5%;">
+<colgroup>
+<col style="width:72px;">
+</col>
+<col style="width:72px;">
+</col>
+<col style="width:72px;">
+</col>
+</colgroup>
+<tr>
+<th>
+</th>
+<th>
+<span class="math inline">\(\mathtt{CharInfo}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{byFamily}\)</span>
+</th>
+<th>
+<span class="math inline">\(\mathtt{ICCTable}\)</span>
+</th>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_2\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_b2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_b2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_b2.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(G_2\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_g2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_g2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_g2.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_3\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_b3.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_b3.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_b3.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_b4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_b4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_b4.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_d4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_d4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_d4.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(F_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_f4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_f4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_f4.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_5\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_b5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_b5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_b5.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_5\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_d5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_d5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_d5.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_b6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_b6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_b6.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_d6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_d6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_d6.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_e6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_e6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_e6.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_7\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_e7.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_e7.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_e7.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_8\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_charinfo_e8.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_families_e8.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="chevie/chevie_icc_e8.txt" target="_blank">txt</a>
+</td>
+</tr>
+</table>
+<p>
+Ungraded Springer multiplicities <span class="math display">\[\sum_j
+(\chi, \mathrm{H}^j(\mathcal{B}_u)_\kappa)_W \in \mathbf{Z}\]</span> for
+<span class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span> and
+non-cuspidal <span class="math inline">\([u, \kappa]\)</span>, in CSV
+format:
+</p>
+<table style="text-align:left; width:87.5%;">
+<colgroup>
+<col style="width:72px;">
+</col>
+<col style="width:72px;">
+</col>
+</colgroup>
+<tr>
+<th>
+</th>
+<th>
+<i>original</i>
+</th>
+<th>
+<i>inverted</i>
+</th>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_2\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b2_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(G_2\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_g2.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_g2_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_3\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b3.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b3_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b4_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d4_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(F_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_f4.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_f4_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_5\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b5_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_5\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d5.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d5_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_b6_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_d6_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_6\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e6.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e6_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_7\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e7.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e7_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(E_8\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e8.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="icc/icc_e8_inverted.txt" target="_blank">txt</a>
+</td>
+</tr>
+</table>
+<h2 id="generalized-haiman-conjecture">2. Generalized Haiman
 Conjecture</h2>
+<p>
+<a class="tt" href="permutations.txt" target="_blank">txt</a>
+Permutations taking the ordering in <span
+class="math inline">\(\mathtt{ChevieCharInfo}\)</span> to that in <span
+class="math inline">\(\mathtt{ICCTable}\)</span>
+</p>
 <p>
 Transformed Hecke character values <span
 class="math display">\[\sum_{\chi, \psi} {\{\chi,
@@ -124,74 +473,240 @@ class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span>:
 </p>
 <table style="text-align:left; width:87.5%">
 <colgroup>
-<col style="width:108px">
+<col style="width:72px">
+</col>
+<col style="width:72px">
 </col>
 </colgroup>
 <tr>
-<td>
-<span class="math inline">\(BC_2\)</span><br> <span
-class="math inline">\(G_2\)</span><br> <span
-class="math inline">\(BC_3\)</span><br> <span
-class="math inline">\(BC_4\)</span><br> <span
-class="math inline">\(D_4\)</span><br> <span
-class="math inline">\(F_4\)</span></br>
+<th>
+</th>
+<th>
+<i>sorted</i>
+</th>
+<th>
+<i>trimmed</i>
+</th>
+</tr>
+<tr>
+<td style="padding:8px 0 0 0;">
+<span class="math inline">\(BC_2\)</span>
 </td>
-<td>
-<a class="tt" href="exotic/exotic_b2.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_g2.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b3.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b4.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_d4.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_f4.txt" target="_blank">txt</a></br>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b2_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b2_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(G_2\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_g2_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_g2_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_3\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b3_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b3_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_4\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b4_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_b4_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_4\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_d4_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_d4_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(F_4\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_f4_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_f4_trimmed.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_5\)</span>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_d5_sorted.txt" target="_blank">txt</a>
+</td>
+<td style="padding:8px 0 0 0;">
+<a class="tt" href="exotic/exotic_d5_trimmed.txt" target="_blank">txt</a>
 </td>
 </tr>
 </table>
 <p>
-Haiman-type multiplicities <span
+<blockquote>
+Virtual multiplicities <span
 class="math inline">\(\alpha_z^\psi(\mathsf{v}) \in
 \mathbf{Z}[\mathsf{v}^{\pm 1}]\)</span> for <span
 class="math inline">\(z \in W\)</span> and <span
-class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
+class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span> and sums <span
+class="math display">\[\alpha_z^\mathcal{F}(\mathsf{v}) = \sum_{\psi \in
+\mathcal{F}} \alpha_z^\psi(\mathsf{v})\]</span> for truncated Lusztig
+families <span class="math inline">\(\mathcal{F} \subseteq
+\mathrm{Irr}(W)\)</span>:
 </p>
+</blockquote>
 <table style="text-align:left; width:87.5%">
 <colgroup>
-<col style="width:108px">
+<col style="width:72px">
+</col>
+<col style="width:72px">
+</col>
+<col style="width:72px">
 </col>
 </colgroup>
 <tr>
-<td>
-<br> <span class="math inline">\(BC_2\)</span><br> <span
-class="math inline">\(G_2\)</span><br> <span
-class="math inline">\(BC_3\)</span><br> <span
-class="math inline">\(BC_4\)</span><br> <span
-class="math inline">\(D_4\)</span><br> <span
-class="math inline">\(F_4\)</span></br>
+<th>
+</th>
+<th>
+<span class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span>
+</th>
+<th>
+<span class="math inline">\(\alpha_z^\mathcal{F}(\mathsf{v})\)</span>
+</th>
+<th>
+<i>tested</i>
+</th>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_2\)</span>
 </td>
-<td>
-<i>all</i><br>
-<a class="tt" href="exotic/exotic_b2_solved.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_g2_solved.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b3_solved.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b4_solved.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_d4_solved.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_f4_solved.txt" target="_blank">txt</a></br>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b2_solved.txt" target="_blank">txt</a>
 </td>
-<td>
-<i>negatives</i><br>
-<a class="tt" href="exotic/exotic_b2_negatives.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_g2_negatives.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b3_negatives.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_b4_negatives.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_d4_negatives.txt" target="_blank">txt</a><br>
-<a class="tt" href="exotic/exotic_f4_negatives.txt" target="_blank">txt</a></br>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b2_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b2_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(G_2\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_g2_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_g2_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_g2_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_3\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b3_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b3_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b3_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(BC_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b4_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b4_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_b4_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d4_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d4_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d4_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(F_4\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_f4_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_f4_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_f4_tested.txt" target="_blank">txt</a>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
+<span class="math inline">\(D_5\)</span>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d5_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d5_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="exotic/exotic_d5_tested.txt" target="_blank">txt</a>
 </td>
 </tr>
 </table>
-<h2 id="scripts">Scripts</h2>
+<h2 id="scripts">3. Scripts</h2>
 <p>
 Python scripts written mostly by
-<a href="https://claude.ai/" target="_blank">Claude</a>* to process
-CHEVIE data:
+<a href="https://claude.ai/" target="_blank">Claude</a>.*
+</p>
+<p>
+Pre-processing CHEVIE data:
 </p>
 <table style="text-align:left; width:87.5%">
 <colgroup>
@@ -203,51 +718,105 @@ CHEVIE data:
 <a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a>
 </td>
 <td>
-joins broken lines in CHEVIE output
+Joins broken lines in CHEVIE output
 </td>
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/dedup_vectors.py" target="_blank">dedup_vectors.py</a>
+<a class="tt" href="py/csv_families.py" target="_blank">csv_families.py</a>
 </td>
 <td>
-removes duplicate vectors of transformed Hecke character values
-</td>
-</tr>
-<tr>
-<td>
-<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a>
-</td>
-<td>
-permutes ordering of transformed character values
+Converts truncated Lusztig families to CSV
 </td>
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/mv_multiply.py" target="_blank">mv_multiply.py</a>
+<a class="tt" href="py/csv_icc.py" target="_blank">csv_icc.py</a>
 </td>
 <td>
-multiplies vectors by inverses to matrices of generalized Kostka numbers
+Converts <span class="math inline">\(\mathtt{ICCTable}\)</span> to CSV,
+then evaluates at <span class="math inline">\(x = 1\)</span>, then
+inverts
 </td>
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/find_negatives.py" target="_blank">find_negatives.py</a>
+<a class="tt" href="py/extract_icc_labels.py" target="_blank">extract_icc_labels.py</a>
 </td>
 <td>
-identifies negative Haiman-type multiplicities
+Extracts <span class="math inline">\(\mathtt{ICCTable}\)</span> ordering
+of irreducible characters
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/find_permutations.py" target="_blank">find_permutations.py</a>
+</td>
+<td>
+Finds permutation taking <span
+class="math inline">\(\mathtt{ChevieCharInfo}\)</span> ordering to <span
+class="math inline">\(\mathtt{ICCTable}\)</span> ordering
+</td>
+</tr>
+</table>
+<p>
+Carrying out calculations and testing the conjecture:
+</p>
+<table style="text-align:left; width:87.5%">
+<colgroup>
+<col style="width:180px">
+</col>
+</colgroup>
+<tr>
+<td>
+<a class="tt" href="py/sort_vectors.py" target="_blank">sort_vectors.py</a>
+</td>
+<td>
+1. Sorts transformed character values according to permutation
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/trim_vectors.py" target="_blank">trim_vectors.py</a>
+</td>
+<td>
+2. Trims away duplicate vectors of transformed Hecke character values
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/solve_vectors.py" target="_blank">solve_vectors.py</a>
+</td>
+<td>
+3. Solves for <span
+class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> by multiplying
+vectors by inverse matrices of ungraded Springer multiplicities
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/sum_families.py" target="_blank">sum_families.py</a>
+</td>
+<td>
+4. Sums up <span
+class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> over <span
+class="math inline">\(\psi \in \mathcal{F}\)</span> to get <span
+class="math inline">\(\alpha_z^\mathcal{F}(\mathsf{v})\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/test_conjecture.py" target="_blank">test_conjecture.py</a>
+</td>
+<td>
+5. Tests whether nonzero coefficients of <span
+class="math inline">\(\alpha_z^\mathcal{F}(\mathsf{v})\)</span> have
+unimodal absolute values, mixed signs, or strictly negative signs
 </td>
 </tr>
 </table>
 <p>
 * Sonnet 4.6, free subscription
-</p>
-<p>
-<a class="tt" href="permutations.txt" target="_blank">txt</a>
-Permutations needed to transform the ordering in <span
-class="math inline">\(\mathtt{ChevieCharInfo(W).charnames}\)</span> to
-that in <span
-class="math inline">\(\mathtt{ICCTable(UnipotentClasses(W))}\)</span>
 </p>
 <!--
 ##  Exotic Fourier Transforms of Irreducible Characters
