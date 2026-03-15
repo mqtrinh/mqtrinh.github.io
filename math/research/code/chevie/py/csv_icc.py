@@ -1,0 +1,69 @@
+import re, numpy as np
+
+def eval_poly_at_1(token):
+    expr = re.sub(r'(\d)(x)', r'\1*\2', token)
+    expr = expr.replace('^', '**')
+    expr = expr.replace('x', '1')
+    return str(eval(expr))
+
+labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7', 'e8']
+
+for label in labels:
+    input = f'chevie_icc_{label}.txt'
+    csv1 = f'icc/icc_{label}.txt'
+    csv2 = f'icc/icc_{label}_inverted.txt'
+
+    print(f"[{label}])")
+
+    # Step 0: Convert table format to CSV
+
+    with open(input, 'r') as f:
+        lines = f.read().strip().split('\n')
+
+    # Find separator line
+    sep_idx = next(i for i, l in enumerate(lines) if re.match(r'^_+', l))
+    data_lines = lines[sep_idx+1:]
+
+    rows_poly = []
+    for line in data_lines:
+        if not line.strip():
+            continue
+        after_pipe = line.split('|', 1)[1]
+        tokens = after_pipe.split()
+        rows_poly.append(','.join(tokens))
+
+    output_poly = '\n'.join(rows_poly)
+
+    # Step 1: Evaluate polynomials at x=1 and write to new CSV
+
+    lines = output_poly.strip().split('\n')
+
+    rows1 = []
+    for line in lines:
+        tokens = line.split(',')
+        rows1.append(','.join(eval_poly_at_1(t) for t in tokens))
+
+    output1 = '\n'.join(rows1)
+
+    with open(csv1, 'w') as f:
+        f.write(output1)
+    print(f"  at x = 1: {csv1}")
+
+    # Step 2: Invert the matrix and write to new CSV
+
+    rows2 = [[int(x) for x in line.split(',')] for line in output1.strip().split('\n')]
+
+    M = np.array(rows2, dtype=float)
+    M_inv = np.linalg.inv(M)
+    M_inv_rounded = np.rint(M_inv).astype(int)
+
+    # Verify it's exact
+    # residual = np.max(np.abs(M_inv - M_inv_rounded))
+    # print(f"Max rounding residual: {residual}")
+
+    output2 = '\n'.join(','.join(str(v) for v in row) for row in M_inv_rounded)
+    with open(csv2, 'w') as f:
+        f.write(output2)
+    print(f"  at x = 1, inverted: {csv2}")
+
+

@@ -2,18 +2,20 @@
 join_lines.py
 
 Usage:
-    python3 join_lines.py <file1> [<file2> ...]
+    python3 join_lines.py <input> <output>
 
-Removes all occurrences of the sequence backslash+newline from each file,
-writing the result back to the same file in place.
+Removes all occurrences of the sequence backslash+newline from <input>,
+writing the result to <output>.
 """
 
 import sys
 
-for filepath in sys.argv[1:]:
-    with open(filepath, 'r') as f:
+if __name__ == '__main__':
+    input = sys.argv[1]
+    output = sys.argv[2]
+    with open(input, 'r') as f:
         content = f.read()
     joined = content.replace('\\\n', '')
-    with open(filepath, 'w') as f:
+    with open(output, 'w') as f:
         f.write(joined)
-    print(f"Done: {filepath}")
+    print(f"Done: {output}")
