@@ -2,7 +2,7 @@
 find_permutations.py
 
 For each label in a given list, reads:
-  - chevie_charinfo_[label].txt
+  - chevie/chevie_charinfo_[label].txt
   - x/x_[label].txt
 
 and prints the permutation (1-indexed) that maps the ith entry of CharInfo
@@ -43,7 +43,7 @@ labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7'
 lines = []
 
 for label in labels:
-    charinfo_path = f'chevie_charinfo_{label}.txt'
+    charinfo_path = f'chevie/chevie_charinfo_{label}.txt'
     x_path      = f'x/x_{label}.txt'
 
     with open(charinfo_path) as f:

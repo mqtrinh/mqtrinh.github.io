@@ -74,7 +74,7 @@ labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7'
 
 for label in labels:
     x_file = f'x/x_{label}.txt'
-    fam_file = f'chevie_families_{label}.txt'
+    fam_file = f'chevie/chevie_families_{label}.txt'
     out_file = f'families/families_{label}.txt'
 
     x_labels = parse_x_file(x_file)

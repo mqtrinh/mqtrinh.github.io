@@ -9,7 +9,7 @@ def eval_poly_at_1(token):
 labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7', 'e8']
 
 for label in labels:
-    input = f'chevie_icc_{label}.txt'
+    input = f'chevie/chevie_icc_{label}.txt'
     csv1 = f'icc/icc_{label}.txt'
     csv2 = f'icc/icc_{label}_inverted.txt'
 
