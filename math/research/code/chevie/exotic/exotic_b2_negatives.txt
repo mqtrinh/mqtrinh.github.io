@@ -1,2 +1,0 @@
-#7 [ 1, 2, 1 ]
-negative entries at indices: [3]
