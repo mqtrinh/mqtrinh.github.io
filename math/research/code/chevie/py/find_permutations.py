@@ -77,7 +77,7 @@ for label in labels:
 
 output = '\n'.join(lines)
 
-with open('chevie_permutations.txt', 'w') as f:
+with open('permutations.txt', 'w') as f:
     f.write(output)
 print(output)
 

@@ -25,7 +25,7 @@ def permute_vector(v, perm):
 
 labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'd5']
 
-perms_file = f'chevie_permutations.txt'
+perms_file = f'permutations.txt'
 with open(perms_file) as f:
     perms = re.split('\n+', f.read())
 
