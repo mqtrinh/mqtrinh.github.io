@@ -1,0 +1,14 @@
+total num of chars: 10
+total num of families: 6
+chars where some sequence of nonzero coeffs is not unimodal in abs value:
+  none
+chars where some polynomial has both positive and negative coeffs:
+  none
+chars where some polynomial has strictly negative coeffs:
+  none
+
+0 entries where some sequence of nonzero coeffs is not unimodal in abs value.
+
+0 entries where some polynomial has both positive and negative coeffs.
+
+0 entries where some polynomial has strictly negative coeffs.
