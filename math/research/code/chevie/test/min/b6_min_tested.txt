@@ -1,0 +1,64 @@
+total num of chars: 65
+total num of families: 26
+chars where some sequence of nonzero coeffs is not unimodal in abs value:
+  none
+chars where some polynomial has both positive and negative coeffs:
+  none
+chars where some polynomial has strictly negative coeffs:
+  2.22         =  53221                in family 21.21        = 53311               
+  4.2          =  931                  in family 4.2          = 931                 
+  1.5          =  751(11,11)           in family 4.2          = 931                 
+  2.211        =  5311111              in family 2.211        = 5311111             
+  3.3          =  751                  in family 3.3          = 751                 
+  3.21         =  73111                in family 3.21         = 73111               
+
+0 entries where some sequence of nonzero coeffs is not unimodal in abs value.
+
+0 entries where some polynomial has both positive and negative coeffs.
+
+12 entries where some polynomial has strictly negative coeffs.
+
+  #20 [ 1, 2, 3, 2, 1, 2, 3, 4 ]
+    2.211: -x^2-2-x^{-2}
+
+  #29 [ 1, 2, 3, 2, 1, 2, 3, 4, 6 ]
+    2.22: -x^3-3x-3x^{-1}-x^{-3}
+
+  #30 [ 1, 2, 3, 2, 1, 2, 3, 4, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6 ]
+    3.3: -2x^6-9x^4-22x^2-30-22x^{-2}-9x^{-4}-2x^{-6}
+
+  #34 [ 1, 2, 1, 2, 3, 4 ]
+    2.211: -x^2-2-x^{-2}
+
+  #42 [ 1, 2, 3, 2, 1, 2, 3, 4, 5 ]
+    3.21: -2x^3-3x-3x^{-1}-2x^{-3}
+
+  #44 [ 1, 2, 1, 2, 3, 4, 6 ]
+    2.22: -x^3-3x-3x^{-1}-x^{-3}
+
+  #46 [ 1, 2, 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 5, 6 ]
+    3.3: -2x^6-6x^4-11x^2-14-11x^{-2}-6x^{-4}-2x^{-6}
+
+  #49 [ 1, 2, 3, 4, 3, 2, 1, 2, 3, 4, 5, 6 ]
+    4.2: -x^6-6x^4-9x^2-10-9x^{-2}-6x^{-4}-x^{-6}
+    1.5: -x^4-x^{-4}
+    3.3: -2x^4-4x^2-6-4x^{-2}-2x^{-4}
+    3.21: -x^4-4x^2-4-4x^{-2}-x^{-4}
+    2.22: -x^4-5x^2-6-5x^{-2}-x^{-4}
+
+  #53 [ 1, 2, 1, 2, 3, 4, 5 ]
+    3.21: -x^3-2x-2x^{-1}-x^{-3}
+
+  #55 [ 1, 2, 1, 2, 3, 2, 1, 2, 3, 4, 5, 6 ]
+    3.3: -x^6-3x^4-5x^2-6-5x^{-2}-3x^{-4}-x^{-6}
+
+  #59 [ 1, 2, 3, 2, 1, 2, 3, 4, 5, 6 ]
+    4.2: -2x^4-3x^2-3-3x^{-2}-2x^{-4}
+    1.5: -x^4-x^2-1-x^{-2}-x^{-4}
+    3.3: -x^4-2x^2-3-2x^{-2}-x^{-4}
+    3.21: -x^2-1-x^{-2}
+    2.22: -x^2-1-x^{-2}
+
+  #63 [ 1, 2, 1, 2, 3, 4, 5, 6 ]
+    4.2: -x^4-2x^2-2-2x^{-2}-x^{-4}
+    2.22: -x^2-2-x^{-2}

@@ -1,0 +1,20 @@
+total num of chars: 20
+total num of families: 10
+chars where some sequence of nonzero coeffs is not unimodal in abs value:
+  none
+chars where some polynomial has both positive and negative coeffs:
+  none
+chars where some polynomial has strictly negative coeffs:
+  2.2          =  531                  in family 2.2          = 531                 
+
+0 entries where some sequence of nonzero coeffs is not unimodal in abs value.
+
+0 entries where some polynomial has both positive and negative coeffs.
+
+2 entries where some polynomial has strictly negative coeffs.
+
+  #14 [ 1, 2, 3, 2, 1, 2, 3, 4 ]
+    2.2: -x^2-2-x^{-2}
+
+  #18 [ 1, 2, 1, 2, 3, 4 ]
+    2.2: -x^2-2-x^{-2}
