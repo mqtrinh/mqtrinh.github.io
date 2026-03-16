@@ -1,0 +1,5 @@
+[g2]
+  number of elements: 12
+  number of unique vectors: 10
+    #5 [ 1, 2 ] DUPLICATES #4 [ 2, 1 ]
+    #9 [ 1, 2, 1, 2 ] DUPLICATES #8 [ 2, 1, 2, 1 ]
