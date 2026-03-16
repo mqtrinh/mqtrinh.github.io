@@ -1,15 +1,6 @@
-"""
-mv_multiply.py
+import re, sys
 
-Usage:
-    python3 mv_multiply.py <vector_file> <matrix_file> <output_file>
-
-Given a file of column vectors of Laurent polynomials in the format of
-exotic_b2_dedup.txt, and a matrix in CSV format, computes M*v for each
-column vector v and writes the results to the output file in the same format.
-"""
-
-import re
+mode = sys.argv[1]
 
 def parse_lp(s):
     s = s.strip()
@@ -99,16 +90,13 @@ def apply_matrix(M, headers, vectors_raw):
         output_blocks.append(header + '\n\n' + '\n'.join(result))
     return '\n\n'.join(output_blocks) + '\n'
 
-with open(f'test/mode.txt') as f:
-    mode = f.read().strip()
-
 with open(f'test/labels_{mode}.txt') as f:
     labels = re.split('\n+', f.read().strip())
 
 for label in labels:
     # if mode == 'all': vec_file = f'test/{mode}/{label}_{mode}_trimmed.txt'
     # if mode == 'min': vec_file = f'test/{mode}/{label}_{mode}_sorted.txt'
-    vec_file = f'test/{mode}/{label}_{mode}_sorted.txt'
+    vec_file = f'test/{mode}/{label}_{mode}.txt'
     
     mat_file = f'icc/icc_{label}_inverted.txt'
     out_file = f'test/{mode}/{label}_{mode}_solved.txt'

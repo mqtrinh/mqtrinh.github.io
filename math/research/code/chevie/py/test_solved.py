@@ -1,5 +1,6 @@
-import re
+import re, sys
 
+mode = sys.argv[1]
 
 def parse_lp(s):
     """Parse a Laurent polynomial string into a dict {exp: coeff}."""
@@ -68,9 +69,6 @@ def formatter(i, list, lines, x, y, x_to_family, family_to_special):
             lines.append(s)
     else:
         lines.append("  none")
-
-with open(f'test/mode.txt') as f:
-    mode = f.read().strip()
 
 with open(f'test/labels_{mode}.txt') as f:
     labels = re.split('\n+', f.read().strip())
