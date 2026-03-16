@@ -16,9 +16,8 @@ python3 py/join_lines.py test/min/f4_min.txt test/min/f4_min.txt
 
 python3 py/join_lines.py test/min/b5_min.txt test/min/b5_min.txt
 python3 py/join_lines.py test/min/d5_min.txt test/min/d5_min.txt
+
+python3 py/join_lines.py test/min/b6_min.txt test/min/b6_min.txt
 python3 py/join_lines.py test/min/d6_min.txt test/min/d6_min.txt
-
-python3 py/join_lines.py test/min/test.txt test/min/test.txt
-
 python3 py/join_lines.py test/min/e6_min.txt test/min/e6_min.txt
 
