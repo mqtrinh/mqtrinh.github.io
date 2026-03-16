@@ -1,6 +1,6 @@
 """
-Reads families_[label].txt and exotic_[label].txt, and produces
-exotic_[label]_summed.txt where each block's N-entry list is replaced
+Reads families_[label].txt and [label]_solved.txt, and produces
+[label]_summed.txt where each block's N-entry list is replaced
 by a new list whose i-th entry is the sum of the Laurent polynomials
 at the positions specified by line i of families_[label].txt.
 
@@ -103,10 +103,10 @@ def parse_families(filepath):
         for line in f:
             line = line.strip()
             if line:
-                families.append([int(x) for x in line.split(',')])
+                families.append([int(x.lstrip('*')) for x in line.split(',')])
     return families
 
-def parse_exotic(filepath):
+def parse_vec(filepath):
     """
     Return list of blocks. Each block is:
       {'header': str, 'entries': [str, ...]}
@@ -145,15 +145,19 @@ def parse_exotic(filepath):
 # Main logic
 # ---------------------------------------------------------------------------
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'd5']
+with open(f'test/mode.txt') as f:
+    mode = f.read().strip()
+
+with open(f'test/labels_{mode}.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 for label in labels:
     fam_file    = f'families/families_{label}.txt'
-    exotic_file = f'exotic/exotic_{label}_solved.txt'
-    out_file    = f'exotic/exotic_{label}_summed.txt'
+    vec_file = f'test/{mode}/{label}_{mode}_solved.txt'
+    out_file    = f'test/{mode}/{label}_{mode}_summed.txt'
 
     families = parse_families(fam_file)
-    blocks   = parse_exotic(exotic_file)
+    blocks   = parse_vec(vec_file)
 
     N = max(max(fam) for fam in families)  # should equal len of each entry list
     F = len(families)

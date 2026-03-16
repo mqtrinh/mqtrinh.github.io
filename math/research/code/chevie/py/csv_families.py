@@ -2,13 +2,13 @@ import re
 
 def parse_x_file(filepath):
     """Return list of labels (strings after 'X') in order, 1-indexed."""
-    labels = []
+    xlabels = []
     with open(filepath) as f:
         for line in f:
             line = line.strip()
             if line.startswith('X'):
-                labels.append(line[1:])  # strip the 'X' prefix
-    return labels
+                xlabels.append(line[1:])  # strip the 'X' prefix
+    return xlabels
 
 def is_separator(line):
     s = line.strip()
@@ -60,9 +60,11 @@ def parse_families_file(filepath):
         else:
             # Data row
             if '|' in line:
-                label_part = line.split('|')[0].strip()
-                label = label_part.lstrip('*').strip()
-                current_table.append(label)
+                # label_part = line.split('|')[0].strip()
+                # label = label_part.lstrip('*').strip()
+                # current_table.append(label)
+                row_label = line.split('|')[0].strip()
+                current_table.append(row_label)
         i += 1
 
     if current_table:
@@ -70,7 +72,8 @@ def parse_families_file(filepath):
 
     return tables
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7', 'e8']
+with open(f'labels.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 for label in labels:
     x_file = f'x/x_{label}.txt'
@@ -79,7 +82,7 @@ for label in labels:
 
     x_labels = parse_x_file(x_file)
     # Build a lookup: label -> 1-based line number
-    label_to_line = {label: idx + 1 for idx, label in enumerate(x_labels)}
+    label_to_line = {x_label: idx + 1 for idx, x_label in enumerate(x_labels)}
 
     tables = parse_families_file(fam_file)
 
@@ -87,8 +90,11 @@ for label in labels:
     for table in tables:
         line_numbers = []
         for row_label in table:
-            if row_label in label_to_line:
-                line_numbers.append(label_to_line[row_label])
+            if row_label.lstrip('*') in label_to_line:
+                if row_label[0] == '*':
+                    line_numbers.append('*' + str(label_to_line[row_label[1:]]))
+                else:
+                    line_numbers.append(label_to_line[row_label])
             # Labels absent from x file are simply skipped
         lines_out.append(','.join(str(n) for n in line_numbers))
 

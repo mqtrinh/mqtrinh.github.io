@@ -15,7 +15,10 @@ if __name__ == '__main__':
     output = sys.argv[2]
     with open(input, 'r') as f:
         content = f.read()
-    joined = content.replace('\\\n', '')
+    
+    step_1 = content.replace('\\\n', '')
+    step_2 = step_1.replace(', \n  ', ', ') # GAP3 weirdness
+
     with open(output, 'w') as f:
-        f.write(joined)
+        f.write(step_2)
     print(f"Done: {output}")

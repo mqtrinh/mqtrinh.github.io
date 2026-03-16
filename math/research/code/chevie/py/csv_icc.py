@@ -6,7 +6,8 @@ def eval_poly_at_1(token):
     expr = expr.replace('x', '1')
     return str(eval(expr))
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7', 'e8']
+with open(f'labels.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 for label in labels:
     input = f'chevie/chevie_icc_{label}.txt'

@@ -99,12 +99,19 @@ def apply_matrix(M, headers, vectors_raw):
         output_blocks.append(header + '\n\n' + '\n'.join(result))
     return '\n\n'.join(output_blocks) + '\n'
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'd5']
+with open(f'test/mode.txt') as f:
+    mode = f.read().strip()
+
+with open(f'test/labels_{mode}.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 for label in labels:
-    vec_file = f'exotic/exotic_{label}_trimmed.txt'
+    # if mode == 'all': vec_file = f'test/{mode}/{label}_{mode}_trimmed.txt'
+    # if mode == 'min': vec_file = f'test/{mode}/{label}_{mode}_sorted.txt'
+    vec_file = f'test/{mode}/{label}_{mode}_sorted.txt'
+    
     mat_file = f'icc/icc_{label}_inverted.txt'
-    out_file = f'exotic/exotic_{label}_solved.txt'
+    out_file = f'test/{mode}/{label}_{mode}_solved.txt'
 
     with open(mat_file) as f:
         M = [[int(x) for x in line.split(',')] for line in f.read().strip().split('\n')]

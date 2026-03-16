@@ -22,12 +22,13 @@ def parse_blocks(filepath):
     
     return blocks
 
-
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'd5']
+# only apply this script in mode 'all'
+with open(f'test/labels_all.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 for label in labels:
-    input_path = f'exotic/exotic_{label}_sorted.txt'
-    output_path = f'exotic/exotic_{label}_trimmed.txt'
+    input_path = f'test/all/{label}_all_sorted.txt'
+    output_path = f'test/all/{label}_all_trimmed.txt'
 
     blocks = parse_blocks(input_path)
 

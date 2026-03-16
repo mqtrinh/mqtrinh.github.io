@@ -23,15 +23,20 @@ def permute_vector(v, perm):
         result[dest] = v[k]
     return result
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'd5']
+with open(f'test/mode.txt') as f:
+    mode = f.read().strip()
+
+with open(f'test/labels_{mode}.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 perms_file = f'permutations.txt'
+
 with open(perms_file) as f:
     perms = re.split('\n+', f.read())
 
 for label in labels:
-    input_file = f'exotic/exotic_{label}.txt'
-    output_file = f'exotic/exotic_{label}_sorted.txt'
+    input_file = f'test/{mode}/{label}_{mode}.txt'
+    output_file = f'test/{mode}/{label}_{mode}_sorted.txt'
 
     label_index = perms.index(f'[{label}]')
     perm_str = re.split('\s', perms[label_index + 1])

@@ -38,7 +38,8 @@ def normalise(s):
     s = s.strip()
     return s
 
-labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5', 'b6', 'd6', 'e6', 'e7', 'e8']
+with open(f'labels.txt') as f:
+    labels = re.split('\n+', f.read().strip())
 
 lines = []
 
