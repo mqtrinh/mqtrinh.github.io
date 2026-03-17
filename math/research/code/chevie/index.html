@@ -80,9 +80,8 @@ Scripts
 <p>
 <a class="tt" href="icc_poster.pdf" target="_blank">pdf</a> Poster
 </p>
-<p>
+<div class="p">
 Raw CHEVIE data:
-</p>
 <table style="text-align:left; width:87.5%;">
 <colgroup>
 <col style="width:72px;">
@@ -288,13 +287,13 @@ Raw CHEVIE data:
 </td>
 </tr>
 </table>
-<p>
+</div>
+<div class="p">
 Ungraded Springer multiplicities <span class="math display">\[\sum_j
 (\chi, \mathrm{H}^j(\mathcal{B}_u)_\kappa)_W \in \mathbf{Z}\]</span> for
 <span class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span> and
 non-cuspidal <span class="math inline">\([u, \kappa]\)</span>, in CSV
 format:
-</p>
 <table style="text-align:left; width:87.5%;">
 <colgroup>
 <col style="width:72px;">
@@ -456,6 +455,7 @@ format:
 </td>
 </tr>
 </table>
+</div>
 <h2 id="generalized-haiman-conjecture">2. Generalized Haiman
 Conjecture</h2>
 <p>
@@ -464,28 +464,27 @@ Permutations taking the ordering in <span
 class="math inline">\(\mathtt{ChevieCharInfo}\)</span> to that in <span
 class="math inline">\(\mathtt{ICCTable}\)</span>
 </p>
-<p>
+<div class="p">
 Transformed Hecke character values <span
 class="math display">\[\sum_{\chi, \psi} {\{\chi,
 \psi\}}\psi_\mathsf{v}(c_z) \in \mathbf{Z}[\mathsf{v}^{\pm 1}]\]</span>
 for <span class="math inline">\(z \in W\)</span> and <span
 class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span>:
-</p>
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:72px">
 </col>
-<col style="width:72px">
+<col style="width:108px">
 </col>
 </colgroup>
 <tr>
 <th>
 </th>
 <th>
-<i>min*</i>
+<i>minimal <span class="math inline">\(z\)</span></i>
 </th>
 <th>
-<i>all</i>
+<i>all <span class="math inline">\(z\)</span></i>
 </th>
 </tr>
 <tr>
@@ -606,18 +605,22 @@ class="math inline">\(\chi \in \mathrm{Irr}(W)\)</span>:
 </td>
 </tr>
 </table>
-<p>
-<blockquote>
+</div>
+<div class="p">
 Virtual multiplicities <span
-class="math display">\[\alpha_z^\psi(\mathsf{v}) \in
-\mathbf{Z}[\mathsf{v}^{\pm 1}]\]</span> for <span
+class="math inline">\(\alpha_z^\psi(x)\)</span> for <span
 class="math inline">\(z \in W\)</span> and <span
-class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
-</p>
-</blockquote>
+class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>, and sums <span
+class="math display">\[\alpha_z^\mathcal{F}(x) = \sum_{\psi \in
+\mathcal{F}} \alpha_z^\psi(x)\]</span> for families <span
+class="math inline">\(\mathcal{F} \subseteq \mathrm{Irr}(W)\)</span>:
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:72px">
+</col>
+<col style="width:108px">
+</col>
+<col style="width:108px">
 </col>
 <col style="width:72px">
 </col>
@@ -626,10 +629,20 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <th>
 </th>
 <th>
-<i>min*</i>
+<span class="math inline">\(\psi\)</span><br><i>minimal <span
+class="math inline">\(z\)</span></i>
 </th>
 <th>
-<i>all</i>
+<span class="math inline">\(\mathcal{F}\)</span><br><i>minimal <span
+class="math inline">\(z\)</span></i>
+</th>
+<th>
+<span class="math inline">\(\psi\)</span><br><i>all <span
+class="math inline">\(z\)</span></i>
+</th>
+<th>
+<span class="math inline">\(\mathcal{F}\)</span><br><i>all <span
+class="math inline">\(z\)</span></i>
 </th>
 </tr>
 <tr>
@@ -640,7 +653,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/b2_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/b2_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/b2_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b2_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -651,7 +670,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/g2_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/g2_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/g2_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/g2_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -662,7 +687,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/b3_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/b3_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/b3_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b3_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -673,7 +704,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/b4_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/b4_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/b4_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b4_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -684,7 +721,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/d4_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/d4_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/d4_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d4_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -695,7 +738,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/f4_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/f4_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/f4_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/f4_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -704,6 +753,9 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 </td>
 <td style="padding:0;">
 <a class="tt" href="test/min/b5_min_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/min/b5_min_summed.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
 </td>
@@ -716,7 +768,13 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/d5_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/d5_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 <a class="tt" href="test/all/d5_all_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d5_all_summed.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -725,6 +783,9 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 </td>
 <td style="padding:0;">
 <a class="tt" href="test/min/b6_min_solved.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/min/b6_min_summed.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
 </td>
@@ -737,6 +798,9 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/d6_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/d6_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 </td>
 </tr>
 <tr>
@@ -747,16 +811,23 @@ class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <a class="tt" href="test/min/e6_min_solved.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/e6_min_summed.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
 </td>
 </tr>
 </table>
-<p>
-Tests of the positivity and unimodality of the nonzero coefficients of
-<span class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span>:
-</p>
+</div>
+<div class="p">
+Outputs of <span class="tt">test_solved</span> and <span
+class="tt">test_summed</span> (see below):
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:72px">
+</col>
+<col style="width:108px">
+</col>
+<col style="width:108px">
 </col>
 <col style="width:72px">
 </col>
@@ -765,10 +836,20 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <th>
 </th>
 <th>
-<i>min*</i>
+<span class="math inline">\(\psi\)</span><br><i>minimal <span
+class="math inline">\(z\)</span></i>
 </th>
 <th>
-<i>all</i>
+<span class="math inline">\(\mathcal{F}\)</span><br><i>minimal <span
+class="math inline">\(z\)</span></i>
+</th>
+<th>
+<span class="math inline">\(\psi\)</span><br><i>all <span
+class="math inline">\(z\)</span></i>
+</th>
+<th>
+<span class="math inline">\(\mathcal{F}\)</span><br><i>all <span
+class="math inline">\(z\)</span></i>
 </th>
 </tr>
 <tr>
@@ -776,10 +857,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(BC_2\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/b2_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b2_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/b2_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b2_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b2_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b2_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -787,10 +874,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(G_2\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/g2_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/g2_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/g2_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/g2_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/g2_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/g2_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -798,10 +891,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(BC_3\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/b3_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b3_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/b3_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b3_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b3_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b3_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -809,10 +908,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(BC_4\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/b4_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b4_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/b4_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b4_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b4_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/b4_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -820,10 +925,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(D_4\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/d4_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/d4_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/d4_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/d4_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d4_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d4_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -831,10 +942,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(F_4\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/f4_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/f4_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/f4_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/f4_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/f4_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/f4_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -842,9 +959,10 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(B_5\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/b5_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b5_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/b5_min_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -852,10 +970,16 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(D_5\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/d5_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/d5_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/all/d5_all_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/d5_min_summed_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d5_all_solved_test.txt" target="_blank">txt</a>
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/all/d5_all_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -863,9 +987,10 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(B_6\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/b6_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/b6_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/b6_min_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -873,9 +998,10 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(D_6\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/d6_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/d6_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/d6_min_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 <tr>
@@ -883,24 +1009,22 @@ Tests of the positivity and unimodality of the nonzero coefficients of
 <span class="math inline">\(E_6\)</span>
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/min/e6_min_tested.txt" target="_blank">txt</a>
+<a class="tt" href="test/min/e6_min_solved_test.txt" target="_blank">txt</a>
 </td>
 <td style="padding:0;">
+<a class="tt" href="test/min/e6_min_summed_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 </table>
-<p>
-* meaning <span class="math inline">\(z\)</span> has minimal Bruhat
-length in its conjugacy class
-</p>
+</div>
 <h2 id="scripts">3. Scripts</h2>
 <p>
-Python scripts written with help from
-<a href="https://claude.ai/" target="_blank">Claude</a>.**
+<a class="tt" href="sage-to-gap.txt" target="_blank">txt</a>
+Permutations taking the ordering of simple reflections in Sage to those
+in GAP3
 </p>
-<p>
-Pre-processing CHEVIE data:
-</p>
+<div class="p">
+Scripts to pre-process CHEVIE data:
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:180px">
@@ -908,7 +1032,7 @@ Pre-processing CHEVIE data:
 </colgroup>
 <tr>
 <td>
-<a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a>
+<a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a>*
 </td>
 <td>
 Joins broken lines in CHEVIE output
@@ -916,7 +1040,7 @@ Joins broken lines in CHEVIE output
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/csv_families.py" target="_blank">csv_families.py</a>
+<a class="tt" href="py/csv_families.py" target="_blank">csv_families.py</a>*
 </td>
 <td>
 Converts truncated Lusztig families to CSV
@@ -924,7 +1048,7 @@ Converts truncated Lusztig families to CSV
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/csv_icc.py" target="_blank">csv_icc.py</a>
+<a class="tt" href="py/csv_icc.py" target="_blank">csv_icc.py</a>*
 </td>
 <td>
 Converts <span class="math inline">\(\mathtt{ICCTable}\)</span> to CSV,
@@ -934,7 +1058,7 @@ inverts
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/extract_icc_labels.py" target="_blank">extract_icc_labels.py</a>
+<a class="tt" href="py/extract_icc_labels.py" target="_blank">extract_icc_labels.py</a>*
 </td>
 <td>
 Extracts <span class="math inline">\(\mathtt{ICCTable}\)</span> ordering
@@ -943,7 +1067,7 @@ of irreducible characters and local systems
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/find_permutations.py" target="_blank">find_permutations.py</a>
+<a class="tt" href="py/find_permutations.py" target="_blank">find_permutations.py</a>*
 </td>
 <td>
 Finds permutation taking <span
@@ -952,9 +1076,12 @@ class="math inline">\(\mathtt{ICCTable}\)</span> ordering
 </td>
 </tr>
 </table>
-<p>
-Carrying out calculations and testing the conjecture:
-</p>
+</div>
+<div class="p">
+Scripts to compute the <span
+class="math inline">\(\alpha_z^\psi\)</span> and <span
+class="math inline">\(\alpha_z^\mathcal{F}\)</span>, and test
+conjectures:
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:180px">
@@ -962,18 +1089,18 @@ Carrying out calculations and testing the conjecture:
 </colgroup>
 <tr>
 <td>
-<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a>
+<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a>*
 </td>
 <td>
 Permutes transformed character values into <span
 class="math inline">\(\mathtt{ICCTable}\)</span> ordering
 </td>
 </tr>
-<!--<tr><td><a class="tt" href="py/find_duplicates.py" target="_blank">find_duplicates.py</a></td>
+<!--<tr><td><a class="tt" href="py/find_duplicates.py" target="_blank">find_duplicates.py</a>&ast;</td>
 <td>Trims away duplicate vectors of transformed Hecke character values</td></tr>-->
 <tr>
 <td>
-<a class="tt" href="py/solve_vectors.py" target="_blank">solve_vectors.py</a>
+<a class="tt" href="py/solve_vectors.py" target="_blank">solve_vectors.py</a>*
 </td>
 <td>
 Solves for <span
@@ -983,17 +1110,53 @@ vectors by inverse matrices of ungraded Springer multiplicities
 </tr>
 <tr>
 <td>
+<a class="tt" href="sage/iterate_sortable.sage" target="_blank">iterate_sortable.sage</a>
+</td>
+<td>
+Iterates over Coxeter elements <span class="math inline">\(c\)</span>,
+printing out the <span class="math inline">\(c\)</span>-sortable
+elements
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/test_solved.py" target="_blank">test_solved.py</a>*
+</td>
+<td>
+Tests nonzero coefficients of <span
+class="math inline">\(\alpha_z^\psi\)</span> for unimodal absolute
+values, mixed signs, or strictly negative signs; searches exceptions for
+<span class="math inline">\(c\)</span>-sortable elements, for all <span
+class="math inline">\(c\)</span>
+</td>
+</tr>
+<tr>
+<td>
+<a class="tt" href="py/sum_families.py" target="_blank">sum_families.py</a>*
+</td>
+<td>
+Sums <span class="math inline">\(\alpha_z^\psi\)</span> for <span
+class="math inline">\(\psi \in \mathcal{F}\)</span> to obtain <span
+class="math inline">\(\alpha_z^\mathcal{F}\)</span>
+</td>
+</tr>
+<tr>
+<td>
 <a class="tt" href="py/test_solved.py" target="_blank">test_solved.py</a>
 </td>
 <td>
-Tests whether nonzero coefficients of <span
-class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> have unimodal
-absolute values, mixed signs, or strictly negative signs
+Tests nonzero coefficients of <span
+class="math inline">\(\alpha_z^\mathcal{F}\)</span> for unimodal
+absolute values, mixed signs, or strictly negative signs; searches
+exceptions for <span class="math inline">\(c\)</span>-sortable elements,
+for all <span class="math inline">\(c\)</span>
 </td>
 </tr>
 </table>
+<div>
 <p>
-** Sonnet 4.6, free subscription
+* Written with help from
+<a href="https://claude.ai/" target="_blank">Claude</a> Sonnet 4.6.
 </p>
 <!--
 ##  Exotic Fourier Transforms of Irreducible Characters
@@ -1025,6 +1188,8 @@ $A_5$</li>
 
 </ul>
 -->
+</div>
+</div>
 		</main>
 	</div>
 	</body>
