@@ -1,0 +1,64 @@
+total num of chars: 36
+total num of families: 16
+
+families where some sequence of nonzero coeffs is not unimodal in abs value:
+      none
+families where some polynomial has both positive and negative coeffs:
+      none
+families where some polynomial has strictly negative coeffs:
+      none
+
+252 elements of W are c-sortable for a given c.
+1912 elements of W are c-sortable for some c.
+
+c = [ 2, 1, 3, 5, 4 ]
+  no exceptions
+
+c = [ 1, 2, 3, 5, 4 ]
+  no exceptions
+
+c = [ 5, 4, 3, 2, 1 ]
+  no exceptions
+
+c = [ 3, 2, 1, 5, 4 ]
+  no exceptions
+
+c = [ 1, 2, 4, 3, 5 ]
+  no exceptions
+
+c = [ 2, 1, 4, 3, 5 ]
+  no exceptions
+
+c = [ 1, 5, 4, 3, 2 ]
+  no exceptions
+
+c = [ 3, 2, 1, 4, 5 ]
+  no exceptions
+
+c = [ 1, 4, 3, 2, 5 ]
+  no exceptions
+
+c = [ 2, 1, 3, 4, 5 ]
+  no exceptions
+
+c = [ 1, 2, 3, 4, 5 ]
+  no exceptions
+
+c = [ 4, 3, 2, 1, 5 ]
+  no exceptions
+
+c = [ 1, 3, 2, 5, 4 ]
+  no exceptions
+
+c = [ 1, 3, 2, 4, 5 ]
+  no exceptions
+
+c = [ 1, 2, 5, 4, 3 ]
+  no exceptions
+
+c = [ 2, 1, 5, 4, 3 ]
+  no exceptions
+
+0 entries where some sequence of nonzero coeffs is not unimodal in abs value.
+0 entries where some polynomial has both positive and negative coeffs.
+0 entries where some polynomial has strictly negative coeffs.
