@@ -59,15 +59,12 @@ def read_vectors(filepath):
         i += 2
     return headers, vectors_raw
 
-def formatter(list, x, y, x_to_special_x):
+def formatter(list, x, y, fam_to_special):
     if list:
         sublist = []
         for i in list:
-            s = "      " + "{:<12}".format(x[i])
-            s += " =  " + "{:<20}".format(y[i]) 
-            special = x_to_special_x[i + 1] # 1-indexing to 1-indexing!
-            s += " in family " + "{:<12}".format(x[special - 1]) + " = " + "{:<20}".format(y[special - 1])
-            sublist.append(s)
+            special = fam_to_special[i + 1] # 1-indexing to 1-indexing!
+            sublist.append("      family " + "{:<12}".format(x[special - 1]) + " = " + "{:<20}".format(y[special - 1]))
         return sublist
     else:
         return ["      none"]
@@ -83,27 +80,22 @@ for label in labels:
     with open(f"y/y_{label}.txt") as f:
         y = re.split("\n", f.read().strip())
     
-    # x_to_special_x takes 1-indexing to 1-indexing!
-    x_to_special_x = [None] * (len(x) + 1) 
+    # fam_to_special takes 1-indexing to 1-indexing!
+    fam_to_special = [None] * (len(families) + 1) 
     for i in range(len(families)):
         family_elts = re.split(",", families[i].strip())
 
         for j in range(len(family_elts)):
             elt = family_elts[j]
             if elt[0] == "*": # each family contains exactly one special element
-                special = int(elt[1:])
-                x_to_special_x[special] = special
-        for j in range(len(family_elts)):
-            elt = family_elts[j]
-            if elt[0] != "*":
-                x_to_special_x[int(elt)] = special
+                fam_to_special[i + 1] = int(elt[1:])
 
     # INPUT
 
-    headers, vectors_raw = read_vectors(f"test/{mode}/{label}_{mode}_solved.txt")
+    headers, vectors_raw = read_vectors(f"test/{mode}/{label}_{mode}_summed.txt")
 
     nonunimodal_list, mixed_list, negative_list = [], [], []
-    nonunimodal_x, mixed_x, negative_x = set(), set(), set()
+    nonunimodal_fam, mixed_fam, negative_fam = set(), set(), set()
 
     for header, v in zip(headers, vectors_raw):
         nonunimodal_v, mixed_v, negative_v = [], [], []
@@ -114,14 +106,14 @@ for label in labels:
                 poly = parse_lp(s)
                 coeffs = list(poly.values())
                 if check_unimodal(coeffs):
-                    nonunimodal_x.add(i)
+                    nonunimodal_fam.add(i)
                     nonunimodal_v.append(i)
                 fneg, fmixed = check_signs(coeffs)
                 if fmixed:
-                    mixed_x.add(i)
+                    mixed_fam.add(i)
                     mixed_v.append(i)
                 if fneg: 
-                    negative_x.add(i)
+                    negative_fam.add(i)
                     negative_v.append(i)
             
         if nonunimodal_v: nonunimodal_list.append((header, nonunimodal_v))
@@ -140,12 +132,12 @@ for label in labels:
     lines.append(f"total num of families: {len(families)}")
     lines.append("")
     
-    lines.append("chars" + str_nonunimodal + ":")
-    lines.extend(formatter(nonunimodal_x, x, y, x_to_special_x))
-    lines.append("chars" + str_mixed + ":")
-    lines.extend(formatter(mixed_x, x, y, x_to_special_x))
-    lines.append("chars" + str_negative + ":")
-    lines.extend(formatter(negative_x, x, y, x_to_special_x))
+    lines.append("families" + str_nonunimodal + ":")
+    lines.extend(formatter(nonunimodal_fam, x, y, fam_to_special))
+    lines.append("families" + str_mixed + ":")
+    lines.extend(formatter(mixed_fam, x, y, fam_to_special))
+    lines.append("families" + str_negative + ":")
+    lines.extend(formatter(negative_fam, x, y, fam_to_special))
     lines.append("")
 
     if mode == "all":
@@ -171,15 +163,15 @@ for label in labels:
                     for (header, v) in nonunimodal_list:
                         if elt in header:
                             lines_nonunimodal_c.append("    " + header)
-                            lines_nonunimodal_c.extend(formatter(v, x, y, x_to_special_x))
+                            lines_nonunimodal_c.extend(formatter(v, x, y, fam_to_special))
                     for (header, v) in mixed_list:
                         if elt in header:
                             lines_mixed_c.append("    " + header)
-                            lines_mixed_c.extend(formatter(v, x, y, x_to_special_x))
+                            lines_mixed_c.extend(formatter(v, x, y, fam_to_special))
                     for (header, v) in negative_list:
                         if elt in header:
                             lines_negative_c.append("    " + header)
-                            lines_negative_c.extend(formatter(v, x, y, x_to_special_x))
+                            lines_negative_c.extend(formatter(v, x, y, fam_to_special))
                 
                 if lines_nonunimodal_c:
                     lines.append("  c-sortables" + str_nonunimodal + ":")
@@ -218,7 +210,7 @@ for label in labels:
 
     output = "\n".join(lines) + "\n" + "\n".join(lines_full) + "\n"
 
-    with open(f"test/{mode}/{label}_{mode}_solved_test.txt", "w") as f:
+    with open(f"test/{mode}/{label}_{mode}_summed_test.txt", "w") as f:
         f.write(output)
 
     print(f"[{label}]\n\n  " + "\n  ".join(lines))
