@@ -36,7 +36,7 @@ for label in labels:
     output_file = f'test/{mode}/{label}_{mode}.txt'
 
     label_index = perms.index(f'[{label}]')
-    perm_str = re.split('\s', perms[label_index + 1])
+    perm_str = re.split(r'\s', perms[label_index + 1])
     perm = [n - 1 for n in map(int, perm_str)]
 
     headers, vectors_raw = read_vectors(input_file)

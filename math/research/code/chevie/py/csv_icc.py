@@ -12,11 +12,10 @@ with open(f'labels.txt') as f:
 for label in labels:
     input = f'chevie/chevie_icc_{label}.txt'
     csv1 = f'icc/icc_{label}.txt'
-    csv2 = f'icc/icc_{label}_inverted.txt'
 
     print(f"[{label}])")
 
-    # Step 0: Convert table format to CSV
+    # Convert table format to CSV
 
     with open(input, 'r') as f:
         lines = f.read().strip().split('\n')
@@ -35,7 +34,7 @@ for label in labels:
 
     output_poly = '\n'.join(rows_poly)
 
-    # Step 1: Evaluate polynomials at x=1 and write to new CSV
+    # Evaluate polynomials at x=1 and write to new CSV
 
     lines = output_poly.strip().split('\n')
 
@@ -49,22 +48,5 @@ for label in labels:
     with open(csv1, 'w') as f:
         f.write(output1)
     print(f"  at x = 1: {csv1}")
-
-    # Step 2: Invert the matrix and write to new CSV
-
-    rows2 = [[int(x) for x in line.split(',')] for line in output1.strip().split('\n')]
-
-    M = np.array(rows2, dtype=float)
-    M_inv = np.linalg.inv(M)
-    M_inv_rounded = np.rint(M_inv).astype(int)
-
-    # Verify it's exact
-    # residual = np.max(np.abs(M_inv - M_inv_rounded))
-    # print(f"Max rounding residual: {residual}")
-
-    output2 = '\n'.join(','.join(str(v) for v in row) for row in M_inv_rounded)
-    with open(csv2, 'w') as f:
-        f.write(output2)
-    print(f"  at x = 1, inverted: {csv2}")
 
 

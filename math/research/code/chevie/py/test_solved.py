@@ -2,6 +2,19 @@ import re, sys
 
 mode = sys.argv[1]
 
+def read_vectors(filepath):
+    with open(filepath) as f:
+        raw = f.read()
+    blocks = re.split(r"(#[0-9]+ [^\n]*)\n", raw)
+    headers, vectors_raw = [], []
+    i = 1
+    while i < len(blocks):
+        headers.append(blocks[i].strip())
+        content = blocks[i+1].strip().split("\n")
+        vectors_raw.append([l.strip() for l in content if l.strip()])
+        i += 2
+    return headers, vectors_raw
+
 def parse_lp(s):
     """Parse a Laurent polynomial string into a dict {exp: coeff}."""
     s = s.strip()
@@ -33,9 +46,9 @@ def check_unimodal(coeffs):
     """Return True if seq is unimodal (weakly increases then weakly decreases)."""
     if len(coeffs) <= 1:
         return False
-    abs_coeffs = [abs(c) for c in coeffs]
+    abs_woeffs = [abs(c) for c in coeffs]
     for i in range(1, len(coeffs) // 2 + 1):
-        if abs_coeffs[i] < abs_coeffs[i-1]:
+        if abs_woeffs[i] < abs_woeffs[i-1]:
             return True
     return False
 
@@ -46,31 +59,20 @@ def check_signs(coeffs):
         return False, True
     return False, False
 
-def read_vectors(filepath):
-    with open(filepath) as f:
-        raw = f.read()
-    blocks = re.split(r"(#[0-9]+ [^\n]*)\n", raw)
-    headers, vectors_raw = [], []
-    i = 1
-    while i < len(blocks):
-        headers.append(blocks[i].strip())
-        content = blocks[i+1].strip().split("\n")
-        vectors_raw.append([l.strip() for l in content if l.strip()])
-        i += 2
-    return headers, vectors_raw
+def formatter(i, x, y, x_to_special_x):
+    s1 = "    " + "{:<28}".format(f"{x[i]} = {y[i]}")
+    special = x_to_special_x[i + 1] # 1-indexing to 1-indexing!
+    s2 = "{:<28}".format(f"{x[special - 1]} = {y[special - 1]}")
+    return s1 + " in family " + s2
 
-def formatter(list, x, y, x_to_special_x):
+def list_formatter(list, x, y, x_to_special_x):
     if list:
         sublist = []
         for i in list:
-            s = "      " + "{:<12}".format(x[i])
-            s += " =  " + "{:<20}".format(y[i]) 
-            special = x_to_special_x[i + 1] # 1-indexing to 1-indexing!
-            s += " in family " + "{:<12}".format(x[special - 1]) + " = " + "{:<20}".format(y[special - 1])
-            sublist.append(s)
+            sublist.append(formatter(i, x, y, x_to_special_x))
         return sublist
     else:
-        return ["      none"]
+        return ["    none"]
 
 with open(f"test/labels_{mode}.txt") as f:
     labels = re.split("\n+", f.read().strip())
@@ -82,9 +84,11 @@ for label in labels:
         x = [s[1:] for s in re.split("\n", f.read().strip())]
     with open(f"y/y_{label}.txt") as f:
         y = re.split("\n", f.read().strip())
+
+    num_x = len(x)
     
     # x_to_special_x takes 1-indexing to 1-indexing!
-    x_to_special_x = [None] * (len(x) + 1) 
+    x_to_special_x = [None] * (num_x + 1) 
     for i in range(len(families)):
         family_elts = re.split(",", families[i].strip())
 
@@ -102,11 +106,14 @@ for label in labels:
 
     headers, vectors_raw = read_vectors(f"test/{mode}/{label}_{mode}_solved.txt")
 
-    nonunimodal_list, mixed_list, negative_list = [], [], []
     nonunimodal_x, mixed_x, negative_x = set(), set(), set()
+    nonunimodal_count, mixed_count, negative_count = 0, 0, 0
+    nonunimodal_list = [[] for i in range(num_x)]
+    mixed_list = [[] for i in range(num_x)]
+    negative_list = [[] for i in range(num_x)]
 
     for header, v in zip(headers, vectors_raw):
-        nonunimodal_v, mixed_v, negative_v = [], [], []
+        nonunimodal_flag, mixed_flag, negative_flag = False, False, False
 
         for i in range(len(v)):
             s = v[i].strip()
@@ -115,20 +122,29 @@ for label in labels:
                 coeffs = list(poly.values())
                 if check_unimodal(coeffs):
                     nonunimodal_x.add(i)
-                    nonunimodal_v.append(i)
+                    nonunimodal_flag = True
+                    nonunimodal_list[i].append(header)
                 fneg, fmixed = check_signs(coeffs)
                 if fmixed:
                     mixed_x.add(i)
-                    mixed_v.append(i)
+                    mixed_flag = True
+                    mixed_list[i].append(header)
                 if fneg: 
                     negative_x.add(i)
-                    negative_v.append(i)
-            
-        if nonunimodal_v: nonunimodal_list.append((header, nonunimodal_v))
-        if mixed_v: mixed_list.append((header, mixed_v))
-        if negative_v: negative_list.append((header, negative_v))
+                    negative_flag = True
+                    negative_list[i].append(header)
+        
+        if nonunimodal_flag:
+            nonunimodal_count += 1
+        if mixed_flag:
+            mixed_count += 1
+        if negative_flag:
+            negative_count += 1 
     
     # OUTPUT
+
+    if mode == "min": mode_str = " minimal-length elements"
+    if mode == "all": mode_str = " elements"
 
     str_nonunimodal = " where some sequence of nonzero coeffs is not unimodal in abs value"
     str_mixed = " where some polynomial has both positive and negative coeffs"
@@ -141,80 +157,34 @@ for label in labels:
     lines.append("")
     
     lines.append("chars" + str_nonunimodal + ":")
-    lines.extend(formatter(nonunimodal_x, x, y, x_to_special_x))
+    lines.extend(list_formatter(nonunimodal_x, x, y, x_to_special_x))
     lines.append("chars" + str_mixed + ":")
-    lines.extend(formatter(mixed_x, x, y, x_to_special_x))
+    lines.extend(list_formatter(mixed_x, x, y, x_to_special_x))
     lines.append("chars" + str_negative + ":")
-    lines.extend(formatter(negative_x, x, y, x_to_special_x))
+    lines.extend(list_formatter(negative_x, x, y, x_to_special_x))
     lines.append("")
-
-    if mode == "all":
-        with open(f"sortable/{label}_sortable.txt", "r") as f:
-            sortable_lines = re.split("\n+", f.read().strip())
-        sortable_per_c = int(sortable_lines[0])
-        sortable_total = int(sortable_lines[1])
-
-        lines.append(str(sortable_per_c) + " elements of W are c-sortable for a given c.")
-        lines.append(str(sortable_total) + " elements of W are c-sortable for some c.")
-        lines.append("")
-
-        for index in range(len(sortable_lines)):
-            c = sortable_lines[index]
-
-            if c[0] == "c":
-                lines.append(c)
-
-                lines_nonunimodal_c, lines_mixed_c, lines_negative_c = [], [], []
-
-                for e in range(sortable_per_c):
-                    elt = sortable_lines[index + 1 + e]
-                    for (header, v) in nonunimodal_list:
-                        if elt in header:
-                            lines_nonunimodal_c.append("    " + header)
-                            lines_nonunimodal_c.extend(formatter(v, x, y, x_to_special_x))
-                    for (header, v) in mixed_list:
-                        if elt in header:
-                            lines_mixed_c.append("    " + header)
-                            lines_mixed_c.extend(formatter(v, x, y, x_to_special_x))
-                    for (header, v) in negative_list:
-                        if elt in header:
-                            lines_negative_c.append("    " + header)
-                            lines_negative_c.extend(formatter(v, x, y, x_to_special_x))
-                
-                if lines_nonunimodal_c:
-                    lines.append("  c-sortables" + str_nonunimodal + ":")
-                    lines.extend(lines_nonunimodal_c)
-                if lines_mixed_c:
-                    lines.append("  c-sortables" + str_mixed + ":")
-                    lines.extend(lines_mixed_c)
-                if lines_negative_c:
-                    lines.append("  c-sortables" + str_negative + ":")
-                    lines.extend(lines_negative_c)
-                if not (lines_nonunimodal_c or lines_mixed_c or lines_negative_c):
-                    lines.append("  no exceptions")
-                
-                lines.append("")
     
     lines_full = []
 
-    lines_full.append(str(len(nonunimodal_list)) + " entries" + str_nonunimodal + ".")
-    if nonunimodal_list:
-        for header, nonunimodal_v in nonunimodal_list:
-            lines_full.append(f"  {header}")
-            for i in nonunimodal_v:
-                lines_full.append(f"    {x[i]}: {vectors_raw[headers.index(header)][i]}")
-    lines_full.append(str(len(mixed_list)) + " entries" + str_mixed + ".")
-    if mixed_list:
-        for header, mixed_v in mixed_list:
-            lines_full.append(f"  {header}")
-            for i in mixed_v:
-                lines_full.append(f"    {x[i]}: {vectors_raw[headers.index(header)][i]}")
-    lines_full.append(str(len(negative_list)) + " entries" + str_negative + ".")
-    if negative_list:
-        for header, negative_v in negative_list:
-            lines_full.append(f"  {header}")
-            for i in negative_v:
-                lines_full.append(f"    {x[i]}: {vectors_raw[headers.index(header)][i]}")
+    lines_full.append("| " + str(nonunimodal_count) + mode_str + str_nonunimodal + ".")
+    for i in range(num_x):
+        if len(nonunimodal_list[i]) > 0:
+            lines_full.append(formatter(i, x, y, x_to_special_x))
+            for header in nonunimodal_list[i]:
+                lines_full.append(f"      {header}")
+                #lines_full.append(f"    {header}: {vectors_raw[headers.index(header)][i]}")
+    lines_full.append("| " + str(mixed_count) + mode_str + str_mixed + ".")
+    for i in range(num_x):
+        if len(mixed_list[i]) > 0:
+            lines_full.append(formatter(i, x, y, x_to_special_x))
+            for header in mixed_list[i]:
+                lines_full.append(f"      {header}")
+    lines_full.append("| " + str(negative_count) + mode_str + str_negative + ".")
+    for i in range(num_x):
+        if len(negative_list[i]) > 0:
+            lines_full.append(formatter(i, x, y, x_to_special_x))
+            for header in negative_list[i]:
+                lines_full.append(f"      {header}")
 
     output = "\n".join(lines) + "\n" + "\n".join(lines_full) + "\n"
 

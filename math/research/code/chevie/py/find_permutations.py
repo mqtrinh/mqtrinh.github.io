@@ -9,9 +9,9 @@ and prints the permutation (1-indexed) that maps the ith entry of CharInfo
 to the a_i-th entry of X, as a space-separated sequence.
 
 Normalisation rules:
-  - CharInfo entries: strip LaTeX '\phi_' prefix; normalise braces/cdot
+  - CharInfo entries: strip LaTeX 'phi_' prefix; normalise braces/cdot
   - X entries: strip leading 'X' or 'Xphi' prefix; normalise braces
-  - Both: map \cdot -> . and strip whitespace
+  - Both: map cdot -> . and strip whitespace
 """
 
 import re
