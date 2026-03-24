@@ -1,0 +1,12 @@
+12 smooth elements in W.
+
+| 0 smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 smooth elements where some polynomial has both positive and negative coeffs.
+| 7 smooth elements where some polynomial has strictly negative coeffs.
+  #4 [ 2, 1 ]
+  #5 [ 1, 2 ]
+  #6 [ 2, 1, 2 ]
+  #7 [ 1, 2, 1 ]
+  #8 [ 2, 1, 2, 1 ]
+  #9 [ 1, 2, 1, 2 ]
+  #11 [ 1, 2, 1, 2, 1 ]
