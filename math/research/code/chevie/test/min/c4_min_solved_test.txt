@@ -1,0 +1,19 @@
+total num of chars: 20
+total num of families: 10
+
+chars where some sequence of nonzero coeffs is not unimodal in abs value:
+    none
+chars where some polynomial has both positive and negative coeffs:
+    none
+chars where some polynomial has strictly negative coeffs:
+    2.11 = 4211                  in family 2.11 = 4211                 
+    3.1 = 62                     in family 3.1 = 62                    
+
+| 0 minimal-length elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 minimal-length elements where some polynomial has both positive and negative coeffs.
+| 3 minimal-length elements where some polynomial has strictly negative coeffs.
+    3.1 = 62                     in family 3.1 = 62                    
+      #14 [ 1, 2, 3, 2, 1, 2, 3, 4 ]
+      #20 [ 1, 2, 3, 4 ]
+    2.11 = 4211                  in family 2.11 = 4211                 
+      #16 [ 1, 2, 3 ]

@@ -1,0 +1,8 @@
+187 smooth elements in W.
+
+| 0 minimal-length smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 minimal-length smooth elements where some polynomial has both positive and negative coeffs.
+| 3 minimal-length smooth elements where some polynomial has strictly negative coeffs.
+  #10 [ 1, 2, 3, 4, 1, 2, 3, 4 ]
+  #11 [ 1, 2, 3, 4 ]
+  #15 [ 4, 3, 2 ]
