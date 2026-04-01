@@ -27,7 +27,7 @@ with open(f'test/labels_all.txt') as f:
     labels = re.split('\n+', f.read().strip())
 
 for label in labels:
-    input_path = f'test/all/{label}_all.txt'
+    input_path = f'test/all/{label}_all_raw.txt'
     output_path = f'test/all/{label}_all_duplicates.txt'
 
     blocks = parse_blocks(input_path)
@@ -46,12 +46,12 @@ for label in labels:
 
     count_total = f"number of elements: {len(blocks)}"
     count_original = f"number of unique vectors: {len(originals)}"
-    summary = f'[{label}]' + '\n  ' + count_total + '\n  ' + count_original
+    summary = count_total + '\n' + count_original + '\n'
 
     lines = []
     lines.append(summary)
     for i, (header, entries, original) in enumerate(duplicates):
-        lines.append('    ' + header + ' DUPLICATES ' + original)
+        lines.append(header + ' DUPLICATES ' + original)
 
     with open(output_path, 'w') as f:
         f.write('\n'.join(lines) + '\n')

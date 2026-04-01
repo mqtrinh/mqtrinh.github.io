@@ -188,7 +188,7 @@ for label in labels:
 
     output = "\n".join(lines) + "\n" + "\n".join(lines_full) + "\n"
 
-    with open(f"test/{mode}/{label}_{mode}_solved_test.txt", "w") as f:
+    with open(f"test/{mode}/{label}_{mode}_test.txt", "w") as f:
         f.write(output)
 
     print(f"[{label}]\n\n  " + "\n  ".join(lines))
