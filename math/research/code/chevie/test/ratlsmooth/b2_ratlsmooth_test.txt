@@ -1,0 +1,15 @@
+total num of chars: 5
+total num of families: 3
+
+chars where some sequence of nonzero coeffs is not unimodal in abs value:
+    none
+chars where some polynomial has both positive and negative coeffs:
+    none
+chars where some polynomial has strictly negative coeffs:
+    1.1 = 311                    in family 1.1 = 311                   
+
+| 0 rationally smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 rationally smooth elements where some polynomial has both positive and negative coeffs.
+| 1 rationally smooth elements where some polynomial has strictly negative coeffs.
+    1.1 = 311                    in family 1.1 = 311                   
+      #7 [ 1, 2, 1 ]
