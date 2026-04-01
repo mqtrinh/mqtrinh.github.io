@@ -23,8 +23,7 @@ def parse_blocks(filepath):
     return blocks
 
 # only apply this script in mode 'all'
-with open(f'test/labels_all.txt') as f:
-    labels = re.split('\n+', f.read().strip())
+labels = ['b2', 'g2', 'b3', 'b4', 'd4', 'f4', 'b5', 'd5']
 
 for label in labels:
     input_path = f'test/all/{label}_all_raw.txt'
@@ -56,4 +55,4 @@ for label in labels:
     with open(output_path, 'w') as f:
         f.write('\n'.join(lines) + '\n')
     
-    print(summary)
+    print(f'[{label}]' + '\n' + summary)
