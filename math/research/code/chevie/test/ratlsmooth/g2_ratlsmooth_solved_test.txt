@@ -9,9 +9,9 @@ chars where some polynomial has strictly negative coeffs:
     phi{2,1} = G2(a1)            in family phi{2,1} = G2(a1)           
     phi{2,2} = ~A1               in family phi{2,1} = G2(a1)           
 
-| 0 elements rationally smooth at e where some sequence of nonzero coeffs is not unimodal in abs value.
-| 0 elements rationally smooth at e where some polynomial has both positive and negative coeffs.
-| 7 elements rationally smooth at e where some polynomial has strictly negative coeffs.
+| 0 rationally smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 rationally smooth elements where some polynomial has both positive and negative coeffs.
+| 7 rationally smooth elements where some polynomial has strictly negative coeffs.
     phi{2,1} = G2(a1)            in family phi{2,1} = G2(a1)           
       #4 [ 2, 1 ]
       #5 [ 1, 2 ]

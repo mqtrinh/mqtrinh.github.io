@@ -19,7 +19,7 @@ chars where some polynomial has strictly negative coeffs:
     11.211 = 332211              in family 11.211 = 332211             
     1.2111 = 33111111            in family 1.2111 = 33111111           
 
-| 170 elements rationally smooth at e where some sequence of nonzero coeffs is not unimodal in abs value.
+| 170 rationally smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
     1.5 = 93                     in family 1.5 = 93                    
       #1664 [ 3, 1, 5, 4, 3, 1, 6, 5, 4, 3, 1, 2 ]
       #1667 [ 2, 3, 1, 5, 4, 3, 1, 6, 5, 4, 3, 1 ]
@@ -197,7 +197,7 @@ chars where some polynomial has strictly negative coeffs:
       #1990 [ 2, 3, 2, 4, 3, 1, 2, 3, 4, 5, 4, 3, 1, 6, 5 ]
       #2026 [ 1, 3, 1, 5, 4, 3, 1, 6, 5, 4, 3, 1, 2, 3, 4 ]
       #2027 [ 1, 3, 1, 4, 3, 1, 2, 3, 4, 5, 4, 3, 2, 6, 5 ]
-| 4 elements rationally smooth at e where some polynomial has both positive and negative coeffs.
+| 4 rationally smooth elements where some polynomial has both positive and negative coeffs.
     2.4 = 75                     in family 2.4 = 75                    
       #1805 [ 2, 5, 4, 3, 2, 6, 5, 4, 3, 1, 2, 3, 4 ]
       #1821 [ 2, 3, 2, 4, 3, 1, 2, 3, 4, 5, 4, 6, 5 ]
@@ -208,7 +208,7 @@ chars where some polynomial has strictly negative coeffs:
       #1821 [ 2, 3, 2, 4, 3, 1, 2, 3, 4, 5, 4, 6, 5 ]
       #1851 [ 1, 5, 4, 3, 1, 6, 5, 4, 3, 1, 2, 3, 4 ]
       #1882 [ 1, 3, 1, 4, 3, 1, 2, 3, 4, 5, 4, 6, 5 ]
-| 1148 elements rationally smooth at e where some polynomial has strictly negative coeffs.
+| 1148 rationally smooth elements where some polynomial has strictly negative coeffs.
     1.5 = 93                     in family 1.5 = 93                    
       #349 [ 2, 6, 5, 4, 3, 1 ]
       #350 [ 2, 5, 4, 3, 1, 6 ]

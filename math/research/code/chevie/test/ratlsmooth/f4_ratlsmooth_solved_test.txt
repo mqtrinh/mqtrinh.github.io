@@ -14,9 +14,9 @@ chars where some polynomial has strictly negative coeffs:
     phi{9,6}'' = B2              in family phi{12,4} = F4(a3)          
     phi{4,13} = ~A1              in family phi{4,13} = ~A1             
 
-| 0 elements rationally smooth at e where some sequence of nonzero coeffs is not unimodal in abs value.
-| 0 elements rationally smooth at e where some polynomial has both positive and negative coeffs.
-| 98 elements rationally smooth at e where some polynomial has strictly negative coeffs.
+| 0 rationally smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 rationally smooth elements where some polynomial has both positive and negative coeffs.
+| 98 rationally smooth elements where some polynomial has strictly negative coeffs.
     phi{4,1} = F4(a1)            in family phi{4,1} = F4(a1)           
       #31 [ 4, 3, 2, 1 ]
       #32 [ 3, 2, 1, 4 ]

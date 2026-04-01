@@ -15,9 +15,9 @@ chars where some polynomial has strictly negative coeffs:
     2.111 = 421111               in family 2.111 = 421111              
     11.111 = 222211              in family 11.111 = 222211             
 
-| 0 elements rationally smooth at e where some sequence of nonzero coeffs is not unimodal in abs value.
-| 0 elements rationally smooth at e where some polynomial has both positive and negative coeffs.
-| 378 elements rationally smooth at e where some polynomial has strictly negative coeffs.
+| 0 rationally smooth elements where some sequence of nonzero coeffs is not unimodal in abs value.
+| 0 rationally smooth elements where some polynomial has both positive and negative coeffs.
+| 378 rationally smooth elements where some polynomial has strictly negative coeffs.
     4.1 = 82                     in family 4.1 = 82                    
       #112 [ 5, 4, 3, 2, 1 ]
       #114 [ 4, 3, 2, 1, 5 ]
