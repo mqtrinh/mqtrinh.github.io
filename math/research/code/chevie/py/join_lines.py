@@ -17,8 +17,9 @@ if __name__ == '__main__':
         content = f.read()
     
     step_1 = content.replace('\\\n', '')
-    step_2 = step_1.replace(', \n  ', ', ') # GAP3 weirdness
+    step_2 = step_1.replace(' \n  ', ' ') # GAP3 weirdness
+    step_3 = step_2.replace(' \n ', ' ') # more GAP3 weirdness
 
     with open(output, 'w') as f:
-        f.write(step_2)
+        f.write(step_3)
     print(f"Done: {output}")
