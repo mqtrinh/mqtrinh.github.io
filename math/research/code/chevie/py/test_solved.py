@@ -144,8 +144,7 @@ for label in labels:
     # OUTPUT
 
     if mode == "all": mode_str = " elements"
-    if mode == "defectless": mode_str = " elements of defect 0 at e"
-    if mode == "ratlsmooth": mode_str = " elements rationally smooth at e"
+    if mode == "ratlsmooth": mode_str = " rationally smooth elements"
 
     str_nonunimodal = " where some sequence of nonzero coeffs is not unimodal in abs value"
     str_mixed = " where some polynomial has both positive and negative coeffs"
