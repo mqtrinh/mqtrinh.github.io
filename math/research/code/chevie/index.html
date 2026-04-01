@@ -450,7 +450,7 @@ class="math inline">\(\mathtt{ChevieCharInfo}\)</span> to that in <span
 class="math inline">\(\mathtt{ICCTable}\)</span>
 </p>
 <!--<div class="p">Exotic Hecke character values
-$$\sum_{\chi, \psi} {\{\chi, \psi\}}\psi_\mathsf{v}(c_z) \in \mathbf{Z}[\mathsf{v}^{\pm 1}]$$
+$$\sum_{\chi, \psi} {\{\chi, \psi\}}\psi_x(c_z) \in \mathbf{Z}[x^{\pm 1}]$$
 for $z \in W$ and $\chi \in \mathrm{Irr}(W)$:
 <table style="text-align:left; width:87.5%">
 <colgroup><col style="width:72px"></col><col style="width:96px"></col></colgroup>
@@ -521,7 +521,7 @@ for $z \in W$ and $\chi \in \mathrm{Irr}(W)$:
 </div>-->
 <div class="p">
 Virtual multiplicities <span
-class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> for <span
+class="math inline">\(\alpha_z^\psi(x)\)</span> for <span
 class="math inline">\(z \in W\)</span> and <span
 class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>:
 <table style="text-align:left; width:87.5%">
@@ -675,6 +675,17 @@ class="math inline">\({}^1\)</span>
 </tr>
 <tr>
 <td style="padding:0;">
+<span class="math inline">\(C_6\)</span>
+</td>
+<td style="padding:0;">
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/ratlsmooth/c6_ratlsmooth_solved.txt" target="_blank">txt</a><span
+class="math inline">\({}^1\)</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
 <span class="math inline">\(D_6\)</span>
 </td>
 <td style="padding:0;">
@@ -690,8 +701,7 @@ class="math inline">\({}^1\)</span>
 <td style="padding:0;">
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/ratlsmooth/e6_ratlsmooth_solved.txt" target="_blank">txt</a><span
-class="math inline">\({}^2\)</span>
+<a class="tt" href="test/ratlsmooth/e6_ratlsmooth_solved.txt" target="_blank">txt</a>
 </td>
 </tr>
 </table>
@@ -849,6 +859,17 @@ class="math inline">\({}^1\)</span>
 </tr>
 <tr>
 <td style="padding:0;">
+<span class="math inline">\(C_6\)</span>
+</td>
+<td style="padding:0;">
+</td>
+<td style="padding:0;">
+<a class="tt" href="test/ratlsmooth/c6_ratlsmooth_solved_test.txt" target="_blank">txt</a><span
+class="math inline">\({}^1\)</span>
+</td>
+</tr>
+<tr>
+<td style="padding:0;">
 <span class="math inline">\(D_6\)</span>
 </td>
 <td style="padding:0;">
@@ -864,19 +885,14 @@ class="math inline">\({}^1\)</span>
 <td style="padding:0;">
 </td>
 <td style="padding:0;">
-<a class="tt" href="test/ratlsmooth/e6_ratlsmooth_solved_test.txt" target="_blank">txt</a><span
-class="math inline">\({}^2\)</span>
+<a class="tt" href="test/ratlsmooth/e6_ratlsmooth_solved_test.txt" target="_blank">txt</a>
 </td>
 </tr>
 </table>
 </div>
 <p>
-<span class="math inline">\({}^1\)</span> currently missing the data for
-the last six entries
-</p>
-<p>
-<span class="math inline">\({}^2\)</span> currently missing the data for
-the last entry
+<span class="math inline">\({}^1\)</span> currently omitting entries
+#2527–2529 out of 2530 total
 </p>
 <h2 id="scripts">3. Scripts</h2>
 <!--<p><a class="tt" href="sage/sage-to-gap.txt" target="_blank">txt</a>
@@ -930,7 +946,8 @@ To pre-process CHEVIE data:
 </colgroup>
 <tr>
 <td>
-<a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a>*
+<a class="tt" href="py/join_lines.py" target="_blank">join_lines.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Joins broken lines in CHEVIE output
@@ -938,7 +955,8 @@ Joins broken lines in CHEVIE output
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/extract_icc_labels.py" target="_blank">extract_icc_labels.py</a>*
+<a class="tt" href="py/extract_icc_labels.py" target="_blank">extract_icc_labels.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Extracts <span class="math inline">\(\mathtt{ICCTable}\)</span> ordering
@@ -947,7 +965,8 @@ of irreducible characters and local systems
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/find_permutations.py" target="_blank">find_permutations.py</a>*
+<a class="tt" href="py/find_permutations.py" target="_blank">find_permutations.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Finds permutation taking <span
@@ -957,7 +976,8 @@ class="math inline">\(\mathtt{ICCTable}\)</span> ordering
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/csv_families.py" target="_blank">csv_families.py</a>*
+<a class="tt" href="py/csv_families.py" target="_blank">csv_families.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Converts truncated Lusztig families to CSV format
@@ -965,7 +985,8 @@ Converts truncated Lusztig families to CSV format
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/csv_icc.py" target="_blank">csv_icc.py</a>*
+<a class="tt" href="py/csv_icc.py" target="_blank">csv_icc.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Converts <span class="math inline">\(\mathtt{ICCTable}\)</span> to CSV
@@ -974,7 +995,8 @@ format, then evaluates at <span class="math inline">\(x = 1\)</span>
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/csv_invert.py" target="_blank">csv_invert.py</a>*
+<a class="tt" href="py/csv_invert.py" target="_blank">csv_invert.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Inverts square matrix of (rational) numbers in CSV format
@@ -983,9 +1005,8 @@ Inverts square matrix of (rational) numbers in CSV format
 </table>
 </div>
 <div class="p">
-To compute the <span
-class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> and test their
-properties:
+To compute the <span class="math inline">\(\alpha_z^\psi(x)\)</span> and
+test their properties:
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:180px">
@@ -993,40 +1014,43 @@ properties:
 </colgroup>
 <tr>
 <td>
-<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a>*
+<a class="tt" href="py/permute_vectors.py" target="_blank">permute_vectors.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Permutes exotic character values into <span
 class="math inline">\(\mathtt{ICCTable}\)</span> ordering
 </td>
 </tr>
-<!--<tr><td><a class="tt" href="py/find_duplicates.py" target="_blank">find_duplicates.py</a>&ast;</td>
+<!--<tr><td><a class="tt" href="py/find_duplicates.py" target="_blank">find_duplicates.py</a>${}^2$</td>
 <td>Finds duplicate vectors of transformed Hecke character values</td></tr>-->
 <tr>
 <td>
-<a class="tt" href="py/csv_multiply.py" target="_blank">csv_multiply.py</a>*
+<a class="tt" href="py/csv_multiply.py" target="_blank">csv_multiply.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Multiplies vectors of exotic character values by inverse matrices of
 ungraded Springer multiplicities to obtain <span
-class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span>
+class="math inline">\(\alpha_z^\psi(x)\)</span>
 </td>
 </tr>
 <tr>
 <td>
-<a class="tt" href="py/test_solved.py" target="_blank">test_solved.py</a>*
+<a class="tt" href="py/test_solved.py" target="_blank">test_solved.py</a><span
+class="math inline">\({}^2\)</span>
 </td>
 <td>
 Tests nonzero coefficients of <span
-class="math inline">\(\alpha_z^\psi(\mathsf{v})\)</span> for unimodal
-absolute values, mixed signs, or strictly negative signs
+class="math inline">\(\alpha_z^\psi(x)\)</span> for unimodal absolute
+values, mixed signs, or strictly negative signs
 </td>
 </tr>
 </table>
 <div>
 <p>
-* Written with help from
-<a href="https://claude.ai/" target="_blank">Claude</a> Sonnet 4.6.
+<span class="math inline">\({}^2\)</span> written with help from
+<a href="https://claude.ai/" target="_blank">Claude</a> Sonnet 4.6
 </p>
 <!--
 ##  Exotic Fourier Transforms of Irreducible Characters
