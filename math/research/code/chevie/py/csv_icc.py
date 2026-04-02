@@ -1,4 +1,4 @@
-import re, numpy as np
+import re
 
 def eval_poly_at_1(token):
     expr = re.sub(r'(\d)(x)', r'\1*\2', token)
