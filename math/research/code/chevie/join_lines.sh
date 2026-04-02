@@ -44,8 +44,8 @@ python3 py/join_lines.py test/ratlsmooth/b5_ratlsmooth_raw.txt test/ratlsmooth/b
 python3 py/join_lines.py test/ratlsmooth/c5_ratlsmooth_raw.txt test/ratlsmooth/c5_ratlsmooth_raw.txt
 python3 py/join_lines.py test/ratlsmooth/d5_ratlsmooth_raw.txt test/ratlsmooth/d5_ratlsmooth_raw.txt
 
-python3 py/join_lines.py test/ratlsmooth/b6_ratlsmooth_raw_incomplete.txt test/ratlsmooth/b6_ratlsmooth_raw.txt
-python3 py/join_lines.py test/ratlsmooth/c6_ratlsmooth_raw_incomplete.txt test/ratlsmooth/c6_ratlsmooth_raw.txt
+python3 py/join_lines.py test/ratlsmooth/b6_ratlsmooth_raw.txt test/ratlsmooth/b6_ratlsmooth_raw.txt
+python3 py/join_lines.py test/ratlsmooth/c6_ratlsmooth_raw.txt test/ratlsmooth/c6_ratlsmooth_raw.txt
 python3 py/join_lines.py test/ratlsmooth/d6_ratlsmooth_raw.txt test/ratlsmooth/d6_ratlsmooth_raw.txt
 python3 py/join_lines.py test/ratlsmooth/e6_ratlsmooth_raw.txt test/ratlsmooth/e6_ratlsmooth_raw.txt
 
