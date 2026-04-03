@@ -1,4 +1,4 @@
-data:=["d", 4];
+data:=["d", 7];
 
 if data[1]="a" then letter:="A"; fi;
 if data[1]="b" then letter:="B"; fi;
@@ -12,7 +12,8 @@ W:=CoxeterGroup(letter, data[2]);
 
 chn:=ChevieCharInfo(W).charnames;
 charinfo_path:=Concatenation("chevie_test/chevie_charinfo_", data[1], String(data[2]), ".txt");
-for c in chn do PrintTo(charinfo_path, FormatLaTeX(c), "\n"); od;
+PrintTo(charinfo_path, "");
+for c in chn do AppendTo(charinfo_path, FormatLaTeX(c), "\n"); od;
 
 icc_path:=Concatenation("chevie_test/chevie_icc_", data[1], String(data[2]), ".txt");
 PrintTo(icc_path, Format(ICCTable(UnipotentClasses(W)),rec(CycPol:=false)), "\n");
