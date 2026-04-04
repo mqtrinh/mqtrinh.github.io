@@ -144,6 +144,7 @@ for label in labels:
     # OUTPUT
 
     if mode == "all": mode_str = " elements"
+    if mode == "min": mode_str = " good minimal-length representatives"
     if mode == "ratlsmooth": mode_str = " rationally smooth elements"
 
     str_nonunimodal = " where some sequence of nonzero coeffs is not unimodal in abs value"
