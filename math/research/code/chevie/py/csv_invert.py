@@ -3,7 +3,7 @@ from fractions import Fraction
 
 type = sys.argv[1]
 
-with open(f'test/labels_min.txt') as f:
+with open(f'labels.txt') as f:
     labels = re.split('\n+', f.read().strip())
 
 for label in labels:

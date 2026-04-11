@@ -4,7 +4,7 @@ mode = sys.argv[1]
 
 def read_vectors(filepath):
     with open(filepath) as f:
-        raw = f.read()
+        raw = f.read().strip()
     blocks = re.split(r'(#[0-9]+ [^\n]*)\n', raw)
     headers, vectors_raw = [], []
     i = 1
