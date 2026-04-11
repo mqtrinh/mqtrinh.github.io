@@ -49,6 +49,10 @@ python3 py/join_lines.py test/ratlsmooth/c6_ratlsmooth_raw.txt test/ratlsmooth/c
 python3 py/join_lines.py test/ratlsmooth/d6_ratlsmooth_raw.txt test/ratlsmooth/d6_ratlsmooth_raw.txt
 python3 py/join_lines.py test/ratlsmooth/e6_ratlsmooth_raw.txt test/ratlsmooth/e6_ratlsmooth_raw.txt
 
+python3 py/join_lines.py test/ratlsmooth/b7_ratlsmooth_raw_24.txt test/ratlsmooth/b7_ratlsmooth_raw.txt
+python3 py/join_lines.py test/ratlsmooth/c7_ratlsmooth_raw_24.txt test/ratlsmooth/c7_ratlsmooth_raw.txt
+python3 py/join_lines.py test/ratlsmooth/d7_ratlsmooth_raw_24.txt test/ratlsmooth/d7_ratlsmooth_raw.txt
+
 # min
 
 #python3 py/join_lines.py test/min/b4_min_raw.txt test/min/b4_min_raw.txt
@@ -64,8 +68,5 @@ python3 py/join_lines.py test/ratlsmooth/e6_ratlsmooth_raw.txt test/ratlsmooth/e
 #python3 py/join_lines.py test/min/d6_min_raw.txt test/min/d6_min_raw.txt
 #python3 py/join_lines.py test/min/e6_min_raw.txt test/min/e6_min_raw.txt
 
-python3 py/join_lines.py test/min/b7_min_raw_incomplete.txt test/min/b7_min_raw.txt
-python3 py/join_lines.py test/min/d7_min_raw.txt test/min/d7_min_raw.txt
-
-python3 py/join_lines.py chevie/chevie_icc_b7.txt chevie/chevie_icc_b7.txt
-python3 py/join_lines.py chevie/chevie_families_b7.txt chevie/chevie_families_b7.txt
+#python3 py/join_lines.py test/min/b7_min_raw_incomplete.txt test/min/b7_min_raw.txt
+#python3 py/join_lines.py test/min/d7_min_raw.txt test/min/d7_min_raw.txt

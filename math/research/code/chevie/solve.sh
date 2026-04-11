@@ -8,13 +8,13 @@
 #python3 py/csv_multiply.py icc all
 #python3 py/test_solved.py all
 
-#python3 py/permute_vectors.py ratlsmooth
-#python3 py/csv_multiply.py icc ratlsmooth
-#python3 py/test_solved.py ratlsmooth
+python3 py/permute_vectors.py ratlsmooth
+python3 py/csv_multiply.py icc ratlsmooth
+python3 py/test_solved.py ratlsmooth
 
-python3 py/permute_vectors.py min
-python3 py/csv_multiply.py icc min
-python3 py/test_solved.py min
+#python3 py/permute_vectors.py min
+#python3 py/csv_multiply.py icc min
+#python3 py/test_solved.py min
 
 # extra
 
