@@ -641,19 +641,19 @@ class="math inline">\((\chi_x(C&#39;_z))_\chi\)</span>:
 </table>
 </div>
 <div class="p">
-Virtual multiplicities <span
-class="math inline">\(\alpha_z^\psi(x)\)</span> for <span
-class="math inline">\(z \in W\)</span> and <span
-class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>, defined by
-requiring <span class="math display">\[\sum_\psi {\{\chi,
-\psi\}}\psi_x(C&#39;_z) = \sum_\psi P_{\psi, \chi}(x)\alpha_z^\psi(x)
+Virtual multiplicities <span class="math inline">\(\alpha_{\psi,
+G}^z(x)\)</span> for <span class="math inline">\(z \in W\)</span> and
+<span class="math inline">\(\psi \in \mathrm{Irr}(W)\)</span>, defined
+by requiring <span class="math display">\[\sum_\psi {\{\chi,
+\psi\}}\psi_x(C&#39;_z) = \sum_\psi P_{\psi, \chi}(x)\alpha_{\psi,
+G}^z(x)
 \quad\text{for all $\chi \in \mathrm{Irr}(W)$},\]</span> where <span
 class="math inline">\(\{-, -\}\)</span> is Lusztig’s exotic Fourier
 transform
 (<a href="https://webusers.imj-prg.fr/~jean.michel/gap3/htm/chap098.htm">Ch. 98</a>)
 and the <span class="math inline">\(P_{\psi, \chi}(x)\)</span> are given
-by the <span class="math inline">\(\mathtt{ICCTable}\)</span> of the
-root system
+by the <span class="math inline">\(\mathtt{ICCTable}\)</span> for <span
+class="math inline">\(G\)</span>
 (<a href="https://webusers.imj-prg.fr/~jean.michel/gap3/htm/chap100.htm">Ch. 100</a>):
 <table style="text-align:left; width:87.5%">
 <colgroup>
@@ -1186,8 +1186,8 @@ Inverts square matrix of (rational) numbers in CSV format
 </table>
 </div>
 <div class="p">
-To compute the <span class="math inline">\(\alpha_z^\psi(x)\)</span> and
-test their properties:
+To compute the <span class="math inline">\(\alpha_{\psi, G}^z\)</span>
+and test their properties:
 <table style="text-align:left; width:87.5%">
 <colgroup>
 <col style="width:180px">
@@ -1217,7 +1217,7 @@ class="math inline">\(\mathtt{ICCTable}\)</span> ordering
 <td>
 Multiplies vectors of exotic character values by inverse matrices of
 ungraded Springer multiplicities to obtain <span
-class="math inline">\(\alpha_z^\psi(x)\)</span>
+class="math inline">\(\alpha_{\psi, G}^z\)</span>
 </td>
 </tr>
 <tr>
@@ -1225,9 +1225,9 @@ class="math inline">\(\alpha_z^\psi(x)\)</span>
 <a class="tt" href="py/test_solved.py" target="_blank">test_solved.py</a>*
 </td>
 <td>
-Tests nonzero coefficients of <span
-class="math inline">\(\alpha_z^\psi(x)\)</span> for unimodal absolute
-values, mixed signs, or strictly negative signs
+Tests nonzero coefficients of <span class="math inline">\(\alpha_{\psi,
+G}^z\)</span> for unimodal absolute values, mixed signs, or strictly
+negative signs
 </td>
 </tr>
 </table>
