@@ -25,4 +25,4 @@
 2502	01	truncated convolution
 2502	02	graded W-character formulas computed in GAP
 2502	09	Haiman's conjecture and Lusztig's special representations
-2503	01	erratum to subsection 3.5 of 'quot'
+2503	03	a, q, t-series from generic plane curve singularities
