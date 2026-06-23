@@ -90,9 +90,11 @@ for label in labels:
     for table in tables:
         line_numbers = []
         for row_label in table:
-            if row_label.lstrip('*') in label_to_line:
+            if row_label.lstrip('*') in label_to_line or row_label.lstrip('#') in label_to_line:
                 if row_label[0] == '*':
                     line_numbers.append('*' + str(label_to_line[row_label[1:]]))
+                elif row_label[0] == '#':
+                    line_numbers.append(label_to_line[row_label[1:]])
                 else:
                     line_numbers.append(label_to_line[row_label])
             # Labels absent from x file are simply skipped
