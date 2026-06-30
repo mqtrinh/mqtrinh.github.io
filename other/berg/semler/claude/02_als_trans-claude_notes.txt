@@ -1,0 +1,54 @@
+June 29, 2026
+
+*
+
+Very nice work! You accidentally left out Berg's sign-off, but that was certainly not a problem at all. Regarding the song title that left you uncertain: It's "Traumgekrönt" (from Rilke). Both this song and "Nachtigall" were collected into Berg's Seven Early Songs. In that collection, "Nachtigall" is the simplest and most tonal, hence the most accessible; this accessibility to a broad public is probably what Berg was identifying, in the letter.
+
+The third-shortest letter is the second of the five: undated, but sent sometime in the late summer of 1907. It is the .pdf with filename 02_als. Again, this is a file where the letter pages are out of order:
+
+* pdf page 1 contains letter pages 4 (on the left) and 1 (on the right).
+* pdf page 2 contains letter pages 2 and 3.
+* pdf page 3 contains letter pages 8 and 5.
+* pdf page 4 contains letter pages 6 and 7.
+* pdf page 5 contains letter pages 12 and 9.
+* pdf page 6 contains letter pages 10 and 11.
+* pdf page 7 contains letter page 13 (on the right).
+* pdf page 8 contains letter pages 14 and 15.
+
+Note that the handwriting in this letter is much more slanted, for reasons unknown. Also note that Berg is writing on stationery that contains an illustration of a hotel (labeled Pension Aurora, Meran, Südtirol, with further non-Berg text below the drawing).
+
+*
+
+Thank you for the correction — good to know about "Traumgekrönt" and the Rilke connection, that's helpful context. Let me update the previous file briefly, then move to this new letter.Now let's move to the new letter.
+
+8 PDF pages, matching the user's description. Let's extract and view them all.
+
+I notice "[1907?]" written in pencil at the top right, and an interesting nickname "Rosenstock" being used for Frida. Let's continue viewing all pages.
+
+Now I have all 8 pdf pages. Let me crop into halves to assemble the proper letter-page order according to the user's mapping.
+
+I already have good full views of each page so cropping isn't strictly necessary, but let me crop for closer reading of difficult passages, starting with reassembling the letter order: pp.4&1 / pp.2&3 / pp.8&5 / pp.6&7 / pp.12&9 / pp.10&11 / p.13 / pp.14&15.
+
+Let me zoom in on the harder-to-read passages. Let's view higher resolution crops for the difficult sections.
+
+Now let's transcribe this letter carefully, page by page, in the correct order.
+
+Now I have all the pages clearly read. Notably, this letter is missing pages 1's continuation before page 4 (page 1 itself appears here at the start) — let me check the numbering carefully. The user says PDF p.1 has letter pages 4 and 1. So letter page 1 begins the letter (right side of PDF p.1), and page 4 follows... wait, page 4 is numbered lower than page 1, which is odd since page 1 should come first. Let me re ‑examine: page 1 starts "Verehrter Rosenstork..." which sounds like an opening. Page 4 continues with "...Weise" mid-sentence. So the order must be 1→2→3→4→5...→15. Let me build the full transcription now.
+
+This was a fun letter — Berg in a discursive, literary mood, ranging across Wilde, Ibsen, Shaw, Strindberg, and others. A few notes:
+
+**What's secure:**
+- The stationery: *Pension Aurora, Meran, Südtirol* (matches your description)
+- The pencil annotation "[1907?]" at the top right of page 1, presumably a librarian or archivist's dating guess
+- His affectionate nickname for Frida throughout: **"Rosenstock"** (rendered in his hand as something close to "Rosenstork" — I kept your spelling since that's clearly what's written, though "Rosenstock" = "rose-bush" is the more natural German word and may be what he intended; worth flagging to the specialist)
+- The substantial literary discussion: Wilde (*The Picture of Dorian Gray*, *Salome*, *Lady Windermere's Fan*, *An Ideal Husband*), Ibsen (*Solness*, *The Wild Duck*, *An Enemy of the People*, *Peer Gynt*, *The Pretenders*), Bernard Shaw, and a list of contemporary writers: Strindberg, Altenberg, Bjørnson, Maeterlinck, Gerhart Hauptmann, and Wedekind
+- The reference to Mahler conducting *Tristan* in Vienna and his impending departure for America, where he would conduct *Fidelio* rather than *Salome*
+- The closing: *Ganz ergeben — Alban Berg*
+
+**Where uncertainty remains [?]:**
+- Several words throughout pp. 1–3 and 9–12 are hard to pin down with full confidence, particularly verb forms and a few adjectives where Berg's slant made letter-shapes ambiguous
+- One possible reference to "Bjørnson" (p. 12) is my best guess at a heavily compressed name
+- The word I've rendered "ihnitiert" (p. 11) doesn't look like a real German word to me — possibly "imitiert" (imitated), which would make much better sense in context: "diese großen Dichter in der Schreibweise sehr imitiert" — though even "imitiert" doesn't quite fit grammatically; the passage may need rethinking once a specialist looks at the image directly
+
+I'd flag pages 9–12 in particular (the Ibsen/Shaw discussion) for the specialist's attention, since that's where my confidence dips lowest.
+
