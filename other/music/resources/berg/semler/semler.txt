@@ -41,8 +41,8 @@ CONTENTS
 
 01	Berg #1 ALS to Seabury 1907 July
 
-- .jpeg photo of ALS, pages 1 and 4
 - .pdf scan of ALS
+- .jpeg photo of ALS, pages 1 and 4
 
 02	Berg #2 ALS [1907 late summer]
 
@@ -50,26 +50,31 @@ CONTENTS
 
 03	Berg #3 ALS with Envelope and Program 1907 November 18
 
+- .pdf scan of ALS
+- .pdf scan of program
+[- .pdf scan of envelope]
 - .jpeg photo of envelope, front
 - .jpeg photo of envelope, back
-- .pdf scan of ALS
 
 04	Berg #4 ALS w/ Envelope 1908 January 14
 
+- .pdf scan of ALS
+- .jpeg photo of ALS, page 1
+[- .pdf scan of envelope]
 - .jpeg photo of envelope, front
 - .jpeg photo of envelope, back
-- .pdf scan of ALS
 
 05	Berg #5 ALS w/ Envelope 1908 August 27
 
+- .pdf scan of ALS
+[- .pdf scan of envelope]
 - .jpeg photo of envelope, front
 - .jpeg photo of envelope, back
-- .pdf scan of ALS
  
 06	Berg #6 Seabury Typed Remembrance Signed of Berg, Titled _1903 and 1904_
 
-- .jpeg photo of typed remembrance, signed, all seven pages
 - .pdf scan of typed remembrance, signed
+- .jpeg photo of typed remembrance, signed, all seven pages
 
 07	Berg #7 TLS from Charley Berg to Seabury 1936 January 20
 
@@ -77,9 +82,10 @@ CONTENTS
 
 08	Berg #8 TLS w/ Envelope from Charley Berg to Seabury 1936 July 20
 
+- .pdf scan of TLS
+[- .pdf scan of envelope]
 - .jpeg photo of envelope, front
 - .jpeg photo of envelope, back
-- .pdf scan of TLS
 
 09	Berg #9 TLS from Willi Reich to Seabury 1936 June 22
 
@@ -93,7 +99,6 @@ CONTENTS
 
 - .jpg photo of booklet cover, outside
 - .jpg photo of booklet cover, inside
-- .pdf scan of booklet cover, inside text
 
 [other booklet pages not scanned or photographed]
 
