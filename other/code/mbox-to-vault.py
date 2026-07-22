@@ -8,12 +8,12 @@ Input:
 
 Output:
 * an Obsidian vault at VAULT_ROOT (absolute path ABS_ROOT)
-* a subfolder containing the messages from the .mbox file in which at least one of the TARGET_ADDRESSES appears
+* a subfolder containing the messages from MBOX in which at least one of the TARGET_ADDRESSES appears
 * a further subfolder containing the file attachments from those messages
 
 To avoid collisions, messages are named using UTC datetime (yy-mm-dd-HHMM) and subject; file attachments are renamed by prefixing the UTC datetime.
 
-Written with help from ChatGPT 5.6 Instant.
+Written with help from ChatGPT 5.3 Instant.
 
 Minh-Tam Trinh
 July 22, 2026
