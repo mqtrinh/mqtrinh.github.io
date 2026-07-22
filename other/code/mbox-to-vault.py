@@ -11,7 +11,7 @@ Output:
 * a subfolder containing the messages from the .mbox file in which at least one of the TARGET_ADDRESSES appears
 * a further subfolder containing the file attachments from those messages
 
-To avoid collisions, messages are named using UTC datetime (YYYY-MM-DD-HHMM) and subject; file attachments are renamed by prefixing the UTC datetime.
+To avoid collisions, messages are named using UTC datetime (yy-mm-dd-HHMM) and subject; file attachments are renamed by prefixing the UTC datetime.
 
 Written with help from ChatGPT 5.6 Instant.
 
