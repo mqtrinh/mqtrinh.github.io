@@ -3,26 +3,27 @@
 """
 
 Input:
+* an Obsidian vault at VAULT_ROOT (absolute path ABS_ROOT)
 * MBOX, an mbox file containing a Gmail inbox export
 * TARGET_ADDRESSES, a set of email addresses
 
 Output:
-* an Obsidian vault at VAULT_ROOT (absolute path ABS_ROOT)
-* a subfolder containing the messages from MBOX in which at least one of the TARGET_ADDRESSES appears
-* a further subfolder containing the file attachments from those messages
+* a directory under VAULT_ROOT containing the messages from MBOX in which at least one of the TARGET_ADDRESSES appears
+* a subdirectory containing the file attachments from those messages
 
-To avoid collisions, messages are named using UTC datetime (yy-mm-dd-HHMM) and subject; file attachments are renamed by prefixing the UTC datetime.
+To avoid collisions, messages are named using UTC datetime (yy-mm-dd-HHMMSS) and subject; file attachments are renamed by prefixing the UTC datetime.
 
 Written with help from ChatGPT 5.3 Instant.
 
 Minh-Tam Trinh
-July 22, 2026
+August 5, 2026
 
 """
 
 from __future__ import annotations
 
 import mailbox
+from collections import defaultdict
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from email.header import decode_header, make_header
@@ -38,9 +39,16 @@ from markdownify import markdownify
 
 import unicodedata
 
-########################
-# Configuration
-########################
+from anyascii import anyascii
+
+# ------------------------
+# configuration
+# ------------------------
+
+SUBJECT_MAX_LEN = 36
+
+VAULT_NAME = "vault_name" ### REPLACE vault_name
+VAULT_ROOT = Path(VAULT_NAME)
 
 MBOX = "mbox_name" ### REPLACE mbox_name
 MBOX_PATH = Path(f"{MBOX}.mbox")
@@ -52,17 +60,17 @@ TARGET_ADDRESSES = {
 
 # https://forum.obsidian.md/t/how-to-link-a-local-file-in-obsidian/5815
 ABS_ROOT = "file:///home/user_name/vaults/vault_name" ### REPLACE /user_name/...
-VAULT_ROOT = Path("vault_name") ### REPLACE vault_name
+
 FILES = "files"
 
-SUBJECT_MAX_LEN = 36
+INDEX_NAME = "_index"
 
 _SUBJECT_PREFIX = re.compile(r"^(?:(?:re|fw|fwd)\s*:\s*)", re.IGNORECASE)
 _EMAIL_RE = re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 
-########################
+# ------------------------
 # data model
-########################
+# ------------------------
 
 @dataclass
 class Attachment:
@@ -100,9 +108,9 @@ class EmailMessage:
 	def __repr__(self):
 		return (f"<EmailMessage #{self.index} {self.message_id!r}>")
 
-########################
+# ------------------------
 # filtering and parsing
-########################
+# ------------------------
 
 def raw_involves_target(msg: EmailMessage) -> bool:
 	participants = set()
@@ -167,12 +175,12 @@ def parse_email(index: int, msg) -> EmailMessage:
 		raw_message=msg,
 	)
 
-########################
+# ------------------------
 # extracting metadata
-########################
+# ------------------------
 
 def display_date(dt: datetime) -> str:
-	return dt.strftime("%y-%m-%d-%H%M")
+	return dt.strftime("%y-%m-%d-%H%M%S")
 	
 def display_date_utc(dt: datetime) -> str:
 	# https://www.pythonmorsels.com/converting-to-utc-time/
@@ -217,16 +225,6 @@ def _handle_part(msg: EmailMessage, part) -> None:
 			return
         
 def extract_metadata(msg: EmailMessage) -> None:
-	"""
-	Populate
-	* body_text
-	* body_html
-	* attachments
-	by walking the MIME tree.
-
-	The EmailMessage is modified in place.
-	"""
-
 	raw = msg.raw_message
 	if not raw.is_multipart():
 		_handle_part(msg, raw)
@@ -236,9 +234,9 @@ def extract_metadata(msg: EmailMessage) -> None:
 			continue
 		_handle_part(msg, part)
 
-########################
+# ------------------------
 # building thread graph
-########################
+# ------------------------
 
 def build_message_lookup(messages: list[EmailMessage]) -> dict[str, EmailMessage]:
 	lookup = {}
@@ -263,98 +261,35 @@ def build_thread_graph(
 		msg.parent = parent
 		parent.children.append(msg)
 
-def sanitize_subject(subject: str) -> str:
-	# remove repeated 'Re:', 'Fw:', and 'Fwd:' prefixes
-	subject = subject.strip()
-	while True:
-		new_subject = _SUBJECT_PREFIX.sub("", subject)
-		if new_subject == subject: break
-		subject = new_subject.strip()
-	
-	"""
-	Convert subject into a canonical folder name. The result:
-	* contains only ASCII lowercase letters, digits, and dashes;
-	* replaces whitespace with dashes;
-	* converts apostrophes within words to dashes;
-	* removes punctuation unsuitable for filenames;
-	* collapses repeated dashes;
-	* is truncated to at most max_length characters.
-	"""
-
-	# convert accented letters to ASCII equivalents
-	subject = unicodedata.normalize("NFKD", subject)
-	subject = subject.encode("ascii", "ignore").decode("ascii")
-
-	# lowercase
-	subject = subject.lower()
-
-	# apostrophes between letters become dashes
-	subject = re.sub(r"(?<=[a-z])['’](?=[a-z])", "-", subject)
-
-	# remove all remaining quotation marks
-	subject = re.sub(r"""['"`‘’“”«»]""", "", subject)
-
-	# remove selected punctuation
-	subject = re.sub(r"[/:?]", "", subject)
-
-	# replace whitespace with dashes
-	subject = re.sub(r"\s+", "-", subject)
-
-	# remove everything except letters, digits, and dashes
-	subject = re.sub(r"[^a-z0-9-]", "", subject)
-
-	# collapse repeated dashes
-	subject = re.sub(r"-{2,}", "-", subject)
-
-	# remove leading/trailing dashes
-	subject = subject.strip("-")
-
-	# truncate
-	if len(subject) > SUBJECT_MAX_LEN:
-		cutoff = subject.rfind("-", 0, SUBJECT_MAX_LEN)
-		if cutoff != -1:
-			subject = subject[:cutoff]
-		else:
-			subject = subject[:SUBJECT_MAX_LEN]
-	subject = subject.rstrip("-")
-
-	# avoid empty names
-	if not subject: subject = "untitled"
-
-	return subject
-	
-########################
+# ------------------------
 # writing Markdown
-########################
+# ------------------------
 	
 def filename(msg: EmailMessage) -> str:
 	if msg is not None:
-		return f"{display_date_utc(msg.date)} {msg.subject}"
+		if msg.subject:
+			return f"{display_date_utc(msg.date)} {msg.subject}"
+		else:
+			return f"{display_date_utc(msg.date)}"
 	return "none"
 
 def yaml_frontmatter(msg: EmailMessage) -> str:
-	temp = "---"
-	#temp += f"\nindex: {msg.index}"
-	temp += f"\nroot: '[[{filename(msg.root)}]]'"
-	temp += f"\nparent: '[[{filename(msg.parent)}]]'"
-	temp += "\nchildren: "
+	lines = ["---"]
+	lines.append("root: '[[" + f"{filename(msg.root)}" + "]]'")
+	lines.append("parent: '[[" + f"{filename(msg.parent)}" + "]]'")
+	lines.append("children: ")
 	for child in msg.children:
-		temp += f"\n- '[[{filename(child)}]]'"
-		
-	temp += f"\nyear: {msg.date.strftime('%Y')}"
-	temp += f"\ndate: {msg.date.strftime('%A, %B %d')}"
-	temp += f"\ntime: {msg.date.strftime('%H:%M %z')}"	
-	
-	temp += f"\nfrom: {msg.sender[1]}"
-	temp += f"\nsubject: {msg.subject}"
-	#temp += f"\nto: {format_address_list(msg.to)}"
-	#temp += f"\ncc: {format_address_list(msg.cc)}"
-	#temp += f"\nbcc: {format_address_list(msg.bcc)}"
-	temp += "\nattachments: "
+		lines.append("- '[[" + f"{filename(child)}" + "]]'")
+	lines.append(f"year: {msg.date.strftime('%Y')}")
+	lines.append(f"date: {msg.date.strftime('%A, %B %d')}")
+	lines.append(f"time: {msg.date.strftime('%H:%M %z')}")	
+	lines.append(f"from: {msg.sender[1]}")
+	lines.append("attachments: ")
 	for file in msg.attachments:
-		temp += f"\n- '[[{FILES}/{file.name}]]'"
-	temp += "\n---"
-	return temp
+		# may need to modify file path, depending on Obsidian settings
+		lines.append(f"- '[[{file.name}]]'")
+	lines.append("---")
+	return "\n".join(lines)
 
 def write_attachments(msg: EmailMessage):
 	for file in msg.attachments:
@@ -415,32 +350,60 @@ def html_to_markdown(html, file_lst) -> str:
 	).rstrip()
 
 def body_as_markdown(msg: EmailMessage) -> str:
+	subject = ""
+	if msg.root == msg: subject = f"# {msg.raw_subject}\n\n"
 	# chooses html over plain where available
 	if msg.body_html is not None:
-		return html_to_markdown(msg.body_html, msg.attachments)
+		return subject + html_to_markdown(msg.body_html, msg.attachments)
 	elif msg.body_text is not None:
-		return normalize_plaintext(msg.body_text)
+		return subject + normalize_plaintext(msg.body_text)
 	else:
-		return ""
+		return subject
 
-def write_markdown(msg: EmailMessage):
+def write_text(filename: str, text: str) -> None:
 	path = (
 		VAULT_ROOT
 		/ MBOX
-		/ f"{filename(msg)}.md"
+		/ f"{filename}.md"
 	)
-	path.parent.mkdir(
-		parents=True,
-		exist_ok=True,
-	)
-	with path.open("w", encoding="utf-8") as f:
-		f.write(yaml_frontmatter(msg))
+	path.parent.mkdir(parents=True, exist_ok=True)
+	with path.open("w", encoding="utf-8", newline="\n") as f:
+		f.write(text.rstrip())
 		f.write("\n")
-		f.write(body_as_markdown(msg))
+		
+def write_markdown(msg: EmailMessage) -> None:
+	text = yaml_frontmatter(msg) + "\n" + body_as_markdown(msg)
+	write_text(filename(msg), text)
 
-########################
+def write_index(roots: list[EmailMessage]) -> None:
+	roots_with_subject = []
+	for msg in roots:
+		if msg.raw_subject: roots_with_subject.append(msg)
+	lines = [
+		"---",
+		f"inbox: {MBOX}",
+		f"count: {len(roots_with_subject)}",
+		"---",
+		"",
+		# "*Untitled threads are omitted from this index.*"
+		# "",
+	]
+	sorted_roots_with_subject = sorted(roots_with_subject, key=lambda msg: (msg.date, msg.index), reverse=True)
+	previous_year, previous_month = "", ""
+	for msg in sorted_roots_with_subject:
+		year, month = msg.date.strftime("%Y"), msg.date.strftime("%B")
+		if year != previous_year:
+			lines.append(f"# {year}")
+			previous_year = year
+		if month != previous_month:
+			lines.extend(["", f"*{month}*"])
+			previous_month = month
+		lines.append(f"- [[{MBOX}/{filename(msg)}|{filename(msg)}]]")
+	write_text(INDEX_NAME, "\n".join(lines))
+
+# ------------------------
 # main
-########################
+# ------------------------
 
 def load_messages(path: Path) -> list[EmailMessage]:
 	archive = mailbox.mbox(path)
@@ -459,28 +422,62 @@ def load_messages(path: Path) -> list[EmailMessage]:
 	print(f"retained {len(kept):,} messages")
 	return kept
 
+def sanitize_subject(subject: str) -> str:
+	# remove repeated 'Re:', 'Fw:', and 'Fwd:' prefixes
+	subject = subject.strip()
+	while True:
+		new_subject = _SUBJECT_PREFIX.sub("", subject)
+		if new_subject == subject: break
+		subject = new_subject.strip()
+	
+	# convert subject into a canonical folder name
+	# the result
+	# * contains only ASCII lowercase letters, digits, and dashes
+	# - replaces non-Latin characters with ASCII letters
+	# * replaces whitespace with dashes
+	# * converts apostrophes within words to dashes
+	# * removes punctuation unsuitable for filenames
+	# * collapses repeated dashes
+	# * is truncated to at most max_length characters
+
+	subject = unicodedata.normalize("NFKD", subject)
+	subject = anyascii(subject)
+	subject = subject.lower()
+	subject = re.sub(r"(?<=[a-z])['’](?=[a-z])", "-", subject)
+	subject = re.sub(r"""['"`‘’“”«»]""", "", subject)
+	subject = re.sub(r"[/:?]", "", subject)
+	subject = re.sub(r"\s+", "-", subject)
+	subject = re.sub(r"[^a-z0-9-]", "", subject)
+	subject = re.sub(r"-{2,}", "-", subject)
+	subject = subject.strip("-")
+	
+	if len(subject) > SUBJECT_MAX_LEN:
+		cutoff = subject.rfind("-", 0, SUBJECT_MAX_LEN)
+		if cutoff != -1:
+			subject = subject[:cutoff]
+		else:
+			subject = subject[:SUBJECT_MAX_LEN]
+	subject = subject.rstrip("-")
+
+	return subject
+
 if __name__ == "__main__":
 	messages = load_messages(MBOX_PATH)
-	
-	for msg in messages:
-		extract_metadata(msg)
-		
+	for msg in messages: extract_metadata(msg)	
 	message_by_id = build_message_lookup(messages)
-	
 	build_thread_graph(
 		messages,
 		message_by_id,
 	)
 	
+	root_ids = []
 	for msg in messages:
 		msg.children.sort(
 			key=lambda child: (
-				child.date is None,
 				child.date,
 				child.index,
 			)
 		)
-
 		root = None
 		if msg.references:
 			num_refs = len(msg.references)
@@ -496,14 +493,16 @@ if __name__ == "__main__":
 					i += 1
 		else:
 			root = msg
-		
+		if root and root.message_id not in root_ids: root_ids.append(root.message_id)
 		msg.root = root
-		if root is not None:
-			msg.subject = sanitize_subject(root.raw_subject)
-		else:
-			msg.subject = ""
+		msg.subject = sanitize_subject(msg.raw_subject)
 	
 	for msg in messages:
 		print(f"writing message #{msg.index}")
 		write_attachments(msg)
 		write_markdown(msg)
+	
+	roots = []
+	for root_id in root_ids: roots.append(message_by_id[root_id])
+	print(f"writing index")
+	write_index(roots)
